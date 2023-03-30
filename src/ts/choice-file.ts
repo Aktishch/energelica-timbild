@@ -29,18 +29,18 @@ const choiceFile = (event: Event): void => {
       const requestUrl: string = '/ajax/submit-handler.php'
       const avatar = document.querySelector('*[data-avatar]') as HTMLImageElement
 
-      dialog.open('fancybox-loading', '/dialogs/loading.html')
+      dialog.loading()
 
       fetch(requestUrl, {
 
         method: 'POST',
         body: formData
 
-      }).then((response: Response): void => {
+      }).then((response: Response): any => {
 
-        response.text()
+        return response.text()
 
-      }).then((): void => {
+      }).then((response): void => {
 
         image.src = String(readFile.result)
         avatar.src = String(readFile.result)

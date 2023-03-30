@@ -8,13 +8,46 @@ declare global {
 
 }
 
-const open = (dialogName: string, requestUrl: string): void => {
+const open = (requestUrl: string): void => {
 
   window.Fancybox.show(
 
-    [{ src: requestUrl, type: 'ajax' }],
+    [{
 
-    { dragToClose: false, mainClass: dialogName }
+      src: requestUrl,
+      type: 'ajax'
+
+    }],
+
+    {
+
+      dragToClose: false,
+      mainClass: 'fancybox-dialog'
+
+    }
+
+  )
+
+}
+
+const loading = (): void => {
+
+  window.Fancybox.show(
+
+    [{
+
+      src: '/dialogs/loading.html',
+      type: 'ajax'
+
+    }],
+
+    {
+
+      dragToClose: false,
+      closeButton: false,
+      click: true
+
+    }
 
   )
 
@@ -26,4 +59,4 @@ const close = (): void => {
 
 }
 
-export default { open, close }
+export default { open, loading, close }

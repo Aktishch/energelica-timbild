@@ -5,29 +5,6 @@
 
 // Fancybox
 .fancybox {
-  &-loading {
-    pointer-events: none;
-
-    & .fancybox__slide {
-      padding : 0;
-      overflow: hidden;
-    }
-
-    & .fancybox__content {
-      display        : flex;
-      align-items    : center;
-      justify-content: center;
-      width          : 100vw;
-      height         : 100vh;
-      pointer-events : all;
-      overflow       : hidden;
-    }
-
-    & .carousel__button {
-      display: none;
-    }
-  }
-
   &__spinner {
     width : auto;
     height: auto;
