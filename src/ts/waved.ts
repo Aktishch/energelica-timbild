@@ -38,7 +38,7 @@ const init = (): void => {
     waved.classList.add('waved')
     item.appendChild(waved)
 
-    item.addEventListener('mousedown', setWaved as EventListener)
+    item.addEventListener('click', setWaved as EventListener)
 
   })
 
