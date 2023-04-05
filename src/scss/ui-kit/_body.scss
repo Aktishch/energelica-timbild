@@ -3,12 +3,14 @@ body {
   color           : var(--color-black);
   background-color: var(--color-white);
 
-  &:is([data-theme="dark"]) {
+  &[data-theme="dark"] {
     --color-black: #fff;
     --color-white: #000;
     --color-grey : #303030;
 
-    & :is([data-theme="light"], .btn) {
+    & [data-theme="light"],
+    & .btn,
+    & .movement::after {
       --color-black: #000;
       --color-white: #fff;
       --color-grey : #f6f7f9;

@@ -12,8 +12,8 @@
 <!-- Галерея -->
 
 <section class="gallery container bg-white" id="content">
-  <h2 class="font-alt text text--center text-40 text-md-50 bold-7 lh-4 shadow-text mb-3 anim anim--up" data-movement="blend" data-anim="hidden">Slider-swiper</h2>
-  <h3 class="text text--center text-16 text-md-18 lh-2 bold-6 mb-5 mb-md-10 anim anim--up" data-anim="hidden">Class template for slider</h3>
+  <h2 class="font-alt text-center text-40 text-md-50 bold-7 lh-4 shadow-text mb-3 anim anim--up" data-movement="blend" data-anim="hidden">Slider-swiper</h2>
+  <h3 class="text-center text-16 text-md-18 lh-2 bold-6 mb-5 mb-md-10 anim anim--up" data-anim="hidden">Class template for slider</h3>
   <div class="gallery-slider relative anim anim--right" data-anim="hidden">
     <div class="swiper swiper--overwrap">
       <div class="swiper-wrapper">
@@ -34,12 +34,12 @@
       </div>
     </div>
     <div class="swiper-pagination d-flex d-md-none color-primary mt-5"></div>
-    <button class="swiper-button-prev btn btn--primary btn--fill d-none d-md-flex" data-waved>
+    <button class="swiper-button-prev btn btn--primary btn--fill d-none d-md-flex" data-waved="light">
       <svg class="icon">
         <use xlink:href="img/icons.svg#arrow-left">
       </svg>
     </button>
-    <button class="swiper-button-next btn btn--primary btn--fill d-none d-md-flex" data-waved>
+    <button class="swiper-button-next btn btn--primary btn--fill d-none d-md-flex" data-waved="light">
       <svg class="icon">
         <use xlink:href="img/icons.svg#arrow-right">
       </svg>
@@ -80,7 +80,7 @@
 ] %>
 
 <section class="products container container--distance bg-grey">
-  <h2 class="font-alt text text--center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Products</h2>
+  <h2 class="font-alt text-center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Products</h2>
   <form class="form mb-7">
     <div class="form-wrapper">
       <div class="input-cover">
@@ -104,7 +104,7 @@
       <div class="swiper-wrapper">
         <% for (var i = 0; i < products.length; i++) { %>
           <div class="swiper-slide h-auto">
-            <div class="product card link-wrapper pointer h-100 p-1" data-product>
+            <div class="product card card--active link-wrapper pointer h-100 p-1" data-product>
               <div class="pack pack--rect bg-grey radius-4">
                 <div class="loader">
                   <span class="loader-progress">
@@ -131,7 +131,7 @@
                 <div class="flex flex-wrap align-end justify-between gap-4 mt-auto mb-5">
                   <div class="flex flex-column w-100 w-md-auto">
                     <% if (products[i].oldPrice) { %>
-                      <span class="text text--line text-14 text-md-16 bold-4 fade-60 mb-2" data-product-oldprice><%= products[i].oldPrice %></span>
+                      <span class="text-line text-14 text-md-16 bold-4 fade-60 mb-2" data-product-oldprice><%= products[i].oldPrice %></span>
                     <% } %>
                     <span class="text-20 text-md-24 bold-6" data-product-price><%= products[i].price %></span>
                   </div>
@@ -143,7 +143,7 @@
                     <span class="quantity-btn btn btn--gray btn--fill radius-max" data-quantity-increase>+</span>
                   </div>
                 </div>
-                <span class="btn btn--primary btn--lg btn--fade" data-product-button data-waved>
+                <span class="btn btn--primary btn--lg btn--fade" data-product-button data-waved="light">
                   <svg class="icon mr-2">
                     <use xlink:href="img/icons.svg#basket">
                   </svg>
@@ -156,12 +156,12 @@
       </div>
     </div>
     <div class="swiper-pagination color-primary mt-5"></div>
-    <button class="swiper-button-prev btn btn--primary btn--fill d-none d-md-flex" data-waved>
+    <button class="swiper-button-prev btn btn--primary btn--fill d-none d-md-flex" data-waved="light">
       <svg class="icon">
         <use xlink:href="img/icons.svg#arrow-left">
       </svg>
     </button>
-    <button class="swiper-button-next btn btn--primary btn--fill d-none d-md-flex" data-waved>
+    <button class="swiper-button-next btn btn--primary btn--fill d-none d-md-flex" data-waved="light">
       <svg class="icon">
         <use xlink:href="img/icons.svg#arrow-right">
       </svg>
@@ -200,10 +200,10 @@
   </div>
   <div class="flex align-end justify-between gap-2">
     <div class="flex flex-column">
-      <span class="text text--line text-12 text-md-16 bold-4 fade-60" data-basket-oldprice>8 000$</span>
+      <span class="text-line text-12 text-md-16 bold-4 fade-60" data-basket-oldprice>8 000$</span>
       <span class="text-20 text-md-22 bold-6" data-basket-price>7 000$</span>
     </div>
-    <button class="btn btn--second btn--lg btn--fade px-10" data-waved>Basket</button>
+    <button class="btn btn--second btn--lg btn--fade px-10" data-waved="dark">Basket</button>
   </div>
 </div>
 
@@ -276,7 +276,7 @@
                     <span class="form-error anim anim--fade" data-error>Пожалуйста, введите ваш номер!</span>
                   </div>
                 </label>
-                <button class="btn btn--primary btn--lg btn--fill w-100" data-waved type="submit">Submit</button>
+                <button class="btn btn--primary btn--lg btn--fill w-100" data-waved="light" type="submit">Submit</button>
               </div>
             </div>
           </div>
@@ -287,13 +287,13 @@
             <div class="swiper-pagination w-auto ml-1"></div>
           </div>
           <div class="flex align-center gap-5">
-            <button class="quiz-slider__btn swiper-button-prev default btn btn--primary btn--lg btn--fill w-auto mt-0" data-waved>
+            <button class="quiz-slider__btn swiper-button-prev default btn btn--primary btn--lg btn--fill w-auto mt-0" data-waved="light">
               <svg class="icon text-12 mr-2">
                 <use xlink:href="img/icons.svg#arrow-left">
               </svg>
               Prev
             </button>
-            <button class="quiz-slider__btn swiper-button-next default btn btn--primary btn--lg btn--fill w-auto mt-0" data-waved>
+            <button class="quiz-slider__btn swiper-button-next default btn btn--primary btn--lg btn--fill w-auto mt-0" data-waved="light">
               Next
               <svg class="icon text-12 ml-2">
                 <use xlink:href="img/icons.svg#arrow-right">
@@ -406,7 +406,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. In minus dolor magnam! Tenetur quam maiores vel vero iste aperiam dolores ipsa, quae autem sunt quo quia omnis commodi, impedit recusandae.
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. In minus dolor magnam! Tenetur quam maiores vel vero iste aperiam dolores ipsa, quae autem sunt quo quia omnis commodi, impedit recusandae.
                 </p>
-                <button class="btn btn--primary btn--lg btn--fill w-100 w-md-50 mt-auto" data-waved>Button</button>
+                <button class="btn btn--primary btn--lg btn--fill w-100 w-md-50 mt-auto" data-waved="light">Button</button>
               </div>
             </div>
           <% } %>

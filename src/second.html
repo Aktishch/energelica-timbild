@@ -14,8 +14,8 @@
 <% var grid = ['row-lg-5', 'row-lg-4', 'row-lg-5', 'row-lg-5', 'row-lg-4', 'row-lg-4'] %>
 
 <section class="album container bg-white overflow-hidden" id="content">
-  <h2 class="font-alt text text--center text-40 text-md-50 bold-7 lh-4 shadow-text mb-3 anim anim--up" data-movement="blend" data-anim="hidden">GridBox</h2>
-  <h3 class="text text--center text-16 text-md-18 lh-2 bold-6 mb-5 mb-md-10 anim anim--up" data-anim="hidden">Columns and rows</h3>
+  <h2 class="font-alt text-center text-40 text-md-50 bold-7 lh-4 shadow-text mb-3 anim anim--up" data-movement="blend" data-anim="hidden">GridBox</h2>
+  <h3 class="text-center text-16 text-md-18 lh-2 bold-6 mb-5 mb-md-10 anim anim--up" data-anim="hidden">Columns and rows</h3>
   <div class="grid grid--rows gap-3 gap-md-5 gap-lg-8">
     <% for (var i = 0; i < grid.length; i++) { %>
       <a class="col-6 col-md-4 row-3 row-md-4 <%= grid[i] %> pack pack--box bg-grey radius-3 shadow-box ease duration-9 anim anim--circle" data-movement="light" data-anim="hidden" data-fancybox="grid" href="https://picsum.photos/600/400?random=<%= i %>">
@@ -37,7 +37,7 @@
 <!-- Сравнение -->
 
 <section class="compare container container--distance bg-grey">
-  <h2 class="font-alt text text--center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Comparison</h2>
+  <h2 class="font-alt text-center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Comparison</h2>
   <div class="relative bg-gray radius-5 overflow-hidden" data-compare>
     <div class="loader">
       <span class="loader-progress">
@@ -69,12 +69,12 @@
 <!-- Сортировка -->
 
 <section class="sorting container container--sm bg-white">
-  <h2 class="font-alt text text--center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Sorting</h2>
+  <h2 class="font-alt text-center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Sorting</h2>
   <div class="filter mx-auto" data-filter>
-    <div class="filter__categories flex align-center justify-between gap-0 gap-md-4 relative border-bottom overflow-hidden mb-5 mb-md-10 pb-0 pb-md-4 anim anim--down" data-anim="hidden">
-      <div class="filter__category filter__category--active flex-grow text text--center text-20 pointer w-100 p-4 p-md-0" data-filter-category="all">all</div>
-      <div class="filter__category flex-grow text text--center text-20 pointer w-100 p-4 p-md-0" data-filter-category="category-1">Primary</div>
-      <div class="filter__category flex-grow text text--center text-20 pointer w-100 p-4 p-md-0" data-filter-category="category-2">Second</div>
+    <div class="filter__categories flex align-center justify-between gap-0 gap-md-4 relative color-black border-bottom overflow-hidden mb-5 mb-md-10 pb-0 pb-md-4 anim anim--down" data-anim="hidden">
+      <div class="filter__category filter__category--active flex-grow text-center text-20 pointer w-100 p-4 p-md-0" data-filter-category="all">all</div>
+      <div class="filter__category flex-grow text-center text-20 pointer w-100 p-4 p-md-0" data-filter-category="category-1">Primary</div>
+      <div class="filter__category flex-grow text-center text-20 pointer w-100 p-4 p-md-0" data-filter-category="category-2">Second</div>
       <span class="filter__line d-none d-md-block absolute bg-primary linear duration-3" data-filter-line></span>
     </div>
     <div class="grid gap-4 gap-md-10">
@@ -94,25 +94,25 @@
 <!-- Счетчик -->
 
 <section class="counter container container--sm container--distance bg-grey">
-  <h2 class="font-alt text text--center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Counter of time</h2>
+  <h2 class="font-alt text-center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Counter of time</h2>
   <div class="flex align-center justify-center bg-white color-primary radius-5 shadow-box py-7 px-4 py-md-10 px-md-10 anim anim--right" data-counter data-anim="hidden">
-    <h3 class="d-none text text--center text-20 text-md-30 bold-6 lh-2 w-100" data-counter-subtitle>Times up</h3>
+    <h3 class="d-none text-center text-20 text-md-30 bold-6 lh-2 w-100" data-counter-subtitle>Times up</h3>
     <div class="flex justify-between gap-4 w-100" data-counter-timer>
       <time class="flex flex-column align-center justify-center">
-        <span class="text text--center text-24 text-md-32 text-lg-50 bold-5" data-counter-unit>0</span>
-        <span class="text text--center text-16 text-md-24 text-lg-30 bold-4">Days</span>
+        <span class="text-center text-24 text-md-32 text-lg-50 bold-5" data-counter-unit>0</span>
+        <span class="text-center text-16 text-md-24 text-lg-30 bold-4">Days</span>
       </time>
       <time class="flex flex-column align-center justify-center">
-        <span class="text text--center text-24 text-md-32 text-lg-50 bold-5" data-counter-unit>0</span>
-        <span class="text text--center text-16 text-md-24 text-lg-30 bold-4">Hours</span>
+        <span class="text-center text-24 text-md-32 text-lg-50 bold-5" data-counter-unit>0</span>
+        <span class="text-center text-16 text-md-24 text-lg-30 bold-4">Hours</span>
       </time>
       <time class="flex flex-column align-center justify-center">
-        <span class="text text--center text-24 text-md-32 text-lg-50 bold-5" data-counter-unit>0</span>
-        <span class="text text--center text-16 text-md-24 text-lg-30 bold-4">Minutes</span>
+        <span class="text-center text-24 text-md-32 text-lg-50 bold-5" data-counter-unit>0</span>
+        <span class="text-center text-16 text-md-24 text-lg-30 bold-4">Minutes</span>
       </time>
       <time class="flex flex-column align-center justify-center">
-        <span class="text text--center text-24 text-md-32 text-lg-50 bold-5" data-counter-unit>0</span>
-        <span class="text text--center text-16 text-md-24 text-lg-30 bold-4">Seconds</span>
+        <span class="text-center text-24 text-md-32 text-lg-50 bold-5" data-counter-unit>0</span>
+        <span class="text-center text-16 text-md-24 text-lg-30 bold-4">Seconds</span>
       </time>
     </div>
   </div>
@@ -121,17 +121,17 @@
 <!-- Время -->
 
 <section class="timer container container--sm bg-white">
-  <h2 class="font-alt text text--center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Timer</h2>
+  <h2 class="font-alt text-center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Timer</h2>
   <div class="timer__block flex flex-column align-center justify-center relative bg-primary radius-max mx-auto" data-timer>
     <div class="timer__stopwatch flex flex-column align-center absolute pointer-none h-50 mx-auto ease duration-10" data-timer-stopwatch></div>
-    <time class="color-white text text--center text-28 bold-6 mb-5" data-timer-units></time>
+    <time class="color-white text-center text-28 bold-6 mb-5" data-timer-units></time>
     <div class="flex align-center justify-center gap-4">
       <button class="timer__btn btn btn--second btn--fade text-38 radius-max" data-timer-turn>
         <svg class="icon">
           <use xlink:href="img/icons.svg#play">
         </svg>
       </button>
-      <button class="btn btn--second btn--md btn--light" data-timer-reset>Reset</button>
+      <button class="btn btn--second btn--md btn--light" data-timer-reset data-waved="dark">Reset</button>
     </div>
   </div>
 </section>
@@ -139,7 +139,7 @@
 <!-- Открытка -->
 
 <section class="postcards container container--distance bg-grey overflow-hidden">
-  <h2 class="font-alt text text--center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Postcards</h2>
+  <h2 class="font-alt text-center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">Postcards</h2>
   <div class="postcards__items flex flex-wrap align-center justify-center gap-10">
     <% for (var i = 0; i < 3; i++) { %>
       <ul class="postcards__item relative bg-gray linear duration-4">
@@ -167,7 +167,7 @@
 <!-- Мир -->
 
 <section class="world container bg-white" data-world>
-  <h2 class="font-alt text text--center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">World map</h2>
+  <h2 class="font-alt text-center text-40 text-md-50 bold-7 lh-4 shadow-text mb-5 mb-md-10 anim anim--up" data-movement="blend" data-anim="hidden">World map</h2>
   <div class="bg-grey radius-5 p-5 p-lg-10" id="country">
     <%= require('./includes/world-map.html').default %>
     <div class="flex align-center justify-center mt-5 mt-md-10">

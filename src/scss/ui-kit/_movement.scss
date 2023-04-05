@@ -15,7 +15,7 @@
 
   &[data-movement="light"] {
     &::after {
-      background-image: radial-gradient(circle closest-side, var(--color-white-90), transparent);
+      background-image: radial-gradient(circle closest-side, var(--color-white), transparent);
       opacity         : 0.3;
     }
   }
@@ -26,7 +26,7 @@
     &::after {
       mix-blend-mode  : difference;
       border-radius   : 50%;
-      background-color: var(--color-white-light);
+      background-color: var(--color-white);
     }
   }
 
