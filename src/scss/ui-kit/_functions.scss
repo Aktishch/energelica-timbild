@@ -51,7 +51,7 @@
   @include getMedia {
     @for $i from 0 through 10 {
       &-#{$i} {
-        #{$value}: #{calc(4 * $i) + px};
+        #{$value}: #{calc($i * $spacing)};
       }
     }
   }

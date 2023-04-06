@@ -1,25 +1,42 @@
 import { coordinates } from './functions/coordinates'
+import touchDevice from './functions/touch-device'
 
-const setWaved = (event: MouseEvent): void => {
+const setWaved = (event: Event): void => {
 
   const item = (event.target as HTMLElement).closest('[data-waved]') as HTMLElement
   const waved = item.querySelector('.waved') as HTMLDivElement
   const circle = document.createElement('div') as HTMLDivElement
 
-  const coordinates: coordinates = {
+  const createCircle = (yPos: number, xPos: number): void => {
 
-    top: event.clientY - item.getBoundingClientRect().top,
-    left: event.clientX - item.getBoundingClientRect().left
+    const coordinates: coordinates = {
+
+      top: yPos - item.getBoundingClientRect().top,
+      left: xPos - item.getBoundingClientRect().left
+
+    }
+
+    circle.classList.add('waved-circle')
+    circle.style.top = `${coordinates.top}px`
+    circle.style.left = `${coordinates.left}px`
+
+    waved.appendChild(circle)
+
+    setTimeout((): void => circle.remove(), 1000)
 
   }
 
-  circle.classList.add('waved-circle')
-  circle.style.top = `${coordinates.top}px`
-  circle.style.left = `${coordinates.left}px`
+  if (event.type === 'touchstart' && touchDevice.init()) {
 
-  waved.appendChild(circle)
+    createCircle((event as TouchEvent).touches[0].clientY, (event as TouchEvent).touches[0].clientX)
 
-  setTimeout((): void => circle.remove(), 1000)
+  }
+
+  if (event.type === 'mousedown' && !touchDevice.init()) {
+
+    createCircle((event as MouseEvent).clientY, (event as MouseEvent).clientX)
+
+  }
 
 }
 
@@ -38,7 +55,8 @@ const init = (): void => {
     waved.classList.add('waved')
     item.appendChild(waved)
 
-    item.addEventListener('click', setWaved as EventListener)
+    item.addEventListener('touchstart', setWaved as EventListener)
+    item.addEventListener('mousedown', setWaved as EventListener)
 
   })
 

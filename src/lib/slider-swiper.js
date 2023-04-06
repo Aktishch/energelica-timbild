@@ -86,12 +86,6 @@ const init = () => {
 
       [media.lg]: {
 
-        slidesPerView: 3
-
-      },
-
-      [media.xl]: {
-
         slidesPerView: 4
 
       }

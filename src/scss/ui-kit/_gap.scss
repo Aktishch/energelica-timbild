@@ -3,7 +3,7 @@
   @include getMedia {
     @for $i from 0 through 10 {
       &-#{$i} {
-        gap : #{calc(4 * $i) + px};
+        gap : #{calc($i * $spacing)};
       }
     }
   }

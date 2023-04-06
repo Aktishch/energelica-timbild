@@ -22,23 +22,12 @@
       --padding-block : 70px;
       --padding-inline: var(--lg);
 
-      &:is(&--distance) {
+      &--distance {
         --width         : var(--lg);
-        --distance      : 10px;
+        --distance      : 20px;
         --padding-inline: calc(var(--width) + (var(--distance) * 2));
         margin          : var(--distance);
         border-radius   : var(--distance);
-      }
-    }
-  }
-
-  @media(min-width: $xl) {
-    & {
-      --padding-inline: var(--xl);
-
-      &:is(&--distance) {
-        --width   : var(--xl);
-        --distance: 20px;
       }
     }
   }

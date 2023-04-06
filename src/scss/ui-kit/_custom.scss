@@ -73,7 +73,7 @@
       border-radius: 50%;
     }
 
-    @media(min-width: $xl) {
+    @media(min-width: $md) {
       &-prev:not(.default) {
         left: -25px;
       }

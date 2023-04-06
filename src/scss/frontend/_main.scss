@@ -6,7 +6,7 @@
     max-width: 200px;
   }
 
-  @media(max-width: $xl) {
+  @media(max-width: $lg) {
     & {
       min-height: 500px;
     }
@@ -293,14 +293,6 @@
 
   &-info {
     max-width: 550px;
-  }
-
-  @media(max-width: $xl) {
-
-    &__pictures,
-    &-info {
-      max-width: 400px;
-    }
   }
 
   @media(max-width: $lg) {

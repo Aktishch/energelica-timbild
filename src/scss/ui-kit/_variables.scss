@@ -15,10 +15,12 @@ $font-family: ("alt": "Circe",
 );
 
 // Разрешения экрана
-$sm: 460.98px;
-$md: 768.98px;
-$lg: 1024.98px;
-$xl: 1280.98px;
+$sm: 459.98px;
+$md: 767.98px;
+$lg: 1179.98px;
+
+// Интервал
+$spacing: 4px;
 
 // Переменные в CSS
 :root {
@@ -40,10 +42,9 @@ $xl: 1280.98px;
     @include getColors($value, $key);
   }
 
-  --sm : #{calc($sm - 30.98px)};
-  --md : #{calc($md - 48.98px)};
-  --lg : #{calc($lg - 54.98px)};
-  --xl : #{calc($xl - 160.98px)};
+  --sm : #{calc($sm - 29.98px)};
+  --md : #{calc($md - 47.98px)};
+  --lg : #{calc($lg - 59.98px)};
 
   --size-lg : 45px;
   --size-sm : 36px;
