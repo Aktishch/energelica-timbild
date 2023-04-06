@@ -29,13 +29,13 @@
     height: var(--size);
   }
 
-  &--md {
-    --size: var(--size-md);
+  &--sm {
+    --size: var(--size-sm);
     height: var(--size);
   }
 
   &--lg,
-  &--md {
+  &--sm {
     border-radius : 6px;
     padding-inline: calc(var(--size) / 2);
   }

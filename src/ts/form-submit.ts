@@ -31,7 +31,7 @@ const formSubmit = (event: Event): void => {
 
       return response.text()
 
-    }).then((response): void => {
+    }).then((response: any): void => {
 
       dialog.close()
 

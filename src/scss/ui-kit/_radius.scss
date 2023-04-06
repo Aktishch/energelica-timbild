@@ -2,7 +2,7 @@
 .radius {
   @for $i from 1 through 10 {
     &-#{$i} {
-      border-radius: #{calc(var(--spacing) * $i)};
+      border-radius: #{calc(4 * $i) + px};
     }
   }
 

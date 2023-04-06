@@ -40,7 +40,7 @@ const choiceFile = (event: Event): void => {
 
         return response.text()
 
-      }).then((response): void => {
+      }).then((response: any): void => {
 
         image.src = String(readFile.result)
         avatar.src = String(readFile.result)

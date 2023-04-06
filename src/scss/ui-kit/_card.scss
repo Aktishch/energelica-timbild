@@ -20,7 +20,7 @@
   }
 
   @media(hover) {
-    &:hover {
+    &--active:hover {
       box-shadow: 8px 8px 4px var(--color-black-50);
     }
   }
