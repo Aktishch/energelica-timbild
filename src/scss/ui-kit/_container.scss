@@ -19,16 +19,8 @@
 
   @media(min-width: $lg) {
     & {
-      --padding-block : 70px;
+      --padding-block : 90px;
       --padding-inline: var(--lg);
-
-      &--distance {
-        --width         : var(--lg);
-        --distance      : 20px;
-        --padding-inline: calc(var(--width) + (var(--distance) * 2));
-        margin          : var(--distance);
-        border-radius   : var(--distance);
-      }
     }
   }
 }

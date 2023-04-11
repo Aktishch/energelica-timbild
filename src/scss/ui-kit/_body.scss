@@ -1,25 +1,28 @@
 // Тело документа
 body {
-  color           : var(--color-black);
-  background-color: var(--color-white);
+  color           : var(--color-white);
+  background-color: var(--color-black);
 
-  &[data-theme="dark"] {
-    --color-black: #fff;
-    --color-white: #000;
-    --color-grey : #303030;
+  // color           : var(--color-black);
+  // background-color: var(--color-white);
 
-    & [data-theme="light"],
-    & .btn,
-    & .movement::after {
-      --color-black: #000;
-      --color-white: #fff;
-      --color-grey : #f6f7f9;
-    }
-  }
+  // &[data-theme="dark"] {
+  //   --color-black: #fff;
+  //   --color-white: #000;
+  //   --color-grey : #303030;
+
+  //   & [data-theme="light"],
+  //   & .btn,
+  //   & .movement::after {
+  //     --color-black: #000;
+  //     --color-white: #fff;
+  //     --color-grey : #f6f7f9;
+  //   }
+  // }
 }
 
 // Выделение
 ::selection {
-  color           : var(--color-white);
-  background-color: var(--color-primary);
+  color           : var(--color-black);
+  background-color: var(--color-white);
 }

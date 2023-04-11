@@ -6,7 +6,7 @@
   background-color: var(--color-white);
   font-size       : var(--text-16);
   padding         : 12px 16px;
-  border          : 1px solid var(--color-gray-30);
+  border          : 1px solid var(--color-grey-30);
   transition      : 0.2s ease;
   user-select     : none;
 
@@ -38,11 +38,11 @@
   }
 
   &:not(&--error):focus {
-    border-color: var(--color-gray);
+    border-color: var(--color-grey);
   }
 
   &::placeholder {
-    color: var(--color-gray);
+    color: var(--color-grey);
   }
 
   &:disabled {

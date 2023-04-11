@@ -3,49 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="autor" content="Александр Актищев (Студия КИТ)"> 
+  <meta http-equiv="autor" content="Студия КИТ"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
   <title><%= data.title %></title>
 </head>
 <body>
 
-  <!-- Прогресс прокрутки страницы -->
-
-  <div class="progress-line d-none d-md-block fixed zi-4 bg-primary w-0" data-progress-line></div>
-
   <!-- Шапка документа -->
 
-  <header class="header container flex align-center justify-between sticky zi-3 bg-black py-4 linear duration-3" data-header data-theme="light">
-    <a class="logo btn mr-10" href="/">
-      <picture>
-        <source srcset="img/pictures/logo.webp" type="image/webp">
-        <img class="w-100" src="img/pictures/logo.png" alt="">
-      </picture>
+  <header class="header container flex align-center justify-between gap-10 fixed zi-3 py-4 linear duration-3" data-header>
+    <a class="logo btn mr-auto" data-waved="dark" href="/">
+      <img class="w-100" src="img/pictures/logo.svg" alt="">
     </a>
-    <nav class="nav d-none d-lg-flex align-center justify-between gap-4 color-second w-100">
-      <a class="link text-uppercase text-14 bold-5 w-max" href="index.html">Front-page</a>
-      <a class="link text-uppercase text-14 bold-5 w-max" href="primary.html">Primary-page</a>
-      <a class="link text-uppercase text-14 bold-5 w-max" href="second.html">Second-page</a>
-      <div class="nav__accordion relative" data-accordion="hidden" data-accordion-close="scroll">
-        <div class="flex align-center text-uppercase text-14 bold-5 w-max" data-accordion-toggle>
-          Navigation
-          <span class="nav__arrow flex align-center justify-center text-12 ml-2 linear duration-3">
-            <svg class="icon">
-              <use xlink:href="img/icons.svg#arrow-right">
-            </svg>
-          </span>
-        </div>
-        <div class="nav__content absolute radius-2 shadow-box w-100" data-accordion-content>
-          <div class="flex flex-column gap-3 color-black bg-white p-4">
-            <a class="link text-14 bold-4 w-max" data-scroll="top" href="#header">Header</a>
-            <a class="link text-14 bold-4 w-max" data-scroll="top" href="#player">Player</a>
-            <a class="link text-14 bold-4 w-max" data-scroll="top" href="#footer">Footer</a>
-          </div>
-        </div>
-      </div>
-    </nav>
-    <button class="btn btn--second btn--fade d-lg-none text-44 radius-2" data-burger>
+    <a class="btn btn--white d-none d-lg-flex link font-alt text-22 bold-7 p-1" data-waved="dark" href="tel: 8 918 323 11 22">8 918 323 11 22</a>
+    <a class="btn btn--white d-none d-lg-flex link text-18 bold-5 p-1" data-waved="dark" href="" target="_blank">
+      <svg class="icon text-16 fade-80 mr-2">
+        <use xlink:href="img/icons.svg#wa">
+      </svg>
+      Написать в WhatsApp
+    </a>
+    <button class="header__btn btn btn--white btn--sm btn--contur d-none d-md-flex bold-5 px-5" data-waved="dark">Отправить заявку</button>
+    <button class="btn btn--white text-32" data-burger data-waved="dark">
       <svg class="icon">
         <use xlink:href="img/icons.svg#burger">
       </svg>
@@ -54,107 +33,50 @@
 
   <!-- Мобильное меню -->
 
-  <% var social = ['ok', 'yt', 'inst', 'tw', 'fb', 'vk'] %>
-
   <section class="mobile fixed zi-6 w-100 h-100 ease duration-1" data-mobile="hidden" data-theme="light">
-    <div class="mobile__content flex flex-column overflow-auto w-100 h-100 ease duration-3">
-      <div class="mobile__head flex align-center justify-between gap-2 relative bg-black p-4 ease duration-5 delay-3">
-        <a class="logo btn" href="/">
-          <picture>
-            <source srcset="img/pictures/logo.webp" type="image/webp">
-            <img class="w-100" src="img/pictures/logo.png" alt="">
-          </picture>
+    <div class="mobile__content flex flex-column bg-primary overflow-auto w-100 h-100 ml-auto ease duration-3">
+      <div class="flex align-center justify-between gap-2 relative p-4">
+        <a class="logo btn d-md-none mr-5" data-waved="dark" href="/">
+          <img class="w-100" src="img/pictures/logo.svg" alt="">
         </a>
         <input class="switch switch--toggle" data-theme="toggle" type="checkbox">
-        <button class="btn text-24" data-mobile-close>
+        <button class="btn btn--white text-28 fade-60 ml-auto p-1" data-mobile-close data-waved="dark">
           <svg class="icon color-white">
             <use xlink:href="img/icons.svg#close">
           </svg>
         </button>
       </div>
-      <div class="mobile__nav flex flex-column gap-4 relative color-white mb-10 p-4 ease duration-9 delay-5">
-        <a class="link text-22 w-max" href="index.html">Front-page</a>
-        <a class="link text-22 w-max" href="primary.html">Primary-page</a>
-        <a class="link text-22 w-max" href="second.html">Second-page</a>
-        <div class="mobile__accordion" data-accordion="hidden" data-accordion-close="click">
-          <div class="flex align-center text-22 w-max" data-accordion-toggle>
-            Navigation
-            <span class="mobile__arrow flex align-center justify-center text-16 fade-70 ml-2 linear duration-3">
-              <svg class="icon">
-                <use xlink:href="img/icons.svg#arrow-right">
-              </svg>
-            </span>
-          </div>
-          <div data-accordion-content>
-            <div class="flex flex-column gap-2 mt-2 pl-5">
-              <a class="link text-18 w-max" data-scroll="top" href="#header">Header</a>
-              <a class="link text-18 w-max" data-scroll="top" href="#player">Player</a>
-              <a class="link text-18 w-max" data-scroll="top" href="#footer">Footer</a>
-            </div>
-          </div>
-        </div>
+      <div class="mobile__nav flex flex-column justify-center relative h-md-100 mb-10 p-4">
+        <ul class="listing gap-6 gap-md-10">
+          <li>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">О нас</a>
+          </li>
+          <li>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">Что мы делаем</a>
+          </li>
+          <li>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">Преимущества</a>
+          </li>
+          <li>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">Нам доверяют</a>
+          </li>
+          <li>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">Контакты</a>
+          </li>
+          <li>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">Давайте пообщаемся</a>
+          </li>
+        </ul>
       </div>
-      <div class="mobile__footer relative mt-auto px-4 pt-4 pb-10 ease duration-5 delay-9">
-        <div class="flex align-center justify-center gap-4">
-          <% for (var i = 0; i < social.length; i++) { %>
-            <a class="btn btn--second text-32 radius-max" href="javascript: ;">
-              <svg class="icon">
-                <use xlink:href="img/icons.svg#<%= social[i] %>">
-              </svg>
-            </a>
-          <% } %>
-        </div>
+      <div class="mt-auto px-4 pb-10">
+        <a class="btn btn--white d-lg-none link font-alt text-22 bold-7 w-max p-1 mb-3" data-waved="dark" href="tel: 8 918 323 11 22">8 918 323 11 22</a>
+        <a class="btn btn--white d-lg-none link text-18 bold-5 w-max p-1 mb-5" data-waved="dark" href="" target="_blank">
+          <svg class="icon text-16 fade-80 mr-2">
+            <use xlink:href="img/icons.svg#wa">
+          </svg>
+          Написать в WhatsApp
+        </a>
+        <button class="btn btn--white btn--lg btn--contur d-md-none px-10" data-waved="dark">Отправить заявку</button>
       </div>
     </div>
   </section>
-
-  <!-- Умное меню -->
-
-  <nav class="smart-menu container relative zi-1 bg-white <%= data.status ? '' : 'd-none' %> py-4 anim anim--down" data-anim="hidden">
-    <div class="smart-menu__block flex align-center justify-between w-100" data-menu>
-      <h2 class="font-alt text-18 bold-7" data-menu-title>Smart-menu items</h2>
-      <ul class="flex justify-between gap-3" data-menu-length>
-        <% for (var i = 1; i < 9; i++) { %>
-          <li>
-            <a class="smart-menu__item flex align-center justify-center bg-white radius-2 shadow-box py-3 px-6" href="javascript: ;">
-              <span class="text-center text-dotted text-16 bold-6">Smart-menu item <%= i %></span>
-            </a>
-          </li>
-        <% } %>
-      </ul>
-      <div class="smart-menu__nav relative" data-menu-nav data-accordion="hidden">
-        <button class="btn btn--primary btn--lg btn--fill" data-bubbles="hidden" data-accordion-toggle>
-          more <span class="ml-1" data-menu-count>0</span>
-        </button>
-        <div class="smart-menu__content absolute w-100" data-accordion-content>
-          <ul class="flex flex-column gap-3 bg-white radius-2 shadow-box p-3" data-menu-list></ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Перетаскиваемое социальное меню -->
-
-  <nav class="social flex flex-column align-center justify-center fixed zi-2 pointer-none" data-social data-draggable>
-    <div class="social__round bg-block radius-max fade-0 pointer-all duration-4 ease-in-out" data-social-round="hidden">
-      <% for (var i = 0; i < social.length; i++) { %>
-        <a class="btn btn--second absolute text-32 radius-max" data-social-link href="javascript: ;">
-          <svg class="icon">
-            <use xlink:href="img/icons.svg#<%= social[i] %>">
-          </svg>
-        </a>
-      <% } %>
-    </div>
-    <button class="social__btn btn btn--primary btn--contur radius-max shadow-box pointer-all overflow-hidden p-1" data-social-button id="draggable"></button>
-  </nav>
-
-  <!-- Переключатель темы -->
-
-  <div class="theme d-none d-lg-flex align-center justify-center fixed zi-5 bg-white color-gray border radius-4 shadow-box p-3">
-    <span class="color-black text-14 bold-4 mr-2">Темная тема</span>
-    <input class="switch switch--toggle" data-theme="toggle" type="checkbox">
-  </div>
-
-  <!-- Снежинки -->
-
-  <div class="snow bg-block fixed zi-5 pointer-none" data-snow></div>

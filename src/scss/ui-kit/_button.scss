@@ -6,7 +6,7 @@
 
   font: {
     size  : var(--text-16);
-    weight: 600;
+    weight: 400;
   }
 
   --btn-color    : var(--color-black);
@@ -20,23 +20,23 @@
   transition     : 0.2s ease;
   cursor         : pointer;
 
-  @include getBtn("primary");
-  @include getBtn("second");
-  @include getBtn("gray");
+  @include getBtn("white");
 
   &--lg {
-    --size: var(--size-lg);
-    height: var(--size);
+    --size   : var(--size-lg);
+    height   : var(--size);
+    font-size: var(--text-18);
   }
 
   &--sm {
-    --size: var(--size-sm);
-    height: var(--size);
+    --size   : var(--size-sm);
+    height   : var(--size);
+    font-size: var(--text-14);
   }
 
   &--lg,
   &--sm {
-    border-radius : 6px;
+    text-transform: uppercase;
     padding-inline: calc(var(--size) / 2);
   }
 
@@ -57,7 +57,7 @@
   }
 
   &--contur {
-    border: 2px solid var(--btn-color);
+    border: 1px solid var(--btn-color);
   }
 
   &:focus {
@@ -112,5 +112,5 @@
 
 @import "./button-swipe";
 @import "./button-glow";
-@import "./button-bubles";
-@import "./button-border";
+// @import "./button-bubles";
+// @import "./button-border";
