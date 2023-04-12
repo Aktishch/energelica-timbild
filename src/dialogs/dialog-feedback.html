@@ -1,0 +1,39 @@
+<div class="dialog dialog--md dialog--feedback relative overflow-hidden p-5 p-md-10">
+  <div class="dialog__blur blur color-grey"></div>
+  <div class="relative">
+    <div class="text-14 text-md-20 text-lg-26 mb-6" data-movement="blend">
+      <h2 class="font-alt bold-6 lh-4 zoom-2">Давайте пообщаемся</h2>
+    </div>
+    <form class="form" data-form="submit">
+      <input type="hidden" value="Главная" name="theme">
+      <label class="form-label mb-8 mb-md-10" data-label="input">
+        <div class="form-wrapper">
+          <div class="input-cover">
+            <input class="input" data-input="tel" type="tel" placeholder="Ваш телефон" name="tel">
+          </div>
+          <div class="form-icon form-icon--left color-white text-24 fade-60">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#tel">
+            </svg>
+          </div>
+          <span class="form-error anim anim--fade" data-error>Пожалуйста, введите ваш номер!</span>
+        </div>
+      </label>
+      <label class="form-label mb-8 mb-md-10" data-label="input">
+        <div class="form-wrapper">
+          <div class="input-cover">
+            <input class="input" data-input="name" type="text" placeholder="Ваше имя" name="name">
+          </div>
+          <div class="form-icon form-icon--left color-white text-24 fade-60">
+            <svg class="icon">
+              <use xlink:href="img/icons.svg#user">
+            </svg>
+          </div>
+          <span class="form-error anim anim--fade" data-error>Пожалуйста, введите ваше имя!</span>
+        </div>
+      </label>
+      <button class="btn btn--white btn--lg btn--contur btn--swipe w-max px-10 mb-5 mb-md-10" data-waved="dark" type="submit">отправить</button>
+      <div class="link text-14 bold-4 lh-4 fade-40 w-md-max" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных данных</div>
+    </form>
+  </div>
+</div>

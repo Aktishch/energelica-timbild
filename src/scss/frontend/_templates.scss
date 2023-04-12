@@ -15,6 +15,7 @@
   left            : 0;
   right           : 0;
   background-color: var(--color-black-40);
+  backdrop-filter : blur(4px);
   transform       : translateY(var(--top));
 
   &__btn {
@@ -73,22 +74,57 @@
 
 // Размытие
 .blur {
-  position : absolute;
-  top      : -350px;
-  width    : 700px;
-  height   : 330px;
-  filter   : blur(200px);
-  animation: blur 5s linear both infinite;
+  position        : absolute;
+  top             : -350px;
+  width           : 700px;
+  height          : 330px;
+  filter          : blur(200px);
+  background-color: currentColor;
+  animation       : blur 5s linear both infinite;
 }
 
 @keyframes blur {
 
   0%,
   100% {
-    background-color: var(--color-second-30);
+    opacity: 0.3;
   }
 
   50% {
-    background-color: var(--color-second-70);
+    opacity: 0.7;
+  }
+}
+
+// Подвал
+.footer {
+  &__btn {
+    min-width: 32px;
+    width    : 32px;
+    height   : 32px;
+  }
+
+  @media(max-width: $md) {
+    & {
+      flex-direction: column;
+    }
+  }
+}
+
+.dialog {
+  &__blur {
+    left: -292px;
+  }
+
+  @media(min-width: $lg) {
+
+    &--politics,
+    &--feedback {
+      padding: 60px 64px;
+    }
+
+    &--submit {
+      width        : 580px;
+      padding-block: 100px;
+    }
   }
 }

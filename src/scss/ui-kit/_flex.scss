@@ -19,17 +19,6 @@
   }
 }
 
-// Последовательность
-.order {
-  @include getMedia {
-    @for $i from 1 through 5 {
-      &-#{$i} {
-        order: #{$i};
-      }
-    }
-  }
-}
-
 // Выравнивание элементов
 .align {
   &-start {

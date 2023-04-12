@@ -2,13 +2,13 @@
 // import yandexMap from './lib/yandex-map'
 // import airDatepicker from './lib/air-datepicker'
 import fancybox from './lib/fancybox'
-// import sliderSwiper from './lib/slider-swiper'
+import sliderSwiper from './lib/slider-swiper'
 
 // Scripts
 import scrollHeader from './ts/scroll-header'
 import mobileMenu from './ts/mobile-menu'
 // import progressLine from './ts/progress-line'
-// import scrollTo from './ts/scroll-to'
+import scrollTo from './ts/scroll-to'
 // import smartMenu from './ts/smart-menu'
 // import social from './ts/social'
 // import draggable from './ts/draggable'
@@ -18,19 +18,19 @@ import mobileMenu from './ts/mobile-menu'
 import waved from './ts/waved'
 import movement from './ts/movement'
 // import bubbles from './ts/bubbles'
-// import listing from './ts/listing'
+import listing from './ts/listing'
 // import accordion from './ts/accordion'
 // import formatBg from './ts/format-bg'
 // import parallax from './ts/parallax'
 // import filter from './ts/filter'
 import outNumber from './ts/out-number'
 // import writeText from './ts/write-text'
-// import formSubmit from './ts/form-submit'
+import formSubmit from './ts/form-submit'
 // import formSave from './ts/form-save'
 // import choiceFile from './ts/choice-file'
 // import copyLink from './ts/copy-link'
-// import inputs from './ts/inputs'
-// import maskTel from './ts/mask-tel'
+import inputs from './ts/inputs'
+import maskTel from './ts/mask-tel'
 // import password from './ts/password'
 // import quantity from './ts/quantity'
 // import range from './ts/range'
@@ -53,11 +53,11 @@ window.addEventListener('DOMContentLoaded', () => {
   // yandexMap.init()
   // airDatepicker.init()
   fancybox.init()
-  // sliderSwiper.init()
+  sliderSwiper.init()
   scrollHeader.init()
   mobileMenu.init()
   // progressLine.init()
-  // scrollTo.init()
+  scrollTo.init()
   // smartMenu.init()
   // social.init()
   // draggable.init()
@@ -67,19 +67,19 @@ window.addEventListener('DOMContentLoaded', () => {
   waved.init()
   movement.init()
   // bubbles.init()
-  // listing.init()
+  listing.init()
   // accordion.init()
   // formatBg.init()
   // parallax.init()
   // filter.init()
   outNumber.init()
   // writeText.init()
-  // formSubmit.init()
+  formSubmit.init()
   // formSave.init()
   // choiceFile.init()
   // copyLink.init()
-  // inputs.init()
-  // maskTel.init()
+  inputs.init()
+  maskTel.init()
   // password.init()
   // quantity.init()
   // range.init()

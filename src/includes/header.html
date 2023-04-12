@@ -5,7 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta http-equiv="autor" content="Студия КИТ"> 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
+  <meta name="theme-color" content="#ffffff">
   <title><%= data.title %></title>
 </head>
 <body>
@@ -13,7 +20,7 @@
   <!-- Шапка документа -->
 
   <header class="header container flex align-center justify-between gap-10 fixed zi-3 py-4 linear duration-3" data-header>
-    <a class="logo btn mr-auto" data-waved="dark" href="/">
+    <a class="logo btn btn--white mr-auto" data-waved="dark" href="/">
       <img class="w-100" src="img/pictures/logo.svg" alt="">
     </a>
     <a class="btn btn--white d-none d-lg-flex link font-alt text-22 bold-7 p-1" data-waved="dark" href="tel: 8 918 323 11 22">8 918 323 11 22</a>
@@ -36,7 +43,7 @@
   <section class="mobile fixed zi-6 w-100 h-100 ease duration-1" data-mobile="hidden" data-theme="light">
     <div class="mobile__content flex flex-column bg-primary overflow-auto w-100 h-100 ml-auto ease duration-3">
       <div class="flex align-center justify-between gap-2 relative p-4">
-        <a class="logo btn d-md-none mr-5" data-waved="dark" href="/">
+        <a class="logo btn btn--white d-md-none mr-5" data-waved="dark" href="/">
           <img class="w-100" src="img/pictures/logo.svg" alt="">
         </a>
         <input class="switch switch--toggle" data-theme="toggle" type="checkbox">
@@ -49,22 +56,22 @@
       <div class="mobile__nav flex flex-column justify-center relative h-md-100 mb-10 p-4">
         <ul class="listing gap-6 gap-md-10">
           <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">О нас</a>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#about">О нас</a>
           </li>
           <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">Что мы делаем</a>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#services">Что мы делаем</a>
           </li>
           <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">Преимущества</a>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#advantages">Преимущества</a>
           </li>
           <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">Нам доверяют</a>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#partners">Нам доверяют</a>
           </li>
           <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">Контакты</a>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#feedback">Давайте пообщаемся</a>
           </li>
           <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="">Давайте пообщаемся</a>
+            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#footer">Контакты</a>
           </li>
         </ul>
       </div>

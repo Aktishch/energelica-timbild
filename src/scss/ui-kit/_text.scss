@@ -1,9 +1,5 @@
 // Текст
 .text {
-  &-italic {
-    font-style: italic;
-  }
-
   &-uppercase {
     text-transform: uppercase;
   }
@@ -22,41 +18,6 @@
 
   &-justify {
     text-align: justify;
-  }
-
-  &-underline {
-    text: {
-      decoration      : underline;
-      underline-offset: 4px;
-    }
-  }
-
-  &-dotted {
-    text: {
-      decoration      : underline dotted;
-      underline-offset: 4px;
-    }
-  }
-
-  &-dashed {
-    text: {
-      decoration      : underline dashed;
-      underline-offset: 4px;
-    }
-  }
-
-  &-line {
-    text-decoration: line-through;
-  }
-
-  &-clone {
-    box-decoration-break: clone;
-  }
-
-  &-hidden {
-    white-space  : nowrap;
-    text-overflow: ellipsis;
-    overflow     : hidden;
   }
 
   @include getMedia {

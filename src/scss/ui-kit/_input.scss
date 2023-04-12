@@ -1,12 +1,17 @@
 // Поле
 .input {
+  font: {
+    size  : var(--text-22);
+    weight: 400;
+  }
+
   flex-grow       : 1;
   width           : 100%;
   height          : var(--size-lg);
-  background-color: var(--color-white);
-  font-size       : var(--text-16);
-  padding         : 12px 16px;
-  border          : 1px solid var(--color-grey-30);
+  background-color: var(--color-none);
+  padding         : 16px;
+  padding-left    : var(--size-lg);
+  border-bottom   : 1px solid var(--color-white-60);
   transition      : 0.2s ease;
   user-select     : none;
 
@@ -20,21 +25,7 @@
   }
 
   &--error {
-    border-color: var(--color-red);
-  }
-
-  &:first-of-type {
-    border: {
-      top-left-radius   : 8px;
-      bottom-left-radius: 8px;
-    }
-  }
-
-  &:last-of-type {
-    border: {
-      top-right-radius   : 8px;
-      bottom-right-radius: 8px;
-    }
+    border-color: var(--color-blue-60);
   }
 
   &:not(&--error):focus {
@@ -42,7 +33,7 @@
   }
 
   &::placeholder {
-    color: var(--color-grey);
+    color: var(--color-white-60);
   }
 
   &:disabled {

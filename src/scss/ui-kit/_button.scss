@@ -20,7 +20,9 @@
   transition     : 0.2s ease;
   cursor         : pointer;
 
+  @include getBtn("primary");
   @include getBtn("white");
+  @include getBtn("black");
 
   &--lg {
     --size   : var(--size-lg);
@@ -112,5 +114,3 @@
 
 @import "./button-swipe";
 @import "./button-glow";
-// @import "./button-bubles";
-// @import "./button-border";
