@@ -59,9 +59,8 @@ module.exports = {
   mode: 'production',
 
   entry: {
-
-    filename: path.resolve(__dirname, 'src/webpack.js')
-
+    application: path.resolve(__dirname, 'src/webpack.js'),
+    animations: path.resolve(__dirname, 'src/animations.js')
   },
 
   resolve: {
@@ -79,7 +78,7 @@ module.exports = {
   output: {
 
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/application.js',
+    filename: 'js/[name].js',
     clean: true,
 
   },
