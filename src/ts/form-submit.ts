@@ -10,13 +10,12 @@ const formSubmit = (event: Event): void => {
   if (!formValidate.init(form)) return
 
   const formData: FormData = new FormData(form)
+  const queryString: string = new URLSearchParams(formData as URLSearchParams).toString()
   const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement
-
-  let requestUrl: string = ''
+  const requestUrl: string = '/ajax/submit-handler.php'
 
   if (form.dataset.form == 'submit') {
 
-    requestUrl = '/ajax/submit-handler.php'
     submitBtn.setAttribute('disabled', 'disabled')
 
     dialog.loading()
@@ -34,7 +33,7 @@ const formSubmit = (event: Event): void => {
 
       dialog.close()
 
-      dialog.open('/dialogs/dialog-submit.html')
+      dialog.open(`/dialogs/dialog-submit.php?${queryString}`)
 
       form.reset()
 

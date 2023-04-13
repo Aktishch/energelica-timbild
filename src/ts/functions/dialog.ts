@@ -36,7 +36,7 @@ const loading = (): void => {
 
     [{
 
-      src: '/dialogs/loading.html',
+      src: '/dialogs/loading.php',
       type: 'ajax'
 
     }],

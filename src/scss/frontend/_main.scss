@@ -130,7 +130,7 @@
 
 // Преимущества
 .advantages {
-  &__card {
+  &__item {
     max-width: 350px;
   }
 
@@ -141,13 +141,13 @@
   }
 
   @media(max-width: $lg) {
-    &__card {
+    &__item {
       max-width: 300px;
     }
   }
 
   @media(max-width: $md) {
-    &__card {
+    &__item {
       max-width: 100%;
     }
   }
@@ -290,5 +290,43 @@
     &__content {
       margin-top: -100px;
     }
+  }
+}
+
+// Квиз
+.quiz {
+  &-slider {
+    &[data-quiz="stop"] .swiper-button-next {
+      pointer-events: none;
+      opacity       : 0.5;
+    }
+
+    &[data-quiz-end] &__btn--next {
+      display: none;
+    }
+
+    &[data-quiz-end] &__submit {
+      display: flex;
+    }
+
+    &__btn {
+      top  : 0;
+      left : 0;
+      right: 0;
+
+      &--prev {
+        min-width: 60px;
+        width    : 60px;
+
+        &.swiper-button-disabled {
+          color           : var(--color-white);
+          background-color: var(--color-white-40);
+        }
+      }
+    }
+  }
+
+  &__content {
+    max-width: 440px;
   }
 }
