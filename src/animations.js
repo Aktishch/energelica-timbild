@@ -10,11 +10,33 @@ window.addEventListener('DOMContentLoaded', () => loadHandler())
 
 function loadHandler() {
     gsap.registerPlugin(Flip, ScrollTrigger, ScrollSmoother)
+    ScrollTrigger.defaults({
+        toggleActions: "play none none reverse"
+    })
 
     scrollSmootherInit()
+   
+    animationInit()
 
+    if (document.readyState == 'complete') {
+        window.addEventListener('load', loadCompleteHandler)
+    } else {
+        loadCompleteHandler()
+    }
+}
+
+function loadCompleteHandler() {
+    ScrollTrigger.refresh(true)
+    if (ScrollTrigger.isTouch !== 1){
+        ScrollSmoother.get().scrollTop(0)
+        ScrollSmoother.get().paused(false)
+    }
+    document.body.classList.add('load-complete')
+}
+
+function animationInit() {
+    // about
     {
-        // about
         gsap.from(
             '.about__content',
             {
@@ -22,7 +44,7 @@ function loadHandler() {
                 scrollTrigger: {
                     trigger: '.about',
                     start: 'top bottom',
-                    end: 'center 80%',
+                    end: 'bottom 50%',
                     scrub: 3
                 }
             }
@@ -34,15 +56,16 @@ function loadHandler() {
                 scrollTrigger: {
                     trigger: '.about',
                     start: 'top bottom',
-                    end: 'center 80%',
-                    markers: true,
+                    end: 'bottom 50%',
+
                     scrub: 3
                 }
             }
         )
     }
+
+    // approach 
     {
-        // approach 
         gsap.from(
             '.approach__content',
             {
@@ -50,7 +73,7 @@ function loadHandler() {
                 scrollTrigger: {
                     trigger: '.approach',
                     start: 'top bottom',
-                    end: 'center 80%',
+                    end: 'center 75%',
                     scrub: 3
                 }
             }
@@ -62,15 +85,15 @@ function loadHandler() {
                 scrollTrigger: {
                     trigger: '.approach',
                     start: 'top bottom',
-                    end: 'center 80%',
-                    markers: true,
+                    end: 'center 75%',
                     scrub: 3
                 }
             }
         )
     }
+
+    // feedback 
     {
-        // feedback 
         gsap.from(
             '.feedback__content',
             {
@@ -78,7 +101,7 @@ function loadHandler() {
                 scrollTrigger: {
                     trigger: '.feedback',
                     start: 'top bottom',
-                    end: 'center 80%',
+                    end: 'bottom 90%',
                     scrub: 3
                 }
             }
@@ -90,54 +113,112 @@ function loadHandler() {
                 scrollTrigger: {
                     trigger: '.feedback',
                     start: 'top bottom',
-                    end: 'center 80%',
-                    markers: true,
+                    end: 'bottom 90%',
                     scrub: 3
                 }
             }
         )
     }
+
+    // main
     {
-        // feedback 
-        const cards = gsap.utils.toArray('.advantages__card')
+        gsap.timeline({
+            defaults: {
+                duration: 1,
+            }
+        })
+            .from(
+                '.main__title',
+                { x: -120, opacity: 0, }
+            )
+            .from(
+                '.main__subtitle',
+                { x: -120, opacity: 0, stagger: 0.1 },
+                '-=0.75'
+            )
+            .from(
+                '.main__btn',
+                { x: -120, opacity: 0, },
+                '-=0.75'
+            )
+    }
+
+    // services
+    {
+        const cards = gsap.utils.toArray('.services .card')
+        gsap.set(cards, { transition: 'none' })
         cards.forEach((card, index) => {
             gsap.from(
                 card,
                 {
-                    trigger: card,
-                    yPercent: 50,
+                    xPercent: 30,
                     opacity: 0,
-                    duration: 1,
                     delay: index / 10,
+                    duration: 1,
                     scrollTrigger: {
-                        trigger: card,
+                        trigger: card.parentElement,
                         start: 'top 95%',
-                        markers: true
                     }
                 }
             )
         })
 
+    }
+
+    // advantages 
+    {
+        const cards = gsap.utils.toArray('.advantages__item .card')
+        gsap.set(cards, { transition: 'none' })
+        cards.forEach((card, index) => {
+            gsap.from(
+                card,
+                {
+                    yPercent: 50,
+                    opacity: 0,
+                    delay: index / 10,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: card.parentElement,
+                        start: 'top 95%',
+                    }
+                }
+            )
+        })
+    }
+
+    // services
+    {
+        const cards = gsap.utils.toArray('.events-slide .card')
+        gsap.set(cards, { transition: 'none' })
+        cards.forEach((card, index) => {
+            gsap.from(
+                card,
+                {
+                    xPercent: 30,
+                    opacity: 0,
+                    delay: index / 10,
+                    duration: 1,
+                    scrollTrigger: {
+                        trigger: card.parentElement,
+                        start: 'top 95%',
+                    }
+                }
+            )
+        })
 
     }
 }
 
-
 function scrollSmootherInit() {
     if (ScrollTrigger.isTouch !== 1) {
-        window.scrollY = 0
-        window.pageYOffset = 0
         ScrollSmoother.create({
             wrapper: '.smooth-wrapper',
             content: '.smooth-content',
             smooth: 3,
             effects: true,
         })
+        ScrollSmoother.get().paused(true)
     }
-
-
-
-
 }
 
 

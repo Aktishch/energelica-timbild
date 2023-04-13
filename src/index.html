@@ -9,7 +9,7 @@
 
 <!-- Главный блок -->
 
-<main class="main container container--sm flex flex-column justify-center relative bg-grey overflow-hidden">
+<main class="main container container--sm flex flex-column justify-center relative  overflow-hidden">
   <div class="main__bg bg-block">
     <div class="pack pack--rect bg-primary h-100">
       <div class="loader">
@@ -21,18 +21,31 @@
       </div>
       <picture>
         <source srcset="img/pictures/group.webp" type="image/webp">
-        <img class="main__image image" src="img/pictures/group.jpg" loading="lazy" alt="">
+        <img class="main__image image" src="img/pictures/group.jpg" loading="lazy" alt="" data-speed="0.8">
       </picture>
     </div>
   </div>
   <div class="flex flex-column align-start relative">
-    <div class="text-14 text-md-20 text-lg-26 mb-4 mb-md-6 ease-in-out duration-5 anim anim--right" data-anim="hidden" data-movement="blend">
-      <h1 class="font-alt bold-6 lh-2 zoom-2">Создаем мероприятия, <br class="d-none d-md-block"> заряженные энергией <br class="d-none d-md-block">и смыслом</h1>
+    <div class="text-14 text-md-20 text-lg-26 mb-4 mb-md-6 main__title" data-movement="blend">
+      <h1 class="font-alt bold-6 lh-2 zoom-2" data-lag="0.3">
+        Создаем мероприятия, <br class="d-none d-md-block">
+        заряженные энергией <br class="d-none d-md-block">
+        и смыслом
+      </h1>
     </div>
-    <h3 class="main__subtitle relative text-22 text-md-26 text-lg-32 bold-4 lh-5 ease-in-out duration-5 delay-2 anim anim--right" data-anim="hidden" data-movement="blend">6 лет организуем яркие события</h3>
-    <h3 class="main__subtitle relative text-22 text-md-26 text-lg-32 bold-4 lh-5 mb-10 ease-in-out duration-5 delay-4 anim anim--right" data-anim="hidden" data-movement="blend">на Черноморском побережье</h3>
-    <div class="flex pt-lg-10 ease-in-out duration-5 delay-6 anim anim--right" data-anim="hidden">
-      <button class="btn btn--white btn--lg btn--fill btn--glow color-black px-md-10" data-waved="dark" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-quiz.html">Рассчитать мероприятие</button>
+    <div data-lag="0.2">
+      <h3 class="main__subtitle relative text-22 text-md-26 text-lg-32 bold-4 lh-5 " data-movement="blend">
+        6 лет организуем яркие события
+      </h3>
+    </div>
+    <div data-lag="0.15">
+      <h3 class="main__subtitle relative text-22 text-md-26 text-lg-32 bold-4 lh-5 mb-10 " data-movement="blend">
+        на Черноморском побережье
+      </h3>
+    </div>
+    <div class="flex pt-lg-10 main__btn" data-lag="0.1">
+      <button class="btn btn--white btn--lg btn--fill btn--glow color-black px-md-10" data-waved="dark"
+        data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-quiz.html">Рассчитать мероприятие</button>
     </div>
   </div>
 </main>
@@ -65,21 +78,22 @@
 <section class="gallery container bg-black overflow-hidden p-md-10" data-theme="item">
   <div class="grid gap-4 gap-md-7">
     <% for (var i = 0; i < gallery.length; i++) { %>
-      <div class="<%= gallery[i].item %> ease-in-out duration-7 delay-md-1 anim" data-anim="hidden">
-        <a class="pack pack--<%= gallery[i].pack %> bg-primary h-100" data-movement="light" data-fancybox="gallery" href="img/pictures/gallery-<%= gallery[i].img %>.jpg">
-          <div class="loader">
-            <span class="loader-progress">
-              <svg class="loader-icon icon">
-                <use xlink:href="img/icons.svg#loader">
-              </svg>
-            </span>
-          </div>
-          <picture>
-            <source srcset="img/pictures/gallery-<%= gallery[i].img %>.webp" type="image/webp">
-            <img class="image image--rise" src="img/pictures/gallery-<%= gallery[i].img %>.jpg" alt="">
-          </picture>
-        </a>
-      </div>
+    <div class="<%= gallery[i].item %> ease-out duration-7 delay-md-1 anim" data-anim="hidden">
+      <a class="pack pack--<%= gallery[i].pack %> bg-primary h-100" data-movement="light" data-fancybox="gallery"
+        href="img/pictures/gallery-<%= gallery[i].img %>.jpg">
+        <div class="loader">
+          <span class="loader-progress">
+            <svg class="loader-icon icon">
+              <use xlink:href="img/icons.svg#loader">
+            </svg>
+          </span>
+        </div>
+        <picture>
+          <source srcset="img/pictures/gallery-<%= gallery[i].img %>.webp" type="image/webp">
+          <img class="image image--rise" src="img/pictures/gallery-<%= gallery[i].img %>.jpg" alt="">
+        </picture>
+      </a>
+    </div>
     <% } %>
   </div>
 </section>
@@ -108,14 +122,16 @@
 <section class="result container bg-black color-white" data-result data-theme="item">
   <div class="grid gap-4 gap-md-2 gap-lg-5">
     <% for (var i = 0; i < result.length; i++) { %>
-      <div class="col-6 col-md-3">
-        <div class="flex flex-column" data-movement="blend">
-          <div class="text-24 text-md-36 text-lg-48 mb-6">
-            <h3 class="font-alt text-center bold-5 zoom-2" data-number="<%= result[i].number %>" data-number-step="1" data-number-time="2"><%= result[i].number %></h3>
-          </div>
-          <p class="text-center text-md-16 text-lg-26 bold-4 lh-3 ease-in-out duration-5 anim anim--up" data-anim="hidden"><%= result[i].text %></p>
+    <div class="col-6 col-md-3">
+      <div class="flex flex-column" data-movement="blend">
+        <div class="text-24 text-md-36 text-lg-48 mb-6">
+          <h3 class="font-alt text-center bold-5 zoom-2" data-number="<%= result[i].number %>" data-number-step="1"
+            data-number-time="2"><%= result[i].number %></h3>
         </div>
+        <p class="text-center text-md-16 text-lg-26 bold-4 lh-3 ease-in-out duration-5 anim anim--up"
+          data-anim="hidden"><%= result[i].text %></p>
       </div>
+    </div>
     <% } %>
   </div>
 </section>
@@ -124,7 +140,7 @@
 
 <section class="about container relative bg-black color-white overflow-hidden py-md-8" data-theme="item" id="about">
   <div class="about__bg bg-block px-md-10">
-    <div class="about__pack pack pack--rect bg-primary w-100 h-md-100 ease-in-out duration-5 delay-md-3 anim anim--right" data-anim="hidden" data-movement="light">
+    <div class="about__pack pack pack--rect bg-primary w-100 h-md-100" data-movement="light">
       <div class="loader">
         <span class="loader-progress">
           <svg class="loader-icon icon">
@@ -138,19 +154,22 @@
       </picture>
     </div>
   </div>
-  <div class="about__content relative zi-1 bg-primary overflow-hidden w-100 py-6 px-3 py-md-8 px-md-8 ml-auto ease-in-out duration-5 delay-md-5 anim anim--left" data-anim="hidden">
+  <div class="about__content relative zi-1 bg-primary overflow-hidden w-100 py-6 px-3 py-md-8 px-md-8 ml-auto">
     <div class="about__blur blur color-second"></div>
     <div class="flex flex-column align-center justify-center relative">
-      <h3 class="font-alt text-center text-18 text-md-20 text-lg-22 bold-5 fade-20 mb-4" data-movement="blend">Мы - Energelika®️</h3>
+      <h3 class="font-alt text-center text-18 text-md-20 text-lg-22 bold-5 fade-20 mb-4" data-movement="blend">Мы -
+        Energelika®️</h3>
       <div class="text-12 text-md-20 text-lg-26 mb-5 mb-md-8" data-movement="blend">
-        <h2 class="font-alt text-center bold-6 lh-2 zoom-2">Создаем дизайн эмоций для компаний, личностей, территорий</h2>
+        <h2 class="font-alt text-center bold-6 lh-2 zoom-2">Создаем дизайн эмоций для компаний, личностей, территорий
+        </h2>
       </div>
       <p class="font-alt text-center text-14 text-md-18 text-lg-22 bold-5 lh-4 fade-80 mb-10" data-movement="blend">
         Решаем ваши задачи и передаем <br class="d-none d-md-block">
-        глубокие  смыслы через мероприятия, <br class="d-none d-md-block">шоу, видео, дизайн, творчество
+        глубокие смыслы через мероприятия, <br class="d-none d-md-block">шоу, видео, дизайн, творчество
       </p>
       <div class="pt-lg-10">
-        <button class="btn btn--white btn--lg btn--contur btn--swipe" data-waved="dark" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">узнать больше</button>
+        <button class="btn btn--white btn--lg btn--contur btn--swipe" data-waved="dark" data-fancybox-dialog
+          data-type="ajax" data-src="dialogs/dialog-feedback.html">узнать больше</button>
       </div>
     </div>
   </div>
@@ -185,42 +204,47 @@
   }
 ]; %>
 
-<section class="services container flex flex-column align-center justify-center bg-black color-white overflow-hidden px-lg-10" data-theme="item" id="services">
-  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">
+<section
+  class="services container flex flex-column align-center justify-center bg-black color-white overflow-hidden px-lg-10"
+  data-theme="item" id="services">
+  <div
+    class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up"
+    data-anim="hidden" data-movement="blend">
     <h2 class="font-alt bold-6 lh-4 zoom-2">ЧТО МЫ ДЕЛАЕМ?</h2>
   </div>
-  <div class="services-slider relative w-100 ease-in-out duration-5 delay-md-3 anim anim--left" data-anim="hidden">
+  <div class="services-slider relative w-100">
     <div class="swiper swiper--overwrap">
       <div class="swiper-wrapper">
         <% for (var i = 0; i < services.length; i++) { %>
-          <div class="swiper-slide h-auto">
-            <div class="card card--active pointer h-100">
-              <div class="services__pack pack bg-primary" data-movement="light">
-                <div class="loader">
-                  <span class="loader-progress">
-                    <svg class="loader-icon icon">
-                      <use xlink:href="img/icons.svg#loader">
-                    </svg>
-                  </span>
-                </div>
-                <picture>
-                  <source srcset="img/pictures/services-<%= services[i].img %>.webp" type="image/webp">
-                  <img class="image image--rise" src="img/pictures/services-<%= services[i].img %>.jpg" alt="">
-                </picture>
+        <div class="swiper-slide h-auto">
+          <div class="card card--active pointer h-100">
+            <div class="services__pack pack bg-primary" data-movement="light">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
               </div>
-              <div class="card-content py-7 px-4 px-md-7">
-                <div class="px-lg-7 mb-5 mb-md-10">
-                  <h4 class="font-alt text-24 text-md-28 text-lg-32 bold-6 lh-2 mb-5"><%= services[i].title %></h4>
-                  <ul class="listing gap-3 text-16 text-md-18 text-lg-22 bold-3 fade-60">
-                    <% for (var j = 0; j < services[i].items.length; j++) { %>
-                      <li><%= services[i].items[j] %></li>
-                    <% } %>
-                  </ul>
-                </div>
-                <button class="btn btn--white btn--lg btn--contur btn--swipe w-100 mt-auto" data-waved="dark"><%= services[i].btn %></button>
+              <picture>
+                <source srcset="img/pictures/services-<%= services[i].img %>.webp" type="image/webp">
+                <img class="image image--rise" src="img/pictures/services-<%= services[i].img %>.jpg" alt="" >
+              </picture>
+            </div>
+            <div class="card-content py-7 px-4 px-md-7">
+              <div class="px-lg-7 mb-5 mb-md-10">
+                <h4 class="font-alt text-24 text-md-28 text-lg-32 bold-6 lh-2 mb-5"><%= services[i].title %></h4>
+                <ul class="listing gap-3 text-16 text-md-18 text-lg-22 bold-3 fade-60">
+                  <% for (var j = 0; j < services[i].items.length; j++) { %>
+                  <li><%= services[i].items[j] %></li>
+                  <% } %>
+                </ul>
               </div>
+              <button class="btn btn--white btn--lg btn--contur btn--swipe w-100 mt-auto"
+                data-waved="dark"><%= services[i].btn %></button>
             </div>
           </div>
+        </div>
         <% } %>
       </div>
     </div>
@@ -239,14 +263,14 @@
     text: 'Передаем концепцию и идею мероприятия через красивый декор'
   },
   {
-    item: 'delay-lg-2',
+    item: '',
     data: '',
     img: '2',
     title: 'Техническое оснащение',
     text: 'Погружаем в атмосферу и вызываем эмоции с помощью света, звука и спец. эффектов'
   },
   {
-    item: 'd-none d-md-flex delay-lg-4',
+    item: 'd-none d-md-flex ',
     data: 'data-listing-item',
     img: '3',
     title: 'Дизайн и брендинг',
@@ -260,7 +284,7 @@
     text: 'Снимаем и режиссируем имиджевое видео'
   },
   {
-    item: 'd-none d-md-flex delay-lg-2',
+    item: 'd-none d-md-flex ',
     data: 'data-listing-item',
     img: '5',
     title: 'Корпоративные подарки',
@@ -268,42 +292,46 @@
   }
 ]; %>
 
-<section class="advantages container container--sm flex flex-column align-center justify-center" data-listing id="advantages">
-  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">
+<section class="advantages container container--sm flex flex-column align-center justify-center" data-listing
+  id="advantages">
+  <div
+    class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up"
+    data-anim="hidden" data-movement="blend">
     <h2 class="font-alt bold-6 lh-4 zoom-2">а также</h2>
   </div>
   <div class="advantages__items flex flex-wrap justify-center gap-4 gap-md-10 w-100">
     <% for (var i = 0; i < advantages.length; i++) { %>
-      <div class="advantages__item <%= advantages[i].item %> w-100 ease-in-out duration-5 anim anim--up" data-anim="hidden" <%= advantages[i].data %>>
-        <div class="card bg-none">
-          <div class="pack pack--rect bg-primary" data-movement="light">
-            <div class="loader">
-              <span class="loader-progress">
-                <svg class="loader-icon icon">
-                  <use xlink:href="img/icons.svg#loader">
-                </svg>
-              </span>
-            </div>
-            <picture>
-              <source srcset="img/pictures/advantages-<%= advantages[i].img %>.webp" type="image/webp">
-              <img class="image image--rise" src="img/pictures/advantages-<%= advantages[i].img %>.jpg" alt="">
-            </picture>
+    <div class="advantages__item <%= advantages[i].item %> w-100">
+      <div class="card bg-none">
+        <div class="pack pack--rect bg-primary" data-movement="light">
+          <div class="loader">
+            <span class="loader-progress">
+              <svg class="loader-icon icon">
+                <use xlink:href="img/icons.svg#loader">
+              </svg>
+            </span>
           </div>
-          <div class="card-conten py-4 py-md-6" data-movement="blend">
-            <h4 class="font-alt text-22 text-md-28 text-lg-32 bold-5 lg-2 mb-2"><%= advantages[i].title %></h4>
-            <p class="text-16 text-md-18 text-lg-22 bold-3 lh-3 fade-60"><%= advantages[i].text %></p>
-          </div>
+          <picture>
+            <source srcset="img/pictures/advantages-<%= advantages[i].img %>.webp" type="image/webp">
+            <img class="image image--rise" src="img/pictures/advantages-<%= advantages[i].img %>.jpg" alt="">
+          </picture>
+        </div>
+        <div class="card-conten py-4 py-md-6" data-movement="blend">
+          <h4 class="font-alt text-22 text-md-28 text-lg-32 bold-5 lg-2 mb-2"><%= advantages[i].title %></h4>
+          <p class="text-16 text-md-18 text-lg-22 bold-3 lh-3 fade-60"><%= advantages[i].text %></p>
         </div>
       </div>
+    </div>
     <% } %>
   </div>
-  <button class="btn btn--white btn--lg btn--contur d-md-none mt-10" data-listing-show data-waved="light">Показать ещё</button>
+  <button class="btn btn--white btn--lg btn--contur d-md-none mt-10" data-listing-show data-waved="light">Показать
+    ещё</button>
 </section>
 
 <!-- Подход -->
 
 <section class="approach container relative overflow-hidden py-md-10">
-  <div class="approach__bg bg-block px-md-10 ease-in-out duration-5 delay-md-3 anim anim--left" data-anim="hidden">
+  <div class="approach__bg bg-block px-md-10">
     <div class="approach__pack pack pack--rect bg-primary w-100 h-md-100 ml-auto" data-movement="light">
       <div class="loader">
         <span class="loader-progress">
@@ -318,7 +346,7 @@
       </picture>
     </div>
   </div>
-  <div class="approach__content relative zi-1 bg-primary overflow-hidden w-100 py-6 px-3 py-md-8 px-md-8 ease-in-out duration-5 delay-md-5 anim anim--right" data-anim="hidden">
+  <div class="approach__content relative zi-1 bg-primary overflow-hidden w-100 py-6 px-3 py-md-8 px-md-8">
     <div class="approach__blur blur color-blue"></div>
     <div data-movement="blend">
       <div class="text-uppercase text-14 text-md-20 text-lg-26 mb-4">
@@ -328,19 +356,26 @@
         Мы не создаем мероприятия, мы создаём эмоции, <br class="d-none d-md-block">решающие ваши конкретные задачи.
       </p>
       <p class="text-14 text-md-18 text-lg-22 bold-3 lh-2 fade-80 mb-5">
-        Для нас мероприятие - это не просто развлечение. Это способ, для того, чтобы пробудить и трансформировать человека. Погрузить его в чувства, вызвать искренние эмоции, и тем самым коснуться глубины его души. Создать такое событие, которое человек оставит с собой на всю жизнь.
+        Для нас мероприятие - это не просто развлечение. Это способ, для того, чтобы пробудить и трансформировать
+        человека. Погрузить его в чувства, вызвать искренние эмоции, и тем самым коснуться глубины его души. Создать
+        такое событие, которое человек оставит с собой на всю жизнь.
       </p>
       <p class="text-14 text-md-18 text-lg-22 bold-3 lh-2 fade-80 mb-5">
-        Мероприятие – это способ передать ценности и глубокие смыслы в красивой форме. Заставить человека задуматься о чем-то важном, переосмыслить многие моменты. Да просто остановить на время «гонку жизни», и прочувствовать жизнь в моменте «здесь и сейчас».
+        Мероприятие – это способ передать ценности и глубокие смыслы в красивой форме. Заставить человека задуматься о
+        чем-то важном, переосмыслить многие моменты. Да просто остановить на время «гонку жизни», и прочувствовать жизнь
+        в моменте «здесь и сейчас».
       </p>
       <p class="text-14 text-md-18 text-lg-22 bold-3 lh-2 fade-80 mb-5">
-        Это способ объединить всех важных для тебя людей в одном месте и качественно провести с ними время. Еще раз осознать ценность каждого из них в твоей жизни и сказать те самые важные слова.
+        Это способ объединить всех важных для тебя людей в одном месте и качественно провести с ними время. Еще раз
+        осознать ценность каждого из них в твоей жизни и сказать те самые важные слова.
       </p>
       <p class="text-14 text-md-18 text-lg-22 bold-3 lh-2 fade-80 mb-5">
-        Мероприятие - это билет на свободу. Это пространство, где нет рамок и ограничений. Где человек может просто быть собой настоящим без масок и ролей. Побыть на время ребенком и повеселиться от души.
+        Мероприятие - это билет на свободу. Это пространство, где нет рамок и ограничений. Где человек может просто быть
+        собой настоящим без масок и ролей. Побыть на время ребенком и повеселиться от души.
       </p>
       <p class="text-14 text-md-18 text-lg-22 bold-5 lh-2">
-        Именно такие мероприятия наша команда создает с 2018 г. До мурашек и в самое сердце. Потому что по-другому мы просто не умеем
+        Именно такие мероприятия наша команда создает с 2018 г. До мурашек и в самое сердце. Потому что по-другому мы
+        просто не умеем
       </p>
     </div>
   </div>
@@ -368,33 +403,37 @@
 ]; %>
 
 <section class="events container flex flex-column align-center justify-center overflow-hidden px-lg-10">
-  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">
+  <div
+    class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up"
+    data-anim="hidden" data-movement="blend">
     <h2 class="font-alt bold-6 lh-4 zoom-2">Мероприятие от ENERGELICA®️ это</h2>
   </div>
-  <div class="events-slider relative w-100 ease-in-out duration-5 delay-md-3 anim anim--left" data-anim="hidden">
+  <div class="events-slider relative w-100">
     <div class="swiper swiper--overwrap">
       <div class="swiper-wrapper">
         <% for (var i = 0; i < events.length; i++) { %>
-          <div class="events-slide swiper-slide h-auto">
-            <div class="card card--active bg-none h-100">
-              <a class="events__pack pack pack--photo bg-primary ease duration-3 delay-2" data-movement="light" data-fancybox="events" href="img/pictures/events-<%= events[i].img %>.jpg">
-                <div class="loader">
-                  <span class="loader-progress">
-                    <svg class="loader-icon icon">
-                      <use xlink:href="img/icons.svg#loader">
-                    </svg>
-                  </span>
-                </div>
-                <picture>
-                  <source srcset="img/pictures/events-<%= events[i].img %>.webp" type="image/webp">
-                  <img class="image image--rise" src="img/pictures/events-<%= events[i].img %>.jpg" alt="">
-                </picture>
-              </a>
-              <div class="card-content align-center justify-center py-5 px-4 pt-md-10">
-                <h4 class="font-alt text-center text-18 text-md-22 text-lg-24 bold-5 lh-2" data-movement="blend"><%= events[i].title %></h4>
+        <div class="events-slide swiper-slide h-auto">
+          <div class="card card--active bg-none h-100">
+            <a class="events__pack pack pack--photo bg-primary ease duration-3 delay-2" data-movement="light"
+              data-fancybox="events" href="img/pictures/events-<%= events[i].img %>.jpg">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
               </div>
+              <picture>
+                <source srcset="img/pictures/events-<%= events[i].img %>.webp" type="image/webp">
+                <img class="image image--rise" src="img/pictures/events-<%= events[i].img %>.jpg" alt="">
+              </picture>
+            </a>
+            <div class="card-content align-center justify-center py-5 px-4 pt-md-10">
+              <h4 class="font-alt text-center text-18 text-md-22 text-lg-24 bold-5 lh-2" data-movement="blend">
+                <%= events[i].title %></h4>
             </div>
           </div>
+        </div>
         <% } %>
       </div>
     </div>
@@ -406,22 +445,26 @@
 
 <% var partners = ['1', '2', '3', '1', '2', '3']; %>
 
-<section class="partners container flex flex-column align-center justify-center bg-black color-white overflow-hidden" data-theme="item" id="partners">
-  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">
+<section class="partners container flex flex-column align-center justify-center bg-black color-white overflow-hidden"
+  data-theme="item" id="partners">
+  <div
+    class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up"
+    data-anim="hidden" data-movement="blend">
     <h2 class="font-alt bold-6 lh-4 zoom-2">нам доверяют</h2>
   </div>
-  <div class="partners-slider relative color-primary w-100 ease-in-out duration-5 delay-md-3 anim anim--up" data-anim="hidden">
+  <div class="partners-slider relative color-primary w-100 ease-in-out duration-5 delay-md-3 anim anim--up"
+    data-anim="hidden">
     <div class="swiper swiper--overwrap">
       <div class="swiper-wrapper">
         <% for (var i = 0; i < partners.length; i++) { %>
-          <div class="swiper-slide">
-            <div class="pack pack--rect bg-white border" data-movement="blend">
-              <picture>
-                <source srcset="img/pictures/partners-<%= partners[i] %>.webp" type="image/webp">
-                <img class="image image--sd p-5" src="img/pictures/partners-<%= partners[i] %>.jpg" alt="">
-              </picture>
-            </div>
+        <div class="swiper-slide">
+          <div class="pack pack--rect bg-white border" data-movement="blend">
+            <picture>
+              <source srcset="img/pictures/partners-<%= partners[i] %>.webp" type="image/webp">
+              <img class="image image--sd p-5" src="img/pictures/partners-<%= partners[i] %>.jpg" alt="">
+            </picture>
           </div>
+        </div>
         <% } %>
       </div>
     </div>
@@ -444,12 +487,21 @@
 <section class="calculation container relative bg-primary color-white overflow-hidden" data-theme="item">
   <div class="calculation__blur blur color-second"></div>
   <div class="flex flex-column align-center justify-center relative">
-    <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-1 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">
-      <h2 class="font-alt bold-6 lh-4 zoom-2">Получите расчет вашего мероприятия</h2>
+    <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-1 ease-in-out duration-5 anim anim--up"
+      data-anim="hidden" data-movement="blend">
+      <h2 class="font-alt bold-6 lh-4 zoom-2" data-lag="0.25">Получите расчет вашего мероприятия</h2>
     </div>
-    <h3 class="text-center text-16 text-md-20 text-lg-22 bold-3 lh-2 mb-10 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">Расскажите о своей задаче, и мы придумаем что-то интересное</h3>
+    <h3 class="text-center text-16 text-md-20 text-lg-22 bold-3 lh-2 mb-10 ease-in-out duration-5 anim anim--up"
+      data-anim="hidden" data-movement="blend">
+      <div data-lag="0.2">
+        Расскажите о своей задаче, и мы придумаем что-то интересное
+      </div>
+    </h3>
     <div class="pt-lg-3 ease-in-out duration-5 anim anim--up" data-anim="hidden">
-      <button class="btn btn--white btn--lg btn--fill btn--glow color-black px-md-10" data-waved="dark">Заполнить бриф</button>
+      <div data-lag="0.15">
+        <button class="btn btn--white btn--lg btn--fill btn--glow color-black px-md-10" data-waved="dark">Заполнить
+          бриф</button>
+      </div>
     </div>
   </div>
 </section>
@@ -458,7 +510,7 @@
 
 <section class="feedback container relative bg-black color-white overflow-hidden" data-theme="item" id="feedback">
   <div class="feedback__bg bg-block">
-    <div class="feedback__pack pack pack--rect bg-primary w-100 h-md-100 ease-in-out duration-5 delay-md-3 anim anim--right" data-anim="hidden" data-movement="light">
+    <div class="feedback__pack pack pack--rect bg-primary w-100 h-md-100" data-movement="light">
       <div class="loader">
         <span class="loader-progress">
           <svg class="loader-icon icon">
@@ -472,7 +524,7 @@
       </picture>
     </div>
   </div>
-  <div class="feedback__content relative zi-1 bg-primary overflow-hidden w-100 py-8 px-5 px-md-8 ml-auto ease-in-out duration-5 delay-md-5 anim anim--left" data-anim="hidden">
+  <div class="feedback__content relative zi-1 bg-primary overflow-hidden w-100 py-8 px-5 px-md-8 ml-auto">
     <div class="feedback__blur blur color-grey"></div>
     <div class="relative">
       <div class="text-14 text-md-20 text-lg-26 mb-6" data-movement="blend">
@@ -506,8 +558,11 @@
             <span class="form-error anim anim--fade" data-error>Пожалуйста, введите ваше имя!</span>
           </div>
         </label>
-        <button class="btn btn--white btn--lg btn--contur btn--swipe w-max px-10 mb-5 mb-md-10" data-waved="dark" type="submit">отправить</button>
-        <div class="link text-14 bold-4 lh-4 fade-40 w-md-max" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных данных</div>
+        <button class="btn btn--white btn--lg btn--contur btn--swipe w-max px-10 mb-5 mb-md-10" data-waved="dark"
+          type="submit">отправить</button>
+        <div class="link text-14 bold-4 lh-4 fade-40 w-md-max" data-fancybox-dialog data-type="ajax"
+          data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных
+          данных</div>
       </form>
     </div>
   </div>
