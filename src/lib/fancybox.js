@@ -4,7 +4,6 @@ import '@fancyapps/ui/dist/fancybox.css'
 
 import sliderSwiper from './slider-swiper'
 import airDatepicker from './air-datepicker'
-import filter from '../ts/filter'
 import waved from '../ts/waved'
 
 const init = () => {
@@ -24,9 +23,8 @@ const init = () => {
 
       done: (fancybox, slide) => {
 
-        sliderSwiper.init()
+        sliderSwiper.quizSlider()
         airDatepicker.init()
-        filter.init()
         waved.init()
 
       }

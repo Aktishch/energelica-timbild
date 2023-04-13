@@ -1,9 +1,3 @@
-const emailInput = (input: HTMLInputElement): boolean => {
-
-  return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value)
-
-}
-
 const init = (form: HTMLFormElement): boolean => {
 
   const labels = form.querySelectorAll('*[data-label="input"]') as NodeListOf<Element>
@@ -75,34 +69,6 @@ const init = (form: HTMLFormElement): boolean => {
         } else {
 
           error.innerText = 'Пожалуйста, введите ваш номер!'
-
-        }
-
-      }
-
-      if (input.dataset.input == 'email') {
-
-        if (emailInput(input)) inputError()
-
-      }
-
-      if (input.dataset.input == 'select') {
-
-        if (input.value == '0') inputError()
-
-      }
-
-      if (input.dataset.input == 'text') {
-
-        if (input.value.length > 0 && input.value.length < 10) {
-
-          error.innerText = 'Введите не менее 10 символов!'
-
-          inputError()
-
-        } else {
-
-          error.innerText = 'Пожалуйста, оставьте отзыв!'
 
         }
 

@@ -21,18 +21,18 @@
       </div>
       <picture>
         <source srcset="img/pictures/group.webp" type="image/webp">
-        <img class="main__image image" src="img/pictures/group.jpg" alt="">
+        <img class="main__image image" src="img/pictures/group.jpg" loading="lazy" alt="">
       </picture>
     </div>
   </div>
   <div class="flex flex-column align-start relative">
-    <div class="text-14 text-md-20 text-lg-26 mb-4 mb-md-6" data-movement="blend">
+    <div class="text-14 text-md-20 text-lg-26 mb-4 mb-md-6 ease-in-out duration-5 anim anim--right" data-anim="hidden" data-movement="blend">
       <h1 class="font-alt bold-6 lh-2 zoom-2">Создаем мероприятия, <br class="d-none d-md-block"> заряженные энергией <br class="d-none d-md-block">и смыслом</h1>
     </div>
-    <h3 class="main__subtitle relative text-22 text-md-26 text-lg-32 bold-4 lh-5" data-movement="blend">6 лет организуем яркие события</h3>
-    <h3 class="main__subtitle relative text-22 text-md-26 text-lg-32 bold-4 lh-5 mb-10" data-movement="blend">на Черноморском побережье</h3>
-    <div class="flex pt-lg-10">
-      <button class="btn btn--white btn--lg btn--fill btn--glow color-black px-md-10" data-waved="dark">Рассчитать мероприятие</button>
+    <h3 class="main__subtitle relative text-22 text-md-26 text-lg-32 bold-4 lh-5 ease-in-out duration-5 delay-2 anim anim--right" data-anim="hidden" data-movement="blend">6 лет организуем яркие события</h3>
+    <h3 class="main__subtitle relative text-22 text-md-26 text-lg-32 bold-4 lh-5 mb-10 ease-in-out duration-5 delay-4 anim anim--right" data-anim="hidden" data-movement="blend">на Черноморском побережье</h3>
+    <div class="flex pt-lg-10 ease-in-out duration-5 delay-6 anim anim--right" data-anim="hidden">
+      <button class="btn btn--white btn--lg btn--fill btn--glow color-black px-md-10" data-waved="dark" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-quiz.html">Рассчитать мероприятие</button>
     </div>
   </div>
 </main>
@@ -41,31 +41,31 @@
 
 <% var gallery = [
   {
-    item: 'col-12 col-md-6 row-2',
+    item: 'col-12 col-md-6 row-2 anim--right',
     pack: 'rect',
     img: '1'
   },
   {
-    item: 'col-6 col-md-3 row-1',
+    item: 'col-6 col-md-3 row-1 anim--down',
     pack: 'box',
     img: '2'
   },
   {
-    item: 'col-6 col-md-3 row-2',
+    item: 'col-6 col-md-3 row-2 anim--up',
     pack: 'photo',
     img: '3'
   },
   {
-    item: 'col-6 col-md-3 row-1',
+    item: 'col-6 col-md-3 row-1 anim--left',
     pack: 'box',
     img: '4'
   }
 ] %>
 
-<section class="gallery container p-md-10">
+<section class="gallery container bg-black overflow-hidden p-md-10" data-theme="item">
   <div class="grid gap-4 gap-md-7">
     <% for (var i = 0; i < gallery.length; i++) { %>
-      <div class="<%= gallery[i].item %>">
+      <div class="<%= gallery[i].item %> ease-in-out duration-7 delay-md-1 anim" data-anim="hidden">
         <a class="pack pack--<%= gallery[i].pack %> bg-primary h-100" data-movement="light" data-fancybox="gallery" href="img/pictures/gallery-<%= gallery[i].img %>.jpg">
           <div class="loader">
             <span class="loader-progress">
@@ -105,7 +105,7 @@
   }
 ] %>
 
-<section class="result container" data-result>
+<section class="result container bg-black color-white" data-result data-theme="item">
   <div class="grid gap-4 gap-md-2 gap-lg-5">
     <% for (var i = 0; i < result.length; i++) { %>
       <div class="col-6 col-md-3">
@@ -113,7 +113,7 @@
           <div class="text-24 text-md-36 text-lg-48 mb-6">
             <h3 class="font-alt text-center bold-5 zoom-2" data-number="<%= result[i].number %>" data-number-step="1" data-number-time="2"><%= result[i].number %></h3>
           </div>
-          <p class="text-center text-md-16 text-lg-26 bold-4 lh-3"><%= result[i].text %></p>
+          <p class="text-center text-md-16 text-lg-26 bold-4 lh-3 ease-in-out duration-5 anim anim--up" data-anim="hidden"><%= result[i].text %></p>
         </div>
       </div>
     <% } %>
@@ -122,9 +122,9 @@
 
 <!-- О нас -->
 
-<section class="about container relative overflow-hidden py-md-8" id="about">
+<section class="about container relative bg-black color-white overflow-hidden py-md-8" data-theme="item" id="about">
   <div class="about__bg bg-block px-md-10">
-    <div class="about__pack pack pack--rect bg-primary w-100 h-md-100" data-movement="light">
+    <div class="about__pack pack pack--rect bg-primary w-100 h-md-100 ease-in-out duration-5 delay-md-3 anim anim--right" data-anim="hidden" data-movement="light">
       <div class="loader">
         <span class="loader-progress">
           <svg class="loader-icon icon">
@@ -138,7 +138,7 @@
       </picture>
     </div>
   </div>
-  <div class="about__content relative zi-1 bg-primary overflow-hidden w-100 py-6 px-3 py-md-8 px-md-8 ml-auto">
+  <div class="about__content relative zi-1 bg-primary overflow-hidden w-100 py-6 px-3 py-md-8 px-md-8 ml-auto ease-in-out duration-5 delay-md-5 anim anim--left" data-anim="hidden">
     <div class="about__blur blur color-second"></div>
     <div class="flex flex-column align-center justify-center relative">
       <h3 class="font-alt text-center text-18 text-md-20 text-lg-22 bold-5 fade-20 mb-4" data-movement="blend">Мы - Energelika®️</h3>
@@ -185,11 +185,11 @@
   }
 ] %>
 
-<section class="services container flex flex-column align-center justify-center px-lg-10" id="services">
-  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10" data-movement="blend">
+<section class="services container flex flex-column align-center justify-center bg-black color-white overflow-hidden px-lg-10" data-theme="item" id="services">
+  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">
     <h2 class="font-alt bold-6 lh-4 zoom-2">ЧТО МЫ ДЕЛАЕМ?</h2>
   </div>
-  <div class="services-slider relative w-100">
+  <div class="services-slider relative w-100 ease-in-out duration-5 delay-md-3 anim anim--left" data-anim="hidden">
     <div class="swiper swiper--overwrap">
       <div class="swiper-wrapper">
         <% for (var i = 0; i < services.length; i++) { %>
@@ -232,35 +232,35 @@
 
 <% var advantages = [
   {
-    card: '',
+    item: '',
     data: '',
     img: '1',
     title: 'Оформление мероприятия',
     text: 'Передаем концепцию и идею мероприятия через красивый декор'
   },
   {
-    card: '',
+    item: 'delay-lg-2',
     data: '',
     img: '2',
     title: 'Техническое оснащение',
     text: 'Погружаем в атмосферу и вызываем эмоции с помощью света, звука и спец. эффектов'
   },
   {
-    card: 'd-none d-md-flex',
+    item: 'd-none d-md-flex delay-lg-4',
     data: 'data-listing-item',
     img: '3',
     title: 'Дизайн и брендинг',
     text: 'Делаем айдентику и оформление проектов и брендов'
   },
   {
-    card: 'd-none d-md-flex',
+    item: 'd-none d-md-flex',
     data: 'data-listing-item',
     img: '4',
     title: 'Видео продакшен',
     text: 'Снимаем и режиссируем имиджевое видео'
   },
   {
-    card: 'd-none d-md-flex',
+    item: 'd-none d-md-flex delay-lg-2',
     data: 'data-listing-item',
     img: '5',
     title: 'Корпоративные подарки',
@@ -269,28 +269,30 @@
 ] %>
 
 <section class="advantages container container--sm flex flex-column align-center justify-center" data-listing id="advantages">
-  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10" data-movement="blend">
+  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">
     <h2 class="font-alt bold-6 lh-4 zoom-2">а также</h2>
   </div>
   <div class="advantages__items flex flex-wrap justify-center gap-4 gap-md-10 w-100">
     <% for (var i = 0; i < advantages.length; i++) { %>
-      <div class="advantages__card card <%= advantages[i].card %> bg-none w-100" <%= advantages[i].data %>>
-        <div class="pack pack--rect bg-primary" data-movement="light">
-          <div class="loader">
-            <span class="loader-progress">
-              <svg class="loader-icon icon">
-                <use xlink:href="img/icons.svg#loader">
-              </svg>
-            </span>
+      <div class="advantages__item <%= advantages[i].item %> w-100 ease-in-out duration-5 anim anim--up" data-anim="hidden" <%= advantages[i].data %>>
+        <div class="card bg-none">
+          <div class="pack pack--rect bg-primary" data-movement="light">
+            <div class="loader">
+              <span class="loader-progress">
+                <svg class="loader-icon icon">
+                  <use xlink:href="img/icons.svg#loader">
+                </svg>
+              </span>
+            </div>
+            <picture>
+              <source srcset="img/pictures/advantages-<%= advantages[i].img %>.webp" type="image/webp">
+              <img class="image image--rise" src="img/pictures/advantages-<%= advantages[i].img %>.jpg" alt="">
+            </picture>
           </div>
-          <picture>
-            <source srcset="img/pictures/advantages-<%= advantages[i].img %>.webp" type="image/webp">
-            <img class="image image--rise" src="img/pictures/advantages-<%= advantages[i].img %>.jpg" alt="">
-          </picture>
-        </div>
-        <div class="card-conten py-4 py-md-6" data-movement="blend">
-          <h4 class="font-alt text-22 text-md-28 text-lg-32 bold-5 lg-2 mb-2"><%= advantages[i].title %></h4>
-          <p class="text-16 text-md-18 text-lg-22 bold-3 lh-3 fade-60"><%= advantages[i].text %></p>
+          <div class="card-conten py-4 py-md-6" data-movement="blend">
+            <h4 class="font-alt text-22 text-md-28 text-lg-32 bold-5 lg-2 mb-2"><%= advantages[i].title %></h4>
+            <p class="text-16 text-md-18 text-lg-22 bold-3 lh-3 fade-60"><%= advantages[i].text %></p>
+          </div>
         </div>
       </div>
     <% } %>
@@ -301,7 +303,7 @@
 <!-- Подход -->
 
 <section class="approach container relative overflow-hidden py-md-10">
-  <div class="approach__bg bg-block px-md-10">
+  <div class="approach__bg bg-block px-md-10 ease-in-out duration-5 delay-md-3 anim anim--left" data-anim="hidden">
     <div class="approach__pack pack pack--rect bg-primary w-100 h-md-100 ml-auto" data-movement="light">
       <div class="loader">
         <span class="loader-progress">
@@ -316,7 +318,7 @@
       </picture>
     </div>
   </div>
-  <div class="approach__content relative zi-1 bg-primary overflow-hidden w-100 py-6 px-3 py-md-8 px-md-8">
+  <div class="approach__content relative zi-1 bg-primary overflow-hidden w-100 py-6 px-3 py-md-8 px-md-8 ease-in-out duration-5 delay-md-5 anim anim--right" data-anim="hidden">
     <div class="approach__blur blur color-blue"></div>
     <div data-movement="blend">
       <div class="text-uppercase text-14 text-md-20 text-lg-26 mb-4">
@@ -365,11 +367,11 @@
   }
 ] %>
 
-<section class="events container flex flex-column align-center justify-center px-lg-10">
-  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10" data-movement="blend">
+<section class="events container flex flex-column align-center justify-center overflow-hidden px-lg-10">
+  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">
     <h2 class="font-alt bold-6 lh-4 zoom-2">Мероприятие от ENERGELICA®️ это</h2>
   </div>
-  <div class="events-slider relative w-100">
+  <div class="events-slider relative w-100 ease-in-out duration-5 delay-md-3 anim anim--left" data-anim="hidden">
     <div class="swiper swiper--overwrap">
       <div class="swiper-wrapper">
         <% for (var i = 0; i < events.length; i++) { %>
@@ -404,16 +406,16 @@
 
 <% var partners = ['1', '2', '3', '1', '2', '3'] %>
 
-<section class="partners container flex flex-column align-center justify-center overflow-hidden" id="partners">
-  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10" data-movement="blend">
+<section class="partners container flex flex-column align-center justify-center bg-black color-white overflow-hidden" data-theme="item" id="partners">
+  <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">
     <h2 class="font-alt bold-6 lh-4 zoom-2">нам доверяют</h2>
   </div>
-  <div class="partners-slider relative w-100">
+  <div class="partners-slider relative color-primary w-100 ease-in-out duration-5 delay-md-3 anim anim--up" data-anim="hidden">
     <div class="swiper swiper--overwrap">
       <div class="swiper-wrapper">
         <% for (var i = 0; i < partners.length; i++) { %>
           <div class="swiper-slide">
-            <div class="pack pack--rect bg-white" data-movement="blend">
+            <div class="pack pack--rect bg-white border" data-movement="blend">
               <picture>
                 <source srcset="img/pictures/partners-<%= partners[i] %>.webp" type="image/webp">
                 <img class="image image--sd p-5" src="img/pictures/partners-<%= partners[i] %>.jpg" alt="">
@@ -439,14 +441,14 @@
 
 <!-- Рассчет -->
 
-<section class="calculation container relative bg-primary overflow-hidden">
+<section class="calculation container relative bg-primary color-white overflow-hidden" data-theme="item">
   <div class="calculation__blur blur color-second"></div>
   <div class="flex flex-column align-center justify-center relative">
-    <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-1" data-movement="blend">
+    <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-1 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">
       <h2 class="font-alt bold-6 lh-4 zoom-2">Получите расчет вашего мероприятия</h2>
     </div>
-    <h3 class="text-center text-16 text-md-20 text-lg-22 bold-3 lh-2 mb-10" data-movement="blend">Расскажите о своей задаче, и мы придумаем что-то интересное</h3>
-    <div class="pt-lg-3">
+    <h3 class="text-center text-16 text-md-20 text-lg-22 bold-3 lh-2 mb-10 ease-in-out duration-5 anim anim--up" data-anim="hidden" data-movement="blend">Расскажите о своей задаче, и мы придумаем что-то интересное</h3>
+    <div class="pt-lg-3 ease-in-out duration-5 anim anim--up" data-anim="hidden">
       <button class="btn btn--white btn--lg btn--fill btn--glow color-black px-md-10" data-waved="dark">Заполнить бриф</button>
     </div>
   </div>
@@ -454,9 +456,9 @@
 
 <!-- Обратная связь -->
 
-<section class="feedback container relative overflow-hidden" id="feedback">
+<section class="feedback container relative bg-black color-white overflow-hidden" data-theme="item" id="feedback">
   <div class="feedback__bg bg-block">
-    <div class="feedback__pack pack pack--rect bg-primary w-100 h-md-100" data-movement="light">
+    <div class="feedback__pack pack pack--rect bg-primary w-100 h-md-100 ease-in-out duration-5 delay-md-3 anim anim--right" data-anim="hidden" data-movement="light">
       <div class="loader">
         <span class="loader-progress">
           <svg class="loader-icon icon">
@@ -470,7 +472,7 @@
       </picture>
     </div>
   </div>
-  <div class="feedback__content relative zi-1 bg-primary overflow-hidden w-100 py-8 px-5 px-md-8 ml-auto">
+  <div class="feedback__content relative zi-1 bg-primary overflow-hidden w-100 py-8 px-5 px-md-8 ml-auto ease-in-out duration-5 delay-md-5 anim anim--left" data-anim="hidden">
     <div class="feedback__blur blur color-grey"></div>
     <div class="relative">
       <div class="text-14 text-md-20 text-lg-26 mb-6" data-movement="blend">
@@ -478,7 +480,7 @@
       </div>
       <form class="form" data-form="submit">
         <input type="hidden" value="Главная" name="theme">
-        <label class="form-label mb-8 mb-md-10" data-label="input">
+        <label class="form-label mb-6 mb-md-10" data-label="input">
           <div class="form-wrapper">
             <div class="input-cover">
               <input class="input" data-input="tel" type="tel" placeholder="Ваш телефон" name="tel">
@@ -491,7 +493,7 @@
             <span class="form-error anim anim--fade" data-error>Пожалуйста, введите ваш номер!</span>
           </div>
         </label>
-        <label class="form-label mb-8 mb-md-10" data-label="input">
+        <label class="form-label mb-6 mb-md-10" data-label="input">
           <div class="form-wrapper">
             <div class="input-cover">
               <input class="input" data-input="name" type="text" placeholder="Ваше имя" name="name">

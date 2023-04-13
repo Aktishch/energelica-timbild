@@ -24,17 +24,15 @@
     position        : absolute;
     inset           : 0;
     border-radius   : inherit;
-    background-color: var(--btn-dark);
+    background-color: var(--btn-color);
     transition      : 0.3s ease-in-out;
-    opacity         : 0;
     z-index         : -1;
   }
 
   @media(hover) {
     &:hover {
 
-      &::before,
-      &::after {
+      &::before {
         opacity: 1;
       }
     }

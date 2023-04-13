@@ -3,22 +3,31 @@ body {
   color           : var(--color-white);
   background-color: var(--color-black);
 
-  // color           : var(--color-black);
-  // background-color: var(--color-white);
+  &[data-theme="light"] {
+    & [data-theme="item"] {
+      --color-primary: #EFEFEF;
+      --color-black  : #FFFFFF;
+      --color-white  : #151515;
 
-  // &[data-theme="dark"] {
-  //   --color-black: #fff;
-  //   --color-white: #000;
-  //   --color-grey : #303030;
+      & [data-movement] {
+        --color-primary: #1D1D1D;
+        --color-white  : #FFFFFF;
+        --color-black  : #151515;
+      }
 
-  //   & [data-theme="light"],
-  //   & .btn,
-  //   & .movement::after {
-  //     --color-black: #000;
-  //     --color-white: #fff;
-  //     --color-grey : #f6f7f9;
-  //   }
-  // }
+      & .input {
+        border-color: #151515;
+
+        &::placeholder {
+          color: var(--color-black-60);
+        }
+      }
+
+      & .blur {
+        display: none;
+      }
+    }
+  }
 }
 
 // Выделение
