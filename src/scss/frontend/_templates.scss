@@ -1,3 +1,26 @@
+// Прелоадер
+.preloader {
+  position       : fixed;
+  inset          : 0;
+  z-index        : 325;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  background     : var(--color-black);
+  transition     : .5s ease;
+}
+
+body.load-complete .preloader {
+  opacity       : 0;
+  visibility    : hidden;
+  pointer-events: none;
+}
+
+// Обертка
+.smooth-wrapper {
+  padding: inherit;
+}
+
 // Логотип
 .logo {
   width: 220px;
