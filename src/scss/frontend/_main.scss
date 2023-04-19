@@ -2,62 +2,35 @@
 .main {
   min-height: 940px;
 
-  &__bg {
-    &::after {
-      content         : "";
-      position        : absolute;
-      inset           : 0;
-      background-image: linear-gradient(to top, var(--color-black) 20%, var(--color-none) 80%);
-    }
+  &__blur {
+    top : 100px;
+    left: -200px;
   }
 
-  &__subtitle {
-    z-index: 1;
-
-    &::before {
-      content         : "";
-      position        : absolute;
-      left            : 0;
-      bottom          : 8px;
-      right           : 0;
-      width           : 100%;
-      height          : 12px;
-      background-color: var(--color-blue-40);
-      z-index         : -1;
-    }
-  }
-
-  @media(min-width: $sm) {
-    &__bg {
-      &::after {
-        display: none;
-      }
-    }
+  &__title {
+    background-color: var(--color-white-10);
   }
 
   @media(max-width: $lg) {
     & {
       min-height: 700px;
     }
-
-    &__subtitle {
-      z-index: 1;
-
-      &::before {
-        bottom: 4px;
-        height: 6px;
-      }
-    }
   }
 
-  @media(max-width: $sm) {
+  @media(max-width: $md) {
     & {
-      min-height     : 630px;
-      justify-content: flex-end;
+      min-height: 630px;
     }
+  }
+}
 
-    &__image {
-      object-position: 80%;
+// Каталог
+.catalog {
+
+  @media(min-width: $md) {
+    &__content {
+      max-width : 400px;
+      min-height: 375px;
     }
   }
 }
@@ -65,20 +38,26 @@
 // О нас
 .about {
   &__pack {
-    max-width: 1210px;
+    max-width: 990px;
+
+    &::before {
+      padding-top: 65%;
+    }
   }
 
   &__content {
     max-width: 650px;
   }
 
-  &__blur {
-    left: -210px;
+  &__doc {
+    top: 0;
+    left: 0;
+    bottom: 0;
   }
 
   @media(min-width: $lg) {
     &__content {
-      padding-block: 110px;
+      padding: 100px 80px;
     }
   }
 
@@ -119,40 +98,6 @@
   }
 }
 
-// Услуги
-.services {
-  &__pack {
-    &::before {
-      padding-top: 90%;
-    }
-  }
-}
-
-// Преимущества
-.advantages {
-  &__item {
-    max-width: 350px;
-  }
-
-  @media(min-width: $lg) {
-    &__items {
-      gap: 56px;
-    }
-  }
-
-  @media(max-width: $lg) {
-    &__item {
-      max-width: 300px;
-    }
-  }
-
-  @media(max-width: $md) {
-    &__item {
-      max-width: 100%;
-    }
-  }
-}
-
 // Подход
 .approach {
   &__pack {
@@ -161,10 +106,6 @@
 
   &__content {
     max-width: 700px;
-  }
-
-  &__blur {
-    right: -210px;
   }
 
   @media(min-width: $lg) {
@@ -206,6 +147,43 @@
 
     &__content {
       margin-top: -70px;
+    }
+  }
+}
+
+
+
+
+// Услуги
+.services {
+  &__pack {
+    &::before {
+      padding-top: 90%;
+    }
+  }
+}
+
+// Преимущества
+.advantages {
+  &__item {
+    max-width: 350px;
+  }
+
+  @media(min-width: $lg) {
+    &__items {
+      gap: 56px;
+    }
+  }
+
+  @media(max-width: $lg) {
+    &__item {
+      max-width: 300px;
+    }
+  }
+
+  @media(max-width: $md) {
+    &__item {
+      max-width: 100%;
     }
   }
 }

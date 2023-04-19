@@ -15,7 +15,7 @@
 
   @media(hover) {
     &:hover {
-      color           : var(--color-black);
+      color           : var(--btn-accent);
       background-color: var(--color-none);
 
       &::before {

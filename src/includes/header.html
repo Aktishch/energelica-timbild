@@ -20,24 +20,28 @@
   <!-- Прелоадер -->
 
   <div class="preloader">
-    <img  src="img/pictures/logo.svg" alt="">
+    <img src="img/pictures/logo.svg" alt="">
   </div>
   
   <!-- Шапка документа -->
 
-  <header class="header container flex align-center justify-between gap-10 fixed zi-3 py-4 linear duration-3" data-header>
-    <a class="logo btn btn--white mr-auto" data-waved="dark" href="/">
+  <header class="header container flex align-center justify-between gap-10 fixed zi-3 bg-white py-4 linear duration-3" data-header>
+    <a class="logo btn btn--black mr-auto" data-waved="light" href="/">
       <img class="w-100" src="img/pictures/logo.svg" alt="">
     </a>
-    <a class="btn btn--white d-none d-lg-flex link font-alt text-22 bold-7 p-1" data-waved="dark" href="tel: 8 918 323 11 22">8 918 323 11 22</a>
-    <a class="btn btn--white d-none d-lg-flex link text-18 bold-5 p-1" data-waved="dark" href="" target="_blank">
+    <div class="d-none d-lg-flex align-center gap-10">
+      <a class="btn btn--black text-18 bold-4 p-1" data-waved="light" data-scroll="top" href="">Программы</a>
+      <a class="btn btn--black text-18 bold-4 p-1" data-waved="light" data-scroll="top" href="">Стоимость</a>
+    </div>
+    <a class="btn btn--black d-none d-lg-flex link font-alt text-22 bold-7 p-1" data-waved="light" href="tel: 8 918 323 11 22">8 918 323 11 22</a>
+    <a class="btn btn--black d-none d-lg-flex link text-18 bold-5 p-1" data-waved="light" href="" target="_blank">
       <svg class="icon text-16 fade-80 mr-2">
         <use xlink:href="img/icons.svg#wa">
       </svg>
       Написать в WhatsApp
     </a>
-    <button class="header__btn btn btn--white btn--sm btn--contur d-none d-md-flex bold-5 px-5" data-waved="dark">Отправить заявку</button>
-    <button class="btn btn--white text-32" data-burger data-waved="dark">
+    <button class="header__btn btn btn--black btn--sm btn--contur d-none d-md-flex bold-5 px-5" data-waved="light">Отправить заявку</button>
+    <button class="d-lg-none btn btn--black text-32" data-burger data-waved="light">
       <svg class="icon">
         <use xlink:href="img/icons.svg#burger">
       </svg>
@@ -47,49 +51,37 @@
   <!-- Мобильное меню -->
 
   <section class="mobile fixed zi-6 w-100 h-100 ease duration-1" data-mobile="hidden">
-    <div class="mobile__content flex flex-column bg-primary overflow-auto w-100 h-100 ml-auto ease duration-3">
-      <div class="flex align-center justify-between gap-2 relative p-4">
-        <a class="logo btn btn--white d-md-none mr-5" data-waved="dark" href="/">
+    <div class="mobile__content flex flex-column bg-white overflow-auto w-100 h-100 ml-auto ease duration-3">
+      <div class="flex align-center justify-between gap-2 color-grey border-bottom relative p-4">
+        <a class="logo btn btn--white mr-5" data-waved="dark" href="/">
           <img class="w-100" src="img/pictures/logo.svg" alt="">
         </a>
         <input class="switch switch--toggle" data-theme="toggle" type="checkbox">
-        <button class="btn btn--white text-28 fade-60 ml-auto p-1" data-mobile-close data-waved="dark">
-          <svg class="icon color-white">
+        <button class="btn btn--black text-28 ml-auto p-1" data-mobile-close data-waved="light">
+          <svg class="icon fade-60">
             <use xlink:href="img/icons.svg#close">
           </svg>
         </button>
       </div>
-      <div class="mobile__nav flex flex-column justify-center relative h-md-100 mb-10 p-4">
+      <div class="flex flex-column justify-center relative h-100 mb-10 p-4">
         <ul class="listing gap-6 gap-md-10">
           <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#about">О нас</a>
+            <a class="link text-22 bold-3 ease-in duration-2" data-scroll="top" href="#about">Программы</a>
           </li>
           <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#services">Что мы делаем</a>
-          </li>
-          <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#advantages">Преимущества</a>
-          </li>
-          <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#partners">Нам доверяют</a>
-          </li>
-          <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#feedback">Давайте пообщаемся</a>
-          </li>
-          <li>
-            <a class="mobile__link link text-22 bold-3 fade-50 ease-in duration-2" data-scroll="top" href="#footer">Контакты</a>
+            <a class="link text-22 bold-3 ease-in duration-2" data-scroll="top" href="#services">Стоимость</a>
           </li>
         </ul>
       </div>
       <div class="mt-auto px-4 pb-10">
-        <a class="btn btn--white d-lg-none link font-alt text-22 bold-7 w-max p-1 mb-3" data-waved="dark" href="tel: 8 918 323 11 22">8 918 323 11 22</a>
-        <a class="btn btn--white d-lg-none link text-18 bold-5 w-max p-1 mb-5" data-waved="dark" href="" target="_blank">
+        <a class="btn btn--black link font-alt text-22 bold-7 w-max p-1 mb-3" data-waved="light" href="tel: 8 918 323 11 22">8 918 323 11 22</a>
+        <a class="btn btn--black link text-18 bold-5 w-max p-1 mb-5" data-waved="light" href="" target="_blank">
           <svg class="icon text-16 fade-80 mr-2">
             <use xlink:href="img/icons.svg#wa">
           </svg>
           Написать в WhatsApp
         </a>
-        <button class="btn btn--white btn--lg btn--contur d-md-none px-10" data-waved="dark">Отправить заявку</button>
+        <button class="btn btn--black btn--lg btn--contur btn--swipe px-10" data-waved="light">Отправить заявку</button>
       </div>
     </div>
   </section>

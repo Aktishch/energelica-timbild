@@ -9,8 +9,8 @@
 
 <!-- Главный блок -->
 
-<main class="main container container--sm flex flex-column justify-center relative  overflow-hidden">
-  <div class="main__bg bg-block">
+<main class="main container container--sm flex flex-column justify-center relative overflow-hidden">
+  <div class="bg-block">
     <div class="pack pack--rect bg-primary h-100">
       <div class="loader">
         <span class="loader-progress">
@@ -20,35 +20,222 @@
         </span>
       </div>
       <picture>
-        <source srcset="img/pictures/group.webp" type="image/webp">
-        <img class="main__image image" src="img/pictures/group.jpg" loading="lazy" alt="" data-speed="0.8">
+        <source srcset="img/pictures/main-bg.webp" type="image/webp">
+        <img class="image" src="img/pictures/main-bg.jpg" loading="lazy" alt="" data-speed="0.8">
       </picture>
     </div>
   </div>
-  <div class="flex flex-column align-start relative">
-    <div class="text-14 text-md-20 text-lg-26 mb-4 mb-md-6 main__title" data-movement="blend">
-      <h1 class="font-alt bold-6 lh-2 zoom-2" data-lag="0.3">
-        Создаем мероприятия, <br class="d-none d-md-block">
-        заряженные энергией <br class="d-none d-md-block">
-        и смыслом
-      </h1>
+  <div class="main__blur blur color-second"></div>
+  <div class="flex flex-column align-start relative color-white">
+    <div class="main__title text-16 text-md-22 text-lg-28 text-uppercase mb-2 p-2">
+      <h1 class="font-alt bold-6 lh-2 zoom-2" data-lag="0.3">Организуем</h1>
+    </div>
+    <div class="main__title text-16 text-md-22 text-lg-28 text-uppercase mb-6 p-2">
+      <h1 class="font-alt bold-6 lh-2 zoom-2" data-lag="0.3">эффективные <br> тимбилдинги</h1>
     </div>
     <div data-lag="0.2">
-      <h3 class="main__subtitle relative text-22 text-md-26 text-lg-32 bold-4 lh-5" data-movement="blend">
-        6 лет организуем яркие события
-      </h3>
+      <h3 class="main__subtitle font-alt text-22 text-md-28 text-lg-36 bold-5 lh-2 mb-5 mb-md-10">на Черноморском <br> Побережье</h3>
     </div>
-    <div data-lag="0.15">
-      <h3 class="main__subtitle relative text-22 text-md-26 text-lg-32 bold-4 lh-5 mb-10" data-movement="blend">
-        на Черноморском побережье
-      </h3>
-    </div>
-    <div class="flex pt-lg-10 main__btn" data-lag="0.1">
-      <button class="btn btn--white btn--lg btn--fill btn--glow color-black px-md-10" data-waved="dark"
-        data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-quiz.html">Рассчитать мероприятие</button>
+    <div class="main__btn flex pt-lg-10" data-lag="0.1">
+      <button class="btn btn--white btn--lg btn--fill btn--glow color-black px-md-10" data-waved="dark" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-quiz.html">Рассчитать мероприятие</button>
     </div>
   </div>
 </main>
+
+<!-- Результат -->
+
+<% var result = [
+  {
+    item: '',
+    img: '1',
+    text: '<span class="bold-6">200+ реализованных</span> <br class="d-none d-md-block"> тимбилдингов'
+  },
+  {
+    item: 'delay-lg-2',
+    img: '2',
+    text: '<span class="bold-6">Свое оборудование</span> <br class="d-none d-md-block"> и сценарии программ'
+  },
+  {
+    item: 'delay-lg-4',
+    img: '3',
+    text: '<span class="bold-6">Организация</span> мероприятия <br class="d-none d-md-block"> <span class="bold-6">под ключ</span> - от идеи <br class="d-none d-md-block"> до воплощения'
+  },
+  {
+    item: 'delay-lg-6',
+    img: '4',
+    text: '<span class="bold-6">Концепция и подбор</span> <br class="d-none d-md-block"> площадок бесплатно'
+  }
+]; %>
+
+<section class="result container">
+  <div class="grid gap-4 gap-md-7">
+    <% for (var i = 0; i < result.length; i++) { %>
+      <div class="col-6 col-lg-3 <%= result[i].item %> ease-in-out anim anim--up" data-anim="hidden">
+        <div class="flex flex-column align-center justify-center">
+          <div class="text-30 text-md-40 text-lg-50 mb-5 mb-md-8">
+            <img class="icon zoom-2" src="img/pictures/result-<%= result[i].img %>.svg" alt="">
+          </div>
+          <p class="text-center text-14 text-md-18 txt-lg-22 bold-5 lh-2"><%= result[i].text %></p>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- Каталог -->
+
+<% var catalog = [
+  {
+    img: '1',
+    title: 'Активные программы',
+    ul: ['Активно-спортивные', 'Экстримальные', 'Скоростные', 'Морские', 'Семейные и детские']
+  },
+  {
+    img: '2',
+    title: 'Творческие программы и мастер-классы',
+    ul: ['Творческие', 'Музыкально-танцевальные', 'Изобретательные', 'Кулинарные']
+  },
+  {
+    img: '3',
+    title: 'Игры. Квесты',
+    ul: ['Логические', 'Развлекательные', 'Финансовые', 'Тематические', 'Активные/Застольные']
+  },
+  {
+    img: '4',
+    title: 'Трансформационные программы',
+    ul: ['Тренинги и стратегические сессии', 'Иммерсивные шоу-тренинги', 'Ретриты, йога туры, медитации', 'Трансформационные игры, квесты', 'Мастер-классы']
+  },
+  {
+    img: '5',
+    title: 'Тематические вечеринки и шоу-программы',
+    ul: ['Тематические вечеринки', 'Шоу-программы']
+  },
+  {
+    img: '6',
+    title: 'Туры и экскурсии',
+    ul: ['Винно-гастрономические туры', 'Экскурсии', 'Пикниковые программы']
+  }
+]; %>
+
+<section class="catalog container overflow-hidden px-lg-10">
+  <div class="text-center text-uppercase text-16 text-md-22 text-lg-28 mb-4 ease-in duration-7 anim anim--up" data-anim="hidden">
+    <h2 class="font-alt bold-6 lh-4 zoom-2"><span class="font-alt color-blue">Каталог</span> тимбилдингов</h2>
+  </div>
+  <h3 class="text-center text-16 text-md-20 text-lg-24 bold-3 lh-2 mb-10 ease-in-out duration-5 anim anim--up" data-anim="hidden">
+    <span class="bold-5">У нас есть более 70 готовых программ </span>для вашего события. Но мы также можем разработать <br class="d-none d-lg-block">
+    индивидуальную программу под тематику и цели вашего мероприятия
+  </h3>
+  <div class="grid gap-4 gap-md-6 gap-lg-10">
+    <% for (var i = 0; i < catalog.length; i++) { %>
+      <div class="col-12 col-lg-6 ease-in-out anim anim--up" data-anim="hidden">
+        <div class="card py-4 px-4 px-md-0 h-100">
+          <div class="bg-block pr-md-8">
+            <div class="pack pack--rect bg-grey h-100" data-movement="light">
+              <div class="loader">
+                <span class="loader-progress">
+                  <svg class="loader-icon icon">
+                    <use xlink:href="img/icons.svg#loader">
+                  </svg>
+                </span>
+              </div>
+              <picture>
+                <source srcset="img/pictures/catalog-<%= catalog[i].img %>.webp" type="image/webp">
+                <img class="image image--rise" src="img/pictures/catalog-<%= catalog[i].img %>.jpg" loading="lazy" alt="">
+              </picture>
+            </div>
+          </div>
+          <div class="catalog__content card-content relative color-grey bg-white border w-100 ml-auto py-7 py-md-10 px-4 px-md-6" data-waved="dark">
+            <div class="flex flex-column color-black pt-md-5">
+              <h4 class="font-alt text-20 text-md-24 text-lg-28 bold-7 lh-2 mb-4 mb-md-6"><%= catalog[i].title %></h4>
+              <ul class="listing gap-3 text-16 text-md-20 text-lg-22 bold-4 fade-80">
+                <% for (var j = 0; j < catalog[i].ul.length; j++) { %>
+                  <li><%= catalog[i].ul[j] %></li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- О нас -->
+
+<section class="about container relative bg-grey overflow-hidden py-md-10">
+  <div class="about__bg bg-block px-md-10">
+    <div class="about__pack pack bg-primary w-100 ml-auto">
+      <picture>
+        <source srcset="img/pictures/about-bg.webp" type="image/webp">
+        <img class="image" src="img/pictures/about-bg.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="about__content relative zi-1 bg-white overflow-hidden w-100 py-6 px-3 py-md-8 px-md-8 ml-auto">
+    <h2 class="font-alt text-28 text-md-38 text-lg-42 bold-6 lh-2 mb-5 mb-md-8">
+      Получите готовую презентацию <span class="font-alt color-blue">лучших программ</span> на ваше мероприятие
+    </h2>
+    <p class="text-16 text-md-20 text-lg-22 bold-4 lh-2 fade-60 mb-5 mb-md-8">Оставьте заявку/ответьте на 5 вопросов и получите:</p>
+    <div class="flex flex-column gap-3 gap-md-5 mb-10">
+      <div class="flex">
+        <img class="icon text-20 mt-1 mr-3" src="img/pictures/check.svg" alt="">
+        <p class="text-16 text-md-20 text-lg-22 bold-4 lh-2">Презентацию готовых программ под задачи и формат вашего мероприятия</p>
+      </div>
+      <div class="flex">
+        <img class="icon text-20 mt-1 mr-3" src="img/pictures/check.svg" alt="">
+        <p class="text-16 text-md-20 text-lg-22 bold-4 lh-2">Предварительный бюджет на организацию</p>
+      </div>
+    </div>
+    <button class="btn btn--primary btn--lg btn--fill px-10" data-waved="light">заполнить бриф</button>
+  </div>
+  <div class="about__doc d-none d-lg-block absolute zi-2 pointer-none w-50 h-100">
+    <div class="pack w-100 h-100">
+      <picture>
+        <source srcset="img/pictures/doc.webp" type="image/webp">
+        <img class="image image--sd image--bl" src="img/pictures/doc.png" alt="">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- Подход -->
+
+<section class="approach container relative overflow-hidden py-md-10">
+  <div class="approach__bg bg-block px-md-10">
+    <div class="approach__pack pack pack--rect bg-grey w-100 h-md-100 ml-auto" data-movement="light">
+      <div class="loader">
+        <span class="loader-progress">
+          <svg class="loader-icon icon">
+            <use xlink:href="img/icons.svg#loader">
+          </svg>
+        </span>
+      </div>
+      <picture>
+        <source srcset="img/pictures/approach-bg.webp" type="image/webp">
+        <img class="image image--rise" src="img/pictures/approach-bg.jpg" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="approach__content relative zi-1 bg-white w-100 py-6 px-3 py-md-8 px-md-8">
+    <div class="text-uppercase text-16 text-md-22 text-lg-28 mb-4">
+      <h2 class="font-alt bold-6 lh-4 zoom-2">О <span class="font-alt color-blue">нашем</span> подходе</h2>
+    </div>
+    <p class="text-16 text-md-20 text-lg-22 bold-5 lh-2 fade-60 mb-5 mb-md-10">
+      Мы не создаем мероприятия, мы создаём эмоции, <br class="d-none d-md-block">
+      решающие ваши конкретные задачи.
+    </p>
+    <p class="text-16 text-md-20 text-lg-22 bold-4 fade-80 lh-2 mb-5">
+      С 2018 г. мы развиваем, сплочаем и развлекаем компании <br>
+      Миссия агентства – в развлекательном формате тимбилдинга передать глубокие смыслы и ценности и выполнить поставленные задачи: обучение, сплочение, развитие, мотивация.
+    </p>
+    <p class="text-16 text-md-20 text-lg-22 bold-4 fade-80 lh-2 mb-5 mb-md-10">
+      Для нас это не работа, это наша страсть. Поэтому мы постоянно совершенствуем качество и разнообразие своих программ для того, чтобы вы всегда оставались довольны.
+    </p>
+    <p class="text-16 text-md-20 text-lg-22 bold-6 lh-2 fade-80">
+      Мероприятия с высоким сервисом, индивидуальный подход к каждому клиенту, креативные решения – то, что мы умеем делать превосходно.
+    </p>
+  </div>
+</section>
 
 <!-- Галлерея -->
 
@@ -75,11 +262,14 @@
   }
 ]; %>
 
-<section class="gallery container bg-black overflow-hidden p-md-10" data-theme="item">
-  <div class="grid gap-4 gap-md-7">
+<section class="gallery container overflow-hidden px-md-10">
+  <div class="text-center text-uppercase text-16 text-md-22 text-lg-28 mb-5 mb-md-10 ease-in duration-7 anim anim--up" data-anim="hidden">
+    <h2 class="font-alt bold-6 lh-4 zoom-2"><span class="color-blue bold-5">Наши</span> проекты</h2>
+  </div>
+  <div class="grid gap-4 gap-md-7 mb-10">
     <% for (var i = 0; i < gallery.length; i++) { %>
     <div class="<%= gallery[i].item %> ease-out duration-7 delay-md-1 anim" data-anim="hidden">
-      <a class="pack pack--<%= gallery[i].pack %> bg-primary h-100" data-movement="light" data-fancybox="gallery"
+      <a class="pack pack--<%= gallery[i].pack %> bg-grey h-100" data-movement="light" data-fancybox="gallery"
         href="img/pictures/gallery-<%= gallery[i].img %>.jpg">
         <div class="loader">
           <span class="loader-progress">
@@ -96,82 +286,8 @@
     </div>
     <% } %>
   </div>
-</section>
-
-<!-- Результат -->
-
-<% var result = [
-  {
-    number: '6',
-    text: 'Лет в event-индустрии'
-  },
-  {
-    number: '140',
-    text: 'Корпоративных проектов'
-  },
-  {
-    number: '90',
-    text: 'Бизнес-событий'
-  },
-  {
-    number: '150',
-    text: 'Частных мероприятий'
-  }
-]; %>
-
-<section class="result container bg-black color-white" data-result data-theme="item">
-  <div class="grid gap-4 gap-md-2 gap-lg-5">
-    <% for (var i = 0; i < result.length; i++) { %>
-    <div class="col-6 col-md-3">
-      <div class="flex flex-column" data-movement="blend">
-        <div class="text-24 text-md-36 text-lg-48 mb-6">
-          <h3 class="font-alt text-center bold-5 zoom-2" data-number="<%= result[i].number %>" data-number-step="1"
-            data-number-time="2"><%= result[i].number %></h3>
-        </div>
-        <p class="text-center text-md-16 text-lg-26 bold-4 lh-3 ease-in-out duration-5 anim anim--up"
-          data-anim="hidden"><%= result[i].text %></p>
-      </div>
-    </div>
-    <% } %>
-  </div>
-</section>
-
-<!-- О нас -->
-
-<section class="about container relative bg-black color-white overflow-hidden py-md-8" data-theme="item" id="about">
-  <div class="about__bg bg-block px-md-10">
-    <div class="about__pack pack pack--rect bg-primary w-100 h-md-100" data-movement="light">
-      <div class="loader">
-        <span class="loader-progress">
-          <svg class="loader-icon icon">
-            <use xlink:href="img/icons.svg#loader">
-          </svg>
-        </span>
-      </div>
-      <picture>
-        <source srcset="img/pictures/about-bg.webp" type="image/webp">
-        <img class="image image--rise" src="img/pictures/about-bg.jpg" alt="">
-      </picture>
-    </div>
-  </div>
-  <div class="about__content relative zi-1 bg-primary overflow-hidden w-100 py-6 px-3 py-md-8 px-md-8 ml-auto">
-    <div class="about__blur blur color-second"></div>
-    <div class="flex flex-column align-center justify-center relative">
-      <h3 class="font-alt text-center text-18 text-md-20 text-lg-22 bold-5 fade-20 mb-4" data-movement="blend">Мы -
-        Energelika®️</h3>
-      <div class="text-12 text-md-20 text-lg-26 mb-5 mb-md-8" data-movement="blend">
-        <h2 class="font-alt text-center bold-6 lh-2 zoom-2">Создаем дизайн эмоций для компаний, личностей, территорий
-        </h2>
-      </div>
-      <p class="font-alt text-center text-14 text-md-18 text-lg-22 bold-5 lh-4 fade-80 mb-10" data-movement="blend">
-        Решаем ваши задачи и передаем <br class="d-none d-md-block">
-        глубокие смыслы через мероприятия, <br class="d-none d-md-block">шоу, видео, дизайн, творчество
-      </p>
-      <div class="pt-lg-10">
-        <button class="btn btn--white btn--lg btn--contur btn--swipe" data-waved="dark" data-fancybox-dialog
-          data-type="ajax" data-src="dialogs/dialog-feedback.html">узнать больше</button>
-      </div>
-    </div>
+  <div class="pt-lg-5 ease-in duration-7 anim anim--up" data-anim="hidden">
+    <button class="btn btn--black btn--lg btn--contur btn--swipe px-10 mx-auto" data-waved="light">показать больше</button>
   </div>
 </section>
 
@@ -204,7 +320,7 @@
   }
 ]; %>
 
-<section
+<!-- <section
   class="services container flex flex-column align-center justify-center bg-black color-white overflow-hidden px-lg-10"
   data-theme="item" id="services">
   <div
@@ -250,7 +366,7 @@
     </div>
     <div class="swiper-pagination color-white mt-10"></div>
   </div>
-</section>
+</section> -->
 
 <!-- Преимущества -->
 
@@ -292,7 +408,7 @@
   }
 ]; %>
 
-<section class="advantages container container--sm flex flex-column align-center justify-center" data-listing
+<!-- <section class="advantages container container--sm flex flex-column align-center justify-center" data-listing
   id="advantages">
   <div
     class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up"
@@ -326,60 +442,7 @@
   </div>
   <button class="btn btn--white btn--lg btn--contur d-md-none mt-10" data-listing-show data-waved="light">Показать
     ещё</button>
-</section>
-
-<!-- Подход -->
-
-<section class="approach container relative overflow-hidden py-md-10">
-  <div class="approach__bg bg-block px-md-10">
-    <div class="approach__pack pack pack--rect bg-primary w-100 h-md-100 ml-auto" data-movement="light">
-      <div class="loader">
-        <span class="loader-progress">
-          <svg class="loader-icon icon">
-            <use xlink:href="img/icons.svg#loader">
-          </svg>
-        </span>
-      </div>
-      <picture>
-        <source srcset="img/pictures/approach-bg.webp" type="image/webp">
-        <img class="image image--rise" src="img/pictures/approach-bg.jpg" alt="">
-      </picture>
-    </div>
-  </div>
-  <div class="approach__content relative zi-1 bg-primary overflow-hidden w-100 py-6 px-3 py-md-8 px-md-8">
-    <div class="approach__blur blur color-blue"></div>
-    <div data-movement="blend">
-      <div class="text-uppercase text-14 text-md-20 text-lg-26 mb-4">
-        <h2 class="font-alt bold-6 lh-4 zoom-2">О нашем подходе</h2>
-      </div>
-      <p class="text-14 text-md-18 text-lg-22 bold-4 lh-2 fade-40 mb-5 mb-md-10">
-        Мы не создаем мероприятия, мы создаём эмоции, <br class="d-none d-md-block">решающие ваши конкретные задачи.
-      </p>
-      <p class="text-14 text-md-18 text-lg-22 bold-3 lh-2 fade-80 mb-5">
-        Для нас мероприятие - это не просто развлечение. Это способ, для того, чтобы пробудить и трансформировать
-        человека. Погрузить его в чувства, вызвать искренние эмоции, и тем самым коснуться глубины его души. Создать
-        такое событие, которое человек оставит с собой на всю жизнь.
-      </p>
-      <p class="text-14 text-md-18 text-lg-22 bold-3 lh-2 fade-80 mb-5">
-        Мероприятие – это способ передать ценности и глубокие смыслы в красивой форме. Заставить человека задуматься о
-        чем-то важном, переосмыслить многие моменты. Да просто остановить на время «гонку жизни», и прочувствовать жизнь
-        в моменте «здесь и сейчас».
-      </p>
-      <p class="text-14 text-md-18 text-lg-22 bold-3 lh-2 fade-80 mb-5">
-        Это способ объединить всех важных для тебя людей в одном месте и качественно провести с ними время. Еще раз
-        осознать ценность каждого из них в твоей жизни и сказать те самые важные слова.
-      </p>
-      <p class="text-14 text-md-18 text-lg-22 bold-3 lh-2 fade-80 mb-5">
-        Мероприятие - это билет на свободу. Это пространство, где нет рамок и ограничений. Где человек может просто быть
-        собой настоящим без масок и ролей. Побыть на время ребенком и повеселиться от души.
-      </p>
-      <p class="text-14 text-md-18 text-lg-22 bold-5 lh-2">
-        Именно такие мероприятия наша команда создает с 2018 г. До мурашек и в самое сердце. Потому что по-другому мы
-        просто не умеем
-      </p>
-    </div>
-  </div>
-</section>
+</section> -->
 
 <!-- Мероприятия -->
 
@@ -402,7 +465,7 @@
   }
 ]; %>
 
-<section class="events container flex flex-column align-center justify-center overflow-hidden px-lg-10">
+<!-- <section class="events container flex flex-column align-center justify-center overflow-hidden px-lg-10">
   <div
     class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up"
     data-anim="hidden" data-movement="blend">
@@ -439,13 +502,13 @@
     </div>
     <div class="swiper-pagination color-white mt-10"></div>
   </div>
-</section>
+</section> -->
 
 <!-- Партнеры -->
 
 <% var partners = ['1', '2', '3', '1', '2', '3']; %>
 
-<section class="partners container flex flex-column align-center justify-center bg-black color-white overflow-hidden"
+<!-- <section class="partners container flex flex-column align-center justify-center bg-black color-white overflow-hidden"
   data-theme="item" id="partners">
   <div
     class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up"
@@ -480,11 +543,11 @@
       </svg>
     </button>
   </div>
-</section>
+</section> -->
 
 <!-- Рассчет -->
 
-<section class="calculation container relative bg-primary color-white overflow-hidden" data-theme="item">
+<!-- <section class="calculation container relative bg-primary color-white overflow-hidden" data-theme="item">
   <div class="calculation__blur blur color-second"></div>
   <div class="flex flex-column align-center justify-center relative">
     <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-1 ease-in-out duration-5 anim anim--up"
@@ -504,11 +567,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- Обратная связь -->
 
-<section class="feedback container relative bg-black color-white overflow-hidden" data-theme="item" id="feedback">
+<!-- <section class="feedback container relative bg-black color-white overflow-hidden" data-theme="item" id="feedback">
   <div class="feedback__bg bg-block">
     <div class="feedback__pack pack pack--rect bg-primary w-100 h-md-100" data-movement="light">
       <div class="loader">
@@ -566,6 +629,6 @@
       </form>
     </div>
   </div>
-</section>
+</section> -->
 
 <%= require('./includes/footer.html').default %>

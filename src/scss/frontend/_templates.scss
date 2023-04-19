@@ -6,7 +6,7 @@
   display        : flex;
   align-items    : center;
   justify-content: center;
-  background     : var(--color-black);
+  background     : var(--color-white);
   transition     : .5s ease;
 }
 
@@ -34,15 +34,13 @@ body.load-complete .preloader {
 
 // Шапка документа
 .header {
-  top             : 0;
-  left            : 0;
-  right           : 0;
-  background-color: var(--color-black-40);
-  backdrop-filter : blur(4px);
-  transform       : translateY(var(--top));
+  top      : 0;
+  left     : 0;
+  right    : 0;
+  transform: translateY(var(--top));
 
   &__btn {
-    border-color: var(--color-white-20);
+    border-color: var(--color-black-20);
   }
 }
 
@@ -53,10 +51,6 @@ body.load-complete .preloader {
   &__content {
     max-width : 425px;
     box-shadow: 0 0 0 100vw var(--color-black-50);
-  }
-
-  &__link {
-    display: inline-block;
   }
 
   &:not([data-mobile="open"]) {
@@ -79,19 +73,6 @@ body.load-complete .preloader {
     transform : translateX(0);
     opacity   : 1;
     visibility: visible;
-  }
-
-  @media(hover) {
-    &__link:hover {
-      opacity  : 1;
-      transform: scale(1.1) translateX(-7px);
-    }
-  }
-
-  @media(min-width: $lg) {
-    &__nav {
-      padding-left: 100px;
-    }
   }
 }
 
