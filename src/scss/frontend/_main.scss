@@ -17,6 +17,12 @@
     }
   }
 
+  @media (min-width: 2000px) {
+    & {
+      min-height: 1300px;
+    }
+  }
+
   @media(max-width: $md) {
     & {
       min-height: 630px;
@@ -71,6 +77,12 @@
     }
   }
 
+  @media (min-width: 2000px) {
+    &__bg {
+      max-width: 1920px;
+    }
+  }
+
   @media(max-width: $lg) {
     &__pack {
       max-width: 700px;
@@ -121,6 +133,12 @@
   @media(min-width: $lg) {
     &__content {
       padding: 60px;
+    }
+  }
+
+  @media (min-width: 2000px) {
+    &__bg {
+      max-width: 1920px;
     }
   }
 
@@ -193,6 +211,12 @@
     background-color: var(--color-white-30);
   }
 
+  @media (min-width: 2000px) {
+    &__bg {
+      max-width: 1920px;
+    }
+  }
+
   @media(max-width: $lg) {
     &__block {
       flex-direction: column;
@@ -254,6 +278,12 @@
     }
   }
 
+  @media (min-width: 2000px) {
+    &__bg {
+      max-width: 1920px;
+    }
+  }
+
   @media(max-width: $lg) {
     &__pack {
       max-width: 700px;
@@ -310,6 +340,12 @@
   &__image {
     transform: rotate(180deg);
   }
+
+  @media (min-width: 2000px) {
+    &__bg {
+      max-width: 1920px;
+    }
+  }
 }
 
 // Вопросы
@@ -331,7 +367,7 @@
 .quiz {
   &-images {
     &__pack {
-      max-width          : 480px;
+      max-width          : 450px;
       background         : var(--color-primary) url('../img/pictures/firework.png') no-repeat center / cover;
       background-position: 100px;
 
