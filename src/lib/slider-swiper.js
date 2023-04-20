@@ -57,102 +57,7 @@ const quizSlider = () => {
 
 const init = () => {
 
-  const sliderServices = new Swiper('.services-slider .swiper', {
-
-    pagination: {
-
-      el: '.services-slider .swiper-pagination',
-      clickable: true
-
-    },
-
-    slidesPerView: 1.1,
-    slidesPerGroup: 1,
-    spaceBetween: 24,
-    grabCursor: true,
-
-    breakpoints: {
-
-      [media.sm]: {
-
-        slidesPerView: 1.5
-
-      },
-
-      [media.md]: {
-
-        slidesPerView: 2
-
-      },
-
-      [media.lg]: {
-
-        slidesPerView: 3
-
-      },
-
-      [media.xl]: {
-
-        slidesPerView: 4
-
-      }
-
-    }
-
-  })
-
-  const sliderEvents = new Swiper('.events-slider .swiper', {
-
-    pagination: {
-
-      el: '.events-slider .swiper-pagination',
-      clickable: true
-
-    },
-
-    slidesPerView: 1.1,
-    slidesPerGroup: 1,
-    spaceBetween: 24,
-    grabCursor: true,
-
-    breakpoints: {
-
-      [media.sm]: {
-
-        slidesPerView: 1.5
-
-      },
-
-      [media.md]: {
-
-        slidesPerView: 2
-
-      },
-
-      [media.lg]: {
-
-        slidesPerView: 3
-
-      },
-
-      [media.xl]: {
-
-        slidesPerView: 4
-
-      }
-
-    }
-
-  })
-
   const sliderPartners = new Swiper('.partners-slider .swiper', {
-
-    pagination: {
-
-      el: '.partners-slider .swiper-pagination',
-      clickable: true
-
-    },
 
     navigation: {
 
@@ -164,8 +69,9 @@ const init = () => {
     slidesPerView: 1.3,
     slidesPerGroup: 1,
     spaceBetween: 20,
-    speed: 500,
+    speed: 1000,
     grabCursor: true,
+    loop: true,
 
     breakpoints: {
 
@@ -185,6 +91,61 @@ const init = () => {
 
         slidesPerView: 3,
         spaceBetween: 44
+
+      }
+
+    },
+
+    autoplay: {
+
+      delay: 3000,
+      stopOnLastSlide: false,
+      disableOnInteraction: false
+
+    }
+
+  })
+
+  const sliderReviews = new Swiper('.reviews-slider .swiper', {
+
+    pagination: {
+
+      el: '.reviews-slider .swiper-pagination',
+      clickable: true
+
+    },
+
+    navigation: {
+
+      prevEl: '.reviews-slider .swiper-button-prev',
+      nextEl: '.reviews-slider .swiper-button-next'
+
+    },
+
+    slidesPerView: 1.3,
+    slidesPerGroup: 1,
+    spaceBetween: 20,
+    speed: 1000,
+    grabCursor: true,
+
+    breakpoints: {
+
+      [media.sm]: {
+
+        slidesPerView: 1.5
+
+      },
+
+      [media.md]: {
+
+        slidesPerView: 2
+
+      },
+
+      [media.lg]: {
+
+        slidesPerView: 3,
+        spaceBetween: 30
 
       }
 

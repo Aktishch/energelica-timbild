@@ -9,7 +9,7 @@
 
 <!-- Главный блок -->
 
-<main class="main container container--sm flex flex-column justify-center relative overflow-hidden">
+<main class="main container container--sm flex flex-column justify-center relative overflow-hidden" data-theme="light">
   <div class="bg-block">
     <div class="pack pack--rect bg-primary h-100">
       <div class="loader">
@@ -127,7 +127,7 @@
   </h3>
   <div class="grid gap-4 gap-md-6 gap-lg-10">
     <% for (var i = 0; i < catalog.length; i++) { %>
-      <div class="col-12 col-lg-6 ease-in-out anim anim--up" data-anim="hidden">
+      <div class="catalog__item col-12 col-lg-6">
         <div class="card py-4 px-4 px-md-0 h-100">
           <div class="bg-block pr-md-8">
             <div class="pack pack--rect bg-grey h-100" data-movement="light">
@@ -162,12 +162,20 @@
 
 <!-- О нас -->
 
-<section class="about container relative bg-grey overflow-hidden py-md-10">
+<section class="about container relative bg-grey overflow-hidden py-md-10 mb-md-10">
+  <div class="bg-block fade-60">
+    <div class="pack w-50 h-100">
+      <picture>
+        <source srcset="img/pictures/firework.webp" type="image/webp">
+        <img class="about__image about__image--1 image" src="img/pictures/firework.png" alt="">
+      </picture>
+    </div>
+  </div>
   <div class="about__bg bg-block px-md-10">
     <div class="about__pack pack bg-primary w-100 ml-auto">
       <picture>
-        <source srcset="img/pictures/about-bg.webp" type="image/webp">
-        <img class="image" src="img/pictures/about-bg.jpg" alt="">
+        <source srcset="img/pictures/firework.webp" type="image/webp">
+        <img class="about__image about__image--2 image" src="img/pictures/firework.png" alt="">
       </picture>
     </div>
   </div>
@@ -264,13 +272,12 @@
 
 <section class="gallery container overflow-hidden px-md-10">
   <div class="text-center text-uppercase text-16 text-md-22 text-lg-28 mb-5 mb-md-10 ease-in duration-7 anim anim--up" data-anim="hidden">
-    <h2 class="font-alt bold-6 lh-4 zoom-2"><span class="color-blue bold-5">Наши</span> проекты</h2>
+    <h2 class="font-alt bold-6 lh-4 zoom-2"><span class="font-alt color-blue">Наши</span> проекты</h2>
   </div>
   <div class="grid gap-4 gap-md-7 mb-10">
     <% for (var i = 0; i < gallery.length; i++) { %>
     <div class="<%= gallery[i].item %> ease-out duration-7 delay-md-1 anim" data-anim="hidden">
-      <a class="pack pack--<%= gallery[i].pack %> bg-grey h-100" data-movement="light" data-fancybox="gallery"
-        href="img/pictures/gallery-<%= gallery[i].img %>.jpg">
+      <div class="pack pack--<%= gallery[i].pack %> bg-grey h-100" data-movement="light">
         <div class="loader">
           <span class="loader-progress">
             <svg class="loader-icon icon">
@@ -282,7 +289,7 @@
           <source srcset="img/pictures/gallery-<%= gallery[i].img %>.webp" type="image/webp">
           <img class="image image--rise" src="img/pictures/gallery-<%= gallery[i].img %>.jpg" alt="">
         </picture>
-      </a>
+      </div>
     </div>
     <% } %>
   </div>
@@ -291,289 +298,183 @@
   </div>
 </section>
 
-<!-- Услуги -->
+<!-- Стоимость -->
 
-<% var services = [
-  {
-    img: '1',
-    title: 'Ивент',
-    items: ['Бизнес мероприятия', 'Корпоративы', 'Частные торжества', 'Собственные проекты'],
-    btn: 'Смотреть проекты'
-  },
-  {
-    img: '2',
-    title: 'Тимбилдинг',
-    items: ['Игры, квесты, МК', 'Активные мероприятия', 'Туры, экскурсии, ретриты', 'Тренинги', 'Трансформационные программы'],
-    btn: 'узнать больше'
-  },
-  {
-    img: '3',
-    title: 'Концерты',
-    items: ['Концерты', 'Вечеринки', 'Шоу'],
-    btn: 'узнать больше'
-  },
-  {
-    img: '4',
-    title: 'Свадьбы',
-    items: ['Свадьбы', 'Выездные регистрации', 'Годовщины'],
-    btn: 'Смотреть проекты'
-  }
-]; %>
-
-<!-- <section
-  class="services container flex flex-column align-center justify-center bg-black color-white overflow-hidden px-lg-10"
-  data-theme="item" id="services">
-  <div
-    class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up"
-    data-anim="hidden" data-movement="blend">
-    <h2 class="font-alt bold-6 lh-4 zoom-2">ЧТО МЫ ДЕЛАЕМ?</h2>
+<section class="price container relative bg-grey overflow-hidden">
+  <div class="bg-block">
+    <div class="price__pack price__pack--1 pack pack--box d-none d-md-block absolute w-100 linear duration-5 anim anim--increase" data-anim="hidden">
+      <picture>
+        <source srcset="img/pictures/firework.webp" type="image/webp">
+        <img class="image" src="img/pictures/firework.png" alt="">
+      </picture>
+    </div>
+    <div class="price__pack price__pack--2 pack pack--box d-none d-md-block absolute w-100 linear duration-5 anim anim--increase" data-anim="hidden">
+      <picture>
+        <source srcset="img/pictures/firework.webp" type="image/webp">
+        <img class="image" src="img/pictures/firework.png" alt="">
+      </picture>
+    </div>
   </div>
-  <div class="services-slider relative w-100">
-    <div class="swiper swiper--overwrap">
-      <div class="swiper-wrapper">
-        <% for (var i = 0; i < services.length; i++) { %>
-        <div class="swiper-slide h-auto">
-          <div class="card card--active pointer h-100">
-            <div class="services__pack pack bg-primary" data-movement="light">
-              <div class="loader">
-                <span class="loader-progress">
-                  <svg class="loader-icon icon">
-                    <use xlink:href="img/icons.svg#loader">
-                  </svg>
-                </span>
-              </div>
-              <picture>
-                <source srcset="img/pictures/services-<%= services[i].img %>.webp" type="image/webp">
-                <img class="image image--rise" src="img/pictures/services-<%= services[i].img %>.jpg" alt="" >
-              </picture>
-            </div>
-            <div class="card-content py-7 px-4 px-md-7">
-              <div class="px-lg-7 mb-5 mb-md-10">
-                <h4 class="font-alt text-24 text-md-28 text-lg-32 bold-6 lh-2 mb-5"><%= services[i].title %></h4>
-                <ul class="listing gap-3 text-16 text-md-18 text-lg-22 bold-3 fade-60">
-                  <% for (var j = 0; j < services[i].items.length; j++) { %>
-                  <li><%= services[i].items[j] %></li>
-                  <% } %>
-                </ul>
-              </div>
-              <button class="btn btn--white btn--lg btn--contur btn--swipe w-100 mt-auto"
-                data-waved="dark"><%= services[i].btn %></button>
-            </div>
+  <div class="relative">
+    <div class="text-center text-uppercase text-16 text-md-22 text-lg-28 mb-5 mb-md-10 ease-in duration-7 anim anim--up" data-anim="hidden">
+      <h2 class="font-alt bold-6 lh-4 zoom-2"><span class="font-alt color-blue">Стоимость</span> тимбилдинга в 2023</h2>
+    </div>
+    <div class="price__block flex align-center justify-between gap-5 gap-lg-10 bg-white p-2 p-md-4 ease-in duration-7 anim anim--left" data-anim="hidden">
+      <div class="price__info w-100 pl-2 pr-2 pl-md-5 pr-md-0">
+        <div class="flex flex-column gap-5 color-grey border-bottom pb-4 mb-4 pb-md-7 mb-md-7">
+          <div class="flex color-black">
+            <img class="icon text-20 mt-1 mr-3" src="img/pictures/check.svg" alt="">
+            <p class="text-18 text-md-20 text-lg-22 bold-4 lh-4">Стоимость проведения зависит от количества человек и выбранной программы.</p>
+          </div>
+          <div class="flex color-black">
+            <img class="icon text-20 mt-1 mr-3" src="img/pictures/check.svg" alt="">
+            <p class="text-18 text-md-20 text-lg-22 bold-4 lh-4">В этой таблице ориентировочная стоимость, точную цену уточняйте у нас.</p>
           </div>
         </div>
-        <% } %>
+        <p class="text-18 text-md-20 text-lg-22 bold-4 lh-4 mb-7 mb-md-10">
+          Минимальная стоимость тимбилдинга <br class="d-md-none"> <span class="bold-6">40 000 ₽</span>
+        </p>
+        <button class="btn btn--primary btn--lg btn--fill px-md-10" data-waved="light">Рассчитать <span class="d-none d-md-inline ml-1">точную стоимость</span></button>
+      </div>
+      <div class="price__content bg-grey w-100 py-5 px-2 py-md-8 px-md-4">
+        <div class="grid ga-1 py-3 px-3 px-md-5 mb-2">
+          <div class="col-7">
+            <h4 class="font-alt text-14 text-md-18 text-lg-22 bold-3 fade-60">Количество участников</h4>
+          </div>
+          <div class="col-5">
+            <h4 class="font-alt text-14 text-md-18 text-lg-22 bold-3 fade-60">Стоимость ₽/чел</h4>
+          </div>
+        </div>
+        <div class="grid gap-1 bg-white py-3 px-3 px-md-5 mb-2">
+          <div class="col-7">
+            <h4 class="text-16 text-md-20 text-lg-24 bold-6">До 50</h4>
+          </div>
+          <div class="col-5">
+            <h4 class="text-16 text-md-20 text-lg-24 bold-6">1300 – 3500</h4>
+          </div>
+        </div>
+        <div class="price__item grid gap-1 py-3 px-3 px-md-5 mb-2">
+          <div class="col-7">
+            <h4 class="text-16 text-md-20 text-lg-24 bold-6">50-100</h4>
+          </div>
+          <div class="col-5">
+            <h4 class="text-16 text-md-20 text-lg-24 bold-6">1100 - 3000</h4>
+          </div>
+        </div>
+        <div class="grid gap-1 bg-white py-3 px-3 px-md-5 mb-2">
+          <div class="col-7">
+            <h4 class="text-16 text-md-20 text-lg-24 bold-6">100 - 200</h4>
+          </div>
+          <div class="col-5">
+            <h4 class="text-16 text-md-20 text-lg-24 bold-6">1000 - 2500</h4>
+          </div>
+        </div>
+        <div class="price__item grid gap-1 py-3 px-3 px-md-5">
+          <div class="col-7">
+            <h4 class="text-16 text-md-20 text-lg-24 bold-6">>200</h4>
+          </div>
+          <div class="col-5">
+            <h4 class="text-16 text-md-20 text-lg-24 bold-6">800 – 2000</h4>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="swiper-pagination color-white mt-10"></div>
   </div>
-</section> -->
+</section>
 
 <!-- Преимущества -->
 
 <% var advantages = [
-  {
-    item: '',
-    data: '',
-    img: '1',
-    title: 'Оформление мероприятия',
-    text: 'Передаем концепцию и идею мероприятия через красивый декор'
-  },
-  {
-    item: '',
-    data: '',
-    img: '2',
-    title: 'Техническое оснащение',
-    text: 'Погружаем в атмосферу и вызываем эмоции с помощью света, звука и спец. эффектов'
-  },
-  {
-    item: 'd-none d-md-flex ',
-    data: 'data-listing-item',
-    img: '3',
-    title: 'Дизайн и брендинг',
-    text: 'Делаем айдентику и оформление проектов и брендов'
-  },
-  {
-    item: 'd-none d-md-flex',
-    data: 'data-listing-item',
-    img: '4',
-    title: 'Видео продакшен',
-    text: 'Снимаем и режиссируем имиджевое видео'
-  },
-  {
-    item: 'd-none d-md-flex ',
-    data: 'data-listing-item',
-    img: '5',
-    title: 'Корпоративные подарки',
-    text: 'Разрабатываем корпоративные сувениры и подарки для ваших сотрудников, клиентов и партнеров'
-  }
+  [
+    {
+      img: '1',
+      title: 'Дизайн и брендинг мероприятия'
+    },
+    {
+      img: '4',
+      title: 'Подбор площадки для мероприятия'
+    },
+    {
+      img: '7',
+      title: 'Шоу-программа'
+    }
+  ],
+  [
+    {
+      img: '2',
+      title: 'Фото и видео съемка'
+    },
+    {
+      img: '5',
+      title: 'Бронь отелей и размещение'
+    },
+    {
+      img: '8',
+      title: 'Декор мероприятия'
+    }
+  ],
+  [
+    {
+      img: '3',
+      title: 'Кейтеринг'
+    },
+    {
+      img: '6',
+      title: 'Организация трансфера'
+    },
+    {
+      img: '9',
+      title: 'Корпоративные подарки'
+    }
+  ]
 ]; %>
 
-<!-- <section class="advantages container container--sm flex flex-column align-center justify-center" data-listing
-  id="advantages">
-  <div
-    class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up"
-    data-anim="hidden" data-movement="blend">
-    <h2 class="font-alt bold-6 lh-4 zoom-2">а также</h2>
+<section class="advantages container container--sm" data-listing="1">
+  <div class="text-center text-uppercase text-16 text-md-22 text-lg-28 mb-3 ease-in duration-7 anim anim--up" data-anim="hidden">
+    <h2 class="font-alt bold-6 lh-4 zoom-2">Вы также можете <span class="font-alt color-blue">заказать</span> у нас</h2>
   </div>
-  <div class="advantages__items flex flex-wrap justify-center gap-4 gap-md-10 w-100">
+  <p class="text-center text-16 text-md-20 text-lg-24 bold-4 lh-2 fade-60 mb-5 mb-8 ease-in-out duration-5 anim anim--up" data-anim="hidden">
+    Помимо тимбилдинга, мы можем организовать все необходимое для вашего события. <br>
+    У нас есть свое ивент агентство и огромная база проверенных подрядчиков.
+  </p>
+  <h3 class="text-center text-uppercase text-16 text-md-20 text-lg-26 bold-6 lh-2 mb-10 ease-in-out duration-5 anim anim--up" data-anim="hidden">
+    Можете доверить нам организацию под ключ
+  </h3>
+  <div class="advantages__gap grid gap-5 gap-lg-10">
     <% for (var i = 0; i < advantages.length; i++) { %>
-    <div class="advantages__item <%= advantages[i].item %> w-100">
-      <div class="card bg-none">
-        <div class="pack pack--rect bg-primary" data-movement="light">
-          <div class="loader">
-            <span class="loader-progress">
-              <svg class="loader-icon icon">
-                <use xlink:href="img/icons.svg#loader">
-              </svg>
-            </span>
-          </div>
-          <picture>
-            <source srcset="img/pictures/advantages-<%= advantages[i].img %>.webp" type="image/webp">
-            <img class="image image--rise" src="img/pictures/advantages-<%= advantages[i].img %>.jpg" alt="">
-          </picture>
-        </div>
-        <div class="card-conten py-4 py-md-6" data-movement="blend">
-          <h4 class="font-alt text-22 text-md-28 text-lg-32 bold-5 lg-2 mb-2"><%= advantages[i].title %></h4>
-          <p class="text-16 text-md-18 text-lg-22 bold-3 lh-3 fade-60"><%= advantages[i].text %></p>
+      <div class="col-12 col-lg-4 <%= i == 0 ? '' : 'd-none d-md-block' %>" <%= i == 0 ? '' : 'data-listing-item' %>>
+        <div class="advantages__items advantages__gap flex flex-column gap-5 gap-lg-10">
+          <% for (var j = 0; j < advantages[i].length; j++) { %>
+            <div class="advantages__item">
+              <div class="pack mb-4" data-movement="light">
+                <picture>
+                  <source srcset="img/pictures/advantages-<%= advantages[i][j].img %>.webp" type="image/webp">
+                  <img class="d-block w-100" src="img/pictures/advantages-<%= advantages[i][j].img %>.jpg" alt="">
+                </picture>
+              </div>
+              <h4 class="text-18 text-lg-26 bold-5 lh-2"><%= advantages[i][j].title %></h4>
+            </div>
+          <% } %>
         </div>
       </div>
-    </div>
     <% } %>
   </div>
-  <button class="btn btn--white btn--lg btn--contur d-md-none mt-10" data-listing-show data-waved="light">Показать
-    ещё</button>
-</section> -->
-
-<!-- Мероприятия -->
-
-<% var events = [
-  {
-    img: '1',
-    title: 'Авторские режиссерские <br> постановки до мурашек'
-  },
-  {
-    img: '2',
-    title: 'Красота и эстетика <br> во всём'
-  },
-  {
-    img: '3',
-    title: 'Сервис в каждой <br> детали'
-  },
-  {
-    img: '4',
-    title: 'Заряд энергии и взрыв <br> эмоций'
-  }
-]; %>
-
-<!-- <section class="events container flex flex-column align-center justify-center overflow-hidden px-lg-10">
-  <div
-    class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up"
-    data-anim="hidden" data-movement="blend">
-    <h2 class="font-alt bold-6 lh-4 zoom-2">Мероприятие от ENERGELICA®️ это</h2>
-  </div>
-  <div class="events-slider relative w-100">
-    <div class="swiper swiper--overwrap">
-      <div class="swiper-wrapper">
-        <% for (var i = 0; i < events.length; i++) { %>
-        <div class="events-slide swiper-slide h-auto">
-          <div class="card card--active bg-none h-100">
-            <a class="events__pack pack pack--photo bg-primary ease duration-3 delay-2" data-movement="light"
-              data-fancybox="events" href="img/pictures/events-<%= events[i].img %>.jpg">
-              <div class="loader">
-                <span class="loader-progress">
-                  <svg class="loader-icon icon">
-                    <use xlink:href="img/icons.svg#loader">
-                  </svg>
-                </span>
-              </div>
-              <picture>
-                <source srcset="img/pictures/events-<%= events[i].img %>.webp" type="image/webp">
-                <img class="image image--rise" src="img/pictures/events-<%= events[i].img %>.jpg" alt="">
-              </picture>
-            </a>
-            <div class="card-content align-center justify-center py-5 px-4 pt-md-10">
-              <h4 class="font-alt text-center text-18 text-md-22 text-lg-24 bold-5 lh-2" data-movement="blend">
-                <%= events[i].title %></h4>
-            </div>
-          </div>
-        </div>
-        <% } %>
-      </div>
-    </div>
-    <div class="swiper-pagination color-white mt-10"></div>
-  </div>
-</section> -->
-
-<!-- Партнеры -->
-
-<% var partners = ['1', '2', '3', '1', '2', '3']; %>
-
-<!-- <section class="partners container flex flex-column align-center justify-center bg-black color-white overflow-hidden"
-  data-theme="item" id="partners">
-  <div
-    class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-5 mb-md-10 ease-in-out duration-5 anim anim--up"
-    data-anim="hidden" data-movement="blend">
-    <h2 class="font-alt bold-6 lh-4 zoom-2">нам доверяют</h2>
-  </div>
-  <div class="partners-slider relative color-primary w-100 ease-in-out duration-5 delay-md-3 anim anim--up"
-    data-anim="hidden">
-    <div class="swiper swiper--overwrap">
-      <div class="swiper-wrapper">
-        <% for (var i = 0; i < partners.length; i++) { %>
-        <div class="swiper-slide">
-          <div class="pack pack--rect bg-white border" data-movement="blend">
-            <picture>
-              <source srcset="img/pictures/partners-<%= partners[i] %>.webp" type="image/webp">
-              <img class="image image--sd p-5" src="img/pictures/partners-<%= partners[i] %>.jpg" alt="">
-            </picture>
-          </div>
-        </div>
-        <% } %>
-      </div>
-    </div>
-    <div class="swiper-pagination color-white mt-10"></div>
-    <button class="swiper-button-prev btn btn--primary btn--fill d-none d-md-flex" data-waved="light">
-      <svg class="icon text-14">
-        <use xlink:href="img/icons.svg#arrow-left">
-      </svg>
-    </button>
-    <button class="swiper-button-next btn btn--primary btn--fill d-none d-md-flex" data-waved="light">
-      <svg class="icon text-14">
-        <use xlink:href="img/icons.svg#arrow-right">
-      </svg>
-    </button>
-  </div>
-</section> -->
-
-<!-- Рассчет -->
-
-<!-- <section class="calculation container relative bg-primary color-white overflow-hidden" data-theme="item">
-  <div class="calculation__blur blur color-second"></div>
-  <div class="flex flex-column align-center justify-center relative">
-    <div class="text-center text-uppercase text-14 text-md-20 text-lg-26 mb-1 ease-in-out duration-5 anim anim--up"
-      data-anim="hidden" data-movement="blend">
-      <h2 class="font-alt bold-6 lh-4 zoom-2" data-lag="0.25">Получите расчет вашего мероприятия</h2>
-    </div>
-    <h3 class="text-center text-16 text-md-20 text-lg-22 bold-3 lh-2 mb-10 ease-in-out duration-5 anim anim--up"
-      data-anim="hidden" data-movement="blend">
-      <div data-lag="0.2">
-        Расскажите о своей задаче, и мы придумаем что-то интересное
-      </div>
-    </h3>
-    <div class="pt-lg-3 ease-in-out duration-5 anim anim--up" data-anim="hidden">
-      <div data-lag="0.15">
-        <button class="btn btn--white btn--lg btn--fill btn--glow color-black px-md-10" data-waved="dark">Заполнить
-          бриф</button>
-      </div>
-    </div>
-  </div>
-</section> -->
+  <button class="btn btn--black btn--lg btn--contur d-md-none mt-10 mx-auto px-10" data-listing-show data-waved="dark">Показать ещё</button>
+</section>
 
 <!-- Обратная связь -->
 
-<!-- <section class="feedback container relative bg-black color-white overflow-hidden" data-theme="item" id="feedback">
+<section class="feedback container relative bg-grey overflow-hidden">
+  <div class="bg-block">
+    <div class="pack pack--box d-none d-md-block w-50 h-100 ml-auto linear duration-5 anim anim--increase" data-anim="hidden">
+      <picture>
+        <source srcset="img/pictures/firework.webp" type="image/webp">
+        <img class="feedback__image image image--br" src="img/pictures/firework.png" alt="">
+      </picture>
+    </div>
+  </div>
   <div class="feedback__bg bg-block">
-    <div class="feedback__pack pack pack--rect bg-primary w-100 h-md-100" data-movement="light">
+    <div class="feedback__pack pack pack--rect bg-grey w-100 h-md-100" data-movement="light">
       <div class="loader">
         <span class="loader-progress">
           <svg class="loader-icon icon">
@@ -587,12 +488,11 @@
       </picture>
     </div>
   </div>
-  <div class="feedback__content relative zi-1 bg-primary overflow-hidden w-100 py-8 px-5 px-md-8 ml-auto">
-    <div class="feedback__blur blur color-grey"></div>
+  <div class="feedback__content relative zi-1 bg-white overflow-hidden w-100 py-8 px-5 px-md-8 ml-auto">
     <div class="relative">
-      <div class="text-14 text-md-20 text-lg-26 mb-6" data-movement="blend">
-        <h2 class="font-alt bold-6 lh-4 zoom-2">Давайте пообщаемся</h2>
-      </div>
+      <h2 class="font-alt text-28 text-md-36 text-lg-42 bold-6 lh-4 mb-5 mb-md-10">
+        Давайте обсудим <span class="font-alt color-blue">ваш тимбилдинг</span> вместе
+      </h2>
       <form class="form" data-form="submit">
         <input type="hidden" value="Главная" name="theme">
         <label class="form-label mb-6 mb-md-10" data-label="input">
@@ -600,7 +500,7 @@
             <div class="input-cover">
               <input class="input" data-input="tel" type="tel" placeholder="Ваш телефон" name="tel">
             </div>
-            <div class="form-icon form-icon--left color-white text-24 fade-60">
+            <div class="form-icon form-icon--left text-24 fade-60">
               <svg class="icon">
                 <use xlink:href="img/icons.svg#tel">
               </svg>
@@ -613,7 +513,7 @@
             <div class="input-cover">
               <input class="input" data-input="name" type="text" placeholder="Ваше имя" name="name">
             </div>
-            <div class="form-icon form-icon--left color-white text-24 fade-60">
+            <div class="form-icon form-icon--left text-24 fade-60">
               <svg class="icon">
                 <use xlink:href="img/icons.svg#user">
               </svg>
@@ -621,14 +521,227 @@
             <span class="form-error anim anim--fade" data-error>Пожалуйста, введите ваше имя!</span>
           </div>
         </label>
-        <button class="btn btn--white btn--lg btn--contur btn--swipe w-max px-10 mb-5 mb-md-10" data-waved="dark"
-          type="submit">отправить</button>
-        <div class="link text-14 bold-4 lh-4 fade-40 w-md-max" data-fancybox-dialog data-type="ajax"
-          data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных
-          данных</div>
+        <p class="text-18 text-md-22 text-lg-24 bold-4 lh-1 fade-60 mb-5 mb-md-9">Как с вами связаться</p>
+        <div class="flex flex-wrap align-center gap-5 gap-md-8 mb-7 mb-md-10">
+          <label class="flex align-center pointer">
+            <input class="switch switch--radio" type="radio" value="Telegram" name="connection">
+            <span class="text-18 text-md-20 text-lg-24 bold-4 fade-60 ml-2 duration-1">Telegram</span>
+          </label>
+          <label class="flex align-center pointer">
+            <input class="switch switch--radio" type="radio" value="WhatsApp" name="connection">
+            <span class="text-18 text-md-20 text-lg-24 bold-4 fade-60 ml-2 duration-1">WhatsApp</span>
+          </label>
+          <label class="flex align-center pointer">
+            <input class="switch switch--radio" type="radio" value="Звонок" name="connection">
+            <span class="text-18 text-md-20 text-lg-24 bold-4 fade-60 ml-2 duration-1">Звонок</span>
+          </label>
+        </div>
+        <button class="btn btn--primary btn--lg btn--fill w-max px-10 mb-5 mb-md-10" data-waved="light" type="submit">оставить заявку</button>
+        <div class="link text-14 bold-4 lh-4 fade-40 w-md-max" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных данных</div>
       </form>
     </div>
   </div>
-</section> -->
+</section>
+
+<!-- Партнеры -->
+
+<% var partners = ['1', '2', '3', '1', '2', '3']; %>
+
+<section class="partners container overflow-hidden">
+  <div class="text-center text-uppercase text-16 text-md-22 text-lg-28 mb-5 mb-md-10 ease-in duration-7 anim anim--up" data-anim="hidden">
+    <h2 class="font-alt bold-6 lh-4 zoom-2">нам <span class="font-alt color-blue">доверяют</span></h2>
+  </div>
+  <div class="partners-slider relative color-grey ease-in-out duration-5 delay-md-3 anim anim--up" data-anim="hidden">
+    <div class="swiper swiper--overwrap">
+      <div class="swiper-wrapper">
+        <% for (var i = 0; i < partners.length; i++) { %>
+        <div class="swiper-slide" data-theme="light">
+          <div class="pack pack--rect bg-white border">
+            <picture>
+              <source srcset="img/pictures/partners-<%= partners[i] %>.webp" type="image/webp">
+              <img class="image image--sd p-5" src="img/pictures/partners-<%= partners[i] %>.jpg" alt="">
+            </picture>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+    <button class="swiper-button-prev btn btn--grey btn--fill d-none d-md-flex color-black" data-waved="dark">
+      <svg class="icon text-14">
+        <use xlink:href="img/icons.svg#arrow-left">
+      </svg>
+    </button>
+    <button class="swiper-button-next btn btn--grey btn--fill d-none d-md-flex color-black" data-waved="dark">
+      <svg class="icon text-14">
+        <use xlink:href="img/icons.svg#arrow-right">
+      </svg>
+    </button>
+  </div>
+</section>
+
+<!-- Отзывы -->
+
+<% var reviews = [
+  {
+    text: 'Благодарим за проведение мероприятия для нашего мероприятия. За много лет работы в PR у меня был большой опыт работы с ивент агентствами, и к сожалению не всегда удачный. Поэтому для проведения этого мероприятия я тщательно отбирала агентство. И сейчас я уверена, что это было самым правильным решением выбрать агентство ENERGELICA. Я полной уверенностью могу сказать – им можно доверять важные события и быть спокойным.',
+    title: 'Ирина Чухнина',
+    subtitle: 'PR партнер СК «Неометрия»',
+    img: 'img/pictures/reviews-2.svg'
+  },
+  {
+    text: 'Выражаем огромную благодарность агентству ENERGELICA за организацию семейного дня для нашей компании . Все было выполнено четко и в сроки. Наш коллектив получил огромное удовольствие во время мероприятия. Теперь – только к вам!',
+    title: 'Светлана',
+    subtitle: 'Транснефть Финанс',
+    img: 'img/pictures/reviews-1.svg'
+  },
+  {
+    text: 'Благодарим за организацию нашего корпоратива в стиле квеста «Форд Боярд». Мы отлично повеселились. Весь процесс подготовки и само мероприятие прошло так, как планировалось! Мы остались очень довольны.',
+    title: 'Карина Кравченко',
+    subtitle: 'Руководитель «ТеплоКомплекс»',
+    img: 'img/pictures/reviews-2.svg'
+  },
+  {
+    text: 'Благодарим за проведение мероприятия для нашего мероприятия. За много лет работы в PR у меня был большой опыт работы с ивент агентствами, и к сожалению не всегда удачный. Поэтому для проведения этого мероприятия я тщательно отбирала агентство. И сейчас я уверена, что это было самым правильным решением выбрать агентство ENERGELICA. Я полной уверенностью могу сказать – им можно доверять важные события и быть спокойным.',
+    title: 'Ирина Чухнина',
+    subtitle: 'PR партнер СК «Неометрия»',
+    img: 'img/pictures/reviews-2.svg'
+  },
+  {
+    text: 'Выражаем огромную благодарность агентству ENERGELICA за организацию семейного дня для нашей компании . Все было выполнено четко и в сроки. Наш коллектив получил огромное удовольствие во время мероприятия. Теперь – только к вам!',
+    title: 'Светлана',
+    subtitle: 'Транснефть Финанс',
+    img: 'img/pictures/reviews-1.svg'
+  },
+  {
+    text: 'Благодарим за организацию нашего корпоратива в стиле квеста «Форд Боярд». Мы отлично повеселились. Весь процесс подготовки и само мероприятие прошло так, как планировалось! Мы остались очень довольны.',
+    title: 'Карина Кравченко',
+    subtitle: 'Руководитель «ТеплоКомплекс»',
+    img: 'img/pictures/reviews-2.svg'
+  }
+]; %>
+
+<section class="reviews container relative bg-grey overflow-hidden">
+  <div class="bg-block">
+    <div class="reviews__pack reviews__pack--1 pack pack--box d-none d-md-block absolute w-100 linear duration-5 anim anim--increase" data-anim="hidden">
+      <picture>
+        <source srcset="img/pictures/firework.webp" type="image/webp">
+        <img class="reviews__image image" src="img/pictures/firework.png" alt="">
+      </picture>
+    </div>
+    <div class="reviews__pack reviews__pack--2 pack pack--box d-none d-md-block absolute w-100 linear duration-5 anim anim--increase" data-anim="hidden">
+      <picture>
+        <source srcset="img/pictures/firework.webp" type="image/webp">
+        <img class="image" src="img/pictures/firework.png" alt="">
+      </picture>
+    </div>
+  </div>
+  <div class="relative">
+    <div class="text-center text-uppercase text-16 text-md-22 text-lg-28 mb-5 mb-md-10 ease-in duration-7 anim anim--up" data-anim="hidden">
+      <h2 class="font-alt bold-6 lh-4 zoom-2">Отзывы</h2>
+    </div>
+    <div class="reviews-slider relative ease-in duration-7 anim anim--up" data-anim="hidden">
+      <div class="swiper swiper--overwrap">
+        <div class="swiper-wrapper">
+          <% for (var i = 0; i < reviews.length; i++) { %>
+            <div class="swiper-slide h-auto">
+              <div class="card h-100 py-7 px-4 py-md-10 px-md-7">
+                <div class="card-content">
+                  <p class="text-16 text-md-20 text-lg-22 bold-4 lh-2 fade-80 mb-5 mb-md-10"><%= reviews[i].text %></p>
+                  <div class="flex align-center justify-between gap-4 mt-auto">
+                    <div class="flex flex-column">
+                      <span class="text-18 text-md-22 text-lg-24 bold-5"><%= reviews[i].title %></span>
+                      <span class="text-14 text-md-16 text-lg-18 bold-3"><%= reviews[i].subtitle %></span>
+                    </div>
+                    <img class="icon text-40" src="<%= reviews[i].img %>" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      </div>
+      <div class="swiper-pagination color-primary mt-10"></div>
+      <button class="swiper-button-prev btn btn--white btn--fill d-none d-md-flex color-black" data-waved="dark">
+        <svg class="icon text-14">
+          <use xlink:href="img/icons.svg#arrow-left">
+        </svg>
+      </button>
+      <button class="swiper-button-next btn btn--white btn--fill d-none d-md-flex color-black" data-waved="dark">
+        <svg class="icon text-14">
+          <use xlink:href="img/icons.svg#arrow-right">
+        </svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Вопросы -->
+
+<% var questions = [
+  [
+    {
+      item: 'bg-grey',
+      title: 'Какие виды тимбилдинга вы организуете?',
+      text: 'У нас есть более 70 готовых вариантов для проведения тимбилдинга. Плюс мы можем разработать тимбилдинг индивидуально под ваши задачи и тематику мероприятия. Для удобства, оставьте заявку на сайте, и наш менеджер подберет наиболее подходящую для вас программу тимбилдинга.'
+    },
+    {
+      item: 'border',
+      title: 'Зачем нужен тимбилдинг?',
+      text: 'Тимбилдинг сплочает коллектив и повышает уровень мотивации сотрудников.'
+    }
+  ],
+  [
+    {
+      item: 'border',
+      title: 'Как заказать тимбилдинг?',
+      text: 'Заказать тимбилдинг можно оставив заявку на сайте или позвонив нам по телефону <br> <a class="link bold-6" href="tel: 8-918-323-11-22">8-918-323-11-22</a>. <br><br> Мы с радостью проконсультируем вас по всем вопросам!'
+    },
+    {
+      item: 'bg-grey',
+      title: 'Вы проводите тимбилдинг только по Черноморскому побережью?',
+      text: 'Большинство тимбилдингов мы организуем в Геленджике, Анапе. Но мы так же выезжаем по Краснодарскому краю.'
+    }
+  ],
+  [
+    {
+      item: 'bg-grey',
+      title: 'Какая стоимость организации тимбилдинга?',
+      text: 'Ориентировочная стоимость указана в разделе «Стоимость». Для точного просчета нам необходимо понимать точное кол-во участников и формат тимбилдинга.'
+    },
+    {
+      item: 'border',
+      title: 'Сколько длится тимбилдинг?',
+      text: 'Продолжительность тимбилдинга обычно занимает 2-4 часа.'
+    },
+    {
+      item: 'border',
+      title: 'Какой у вас налог?',
+      text: 'У нас ИП, налог 8,5%'
+    },
+  ]
+]; %>
+
+<section class="questions container container--sm" data-listing="1">
+  <div class="text-center text-uppercase text-16 text-md-22 text-lg-28 mb-5 mb-md-10 ease-in duration-7 anim anim--up" data-anim="hidden">
+    <h2 class="font-alt bold-6 lh-4 zoom-2"><span class="font-alt color-blue">Частые</span> вопросы</h2>
+  </div>
+  <div class="grid gap-5 gap-lg-8">
+    <% for (var i = 0; i < questions.length; i++) { %>
+      <div class="col-12 col-lg-4 <%= i == 0 ? '' : 'd-none d-md-block' %>" <%= i == 0 ? '' : 'data-listing-item' %>>
+        <div class="questions__items flex flex-column gap-5 gap-lg-8">
+          <% for (var j = 0; j < questions[i].length; j++) { %>
+            <div class="questions__item <%= questions[i][j].item %> color-grey w-100 py-5 px-5 py-lg-8">
+              <div class="flex flex-column color-black">
+                <h4 class="text-18 text-md-22 text-lg-24 bold-4 lh-2 mb-4"><%= questions[i][j].title %></h4>
+                <p class="text-16 text-md-20 text-lg-22 bold-4 fade-80 lh-2"><%= questions[i][j].text %></p>
+              </div>
+            </div>
+          <% } %>
+        </div>
+      </div>
+    <% } %>
+  </div>
+  <button class="btn btn--black btn--lg btn--contur d-md-none mt-10 mx-auto px-10" data-listing-show data-waved="dark">Показать ещё</button>
+</section>
 
 <%= require('./includes/footer.html').default %>

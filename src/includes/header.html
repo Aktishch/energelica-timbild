@@ -25,7 +25,7 @@
   
   <!-- Шапка документа -->
 
-  <header class="header container flex align-center justify-between gap-10 fixed zi-3 bg-white py-4 linear duration-3" data-header>
+  <header class="header container flex align-center justify-between gap-10 fixed zi-3 bg-white py-4 linear duration-3" data-header data-theme="light">
     <a class="logo btn btn--black mr-auto" data-waved="light" href="/">
       <img class="w-100" src="img/pictures/logo.svg" alt="">
     </a>
@@ -40,7 +40,7 @@
       </svg>
       Написать в WhatsApp
     </a>
-    <button class="header__btn btn btn--black btn--sm btn--contur d-none d-md-flex bold-5 px-5" data-waved="light">Отправить заявку</button>
+    <button class="header__btn btn btn--black btn--sm btn--contur d-none d-md-flex bold-5 px-5" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">Отправить заявку</button>
     <button class="d-lg-none btn btn--black text-32" data-burger data-waved="light">
       <svg class="icon">
         <use xlink:href="img/icons.svg#burger">
@@ -50,7 +50,7 @@
 
   <!-- Мобильное меню -->
 
-  <section class="mobile fixed zi-6 w-100 h-100 ease duration-1" data-mobile="hidden">
+  <section class="mobile fixed zi-6 w-100 h-100 ease duration-1" data-mobile="hidden" data-theme="light">
     <div class="mobile__content flex flex-column bg-white overflow-auto w-100 h-100 ml-auto ease duration-3">
       <div class="flex align-center justify-between gap-2 color-grey border-bottom relative p-4">
         <a class="logo btn btn--white mr-5" data-waved="dark" href="/">
@@ -64,7 +64,7 @@
         </button>
       </div>
       <div class="flex flex-column justify-center relative h-100 mb-10 p-4">
-        <ul class="listing gap-6 gap-md-10">
+        <ul class="listing gap-6 gap-md-10 color-black">
           <li>
             <a class="link text-22 bold-3 ease-in duration-2" data-scroll="top" href="#about">Программы</a>
           </li>

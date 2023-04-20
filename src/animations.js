@@ -156,31 +156,30 @@ const animationInit = () => {
       )
   }
 
-  // services
-  {
-    const cards = gsap.utils.toArray('.services .card')
-    gsap.set(cards, { transition: 'none' })
-    cards.forEach((card, index) => {
-      gsap.from(
-        card,
-        {
-          xPercent: 30,
-          opacity: 0,
-          delay: index / 10,
-          duration: 1,
-          scrollTrigger: {
-            trigger: card.parentElement,
-            start: 'top 95%',
+    // catalog 
+    {
+      const cards = gsap.utils.toArray('.catalog__item')
+      gsap.set(cards, { transition: 'none' })
+      cards.forEach((card, index) => {
+        gsap.from(
+          card,
+          {
+            yPercent: 50,
+            opacity: 0,
+            delay: index / 10,
+            duration: 1,
+            scrollTrigger: {
+              trigger: card.parentElement,
+              start: 'top 95%',
+            }
           }
-        }
-      )
-    })
-
-  }
+        )
+      })
+    }
 
   // advantages 
   {
-    const cards = gsap.utils.toArray('.advantages__item .card')
+    const cards = gsap.utils.toArray('.advantages__item')
     gsap.set(cards, { transition: 'none' })
     cards.forEach((card, index) => {
       gsap.from(
@@ -199,27 +198,27 @@ const animationInit = () => {
     })
   }
 
-  // services
-  {
-    const cards = gsap.utils.toArray('.events-slide .card')
-    gsap.set(cards, { transition: 'none' })
-    cards.forEach((card, index) => {
-      gsap.from(
-        card,
-        {
-          xPercent: 30,
-          opacity: 0,
-          delay: index / 10,
-          duration: 1,
-          scrollTrigger: {
-            trigger: card.parentElement,
-            start: 'top 95%',
+    // questions 
+    {
+      const cards = gsap.utils.toArray('.questions__item')
+      gsap.set(cards, { transition: 'none' })
+      cards.forEach((card, index) => {
+        gsap.from(
+          card,
+          {
+            yPercent: 50,
+            opacity: 0,
+            delay: index / 10,
+            duration: 1,
+            scrollTrigger: {
+              trigger: card.parentElement,
+              start: 'top 95%',
+            }
           }
-        }
-      )
-    })
+        )
+      })
+    }
 
-  }
 }
 
 const scrollSmootherInit = () => {

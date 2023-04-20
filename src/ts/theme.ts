@@ -3,7 +3,7 @@ const init = (): void => {
   const body = document.body as HTMLBodyElement
   const toggles = body.querySelectorAll('*[data-theme="toggle"]') as NodeListOf<Element>
 
-  let theme: string = 'dark'
+  let theme: string = 'light'
 
   const togglesChecked = (check: boolean): void => {
 
@@ -21,15 +21,15 @@ const init = (): void => {
 
     if (!body.hasAttribute('data-theme')) {
 
-      theme = 'light'
+      theme = 'dark'
       localStorage.setItem('theme', theme)
-      body.setAttribute('data-theme', 'light')
+      body.setAttribute('data-theme', 'dark')
 
       togglesChecked(true)
 
     } else {
 
-      theme = 'dark'
+      theme = 'light'
       localStorage.setItem('theme', theme)
       body.removeAttribute('data-theme')
 
@@ -43,9 +43,9 @@ const init = (): void => {
 
     theme = String(localStorage.getItem('theme'))
 
-    if (theme == 'light') {
+    if (theme == 'dark') {
 
-      body.setAttribute('data-theme', 'light')
+      body.setAttribute('data-theme', 'dark')
 
       togglesChecked(true)
 

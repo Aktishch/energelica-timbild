@@ -105,6 +105,14 @@ body.load-complete .preloader {
     min-width: 32px;
     width    : 32px;
     height   : 32px;
+
+    &--wa {
+      background: #26D044;
+    }
+
+    &--tg {
+      background: #33AADE;
+    }
   }
 
   @media(max-width: $md) {
@@ -116,10 +124,6 @@ body.load-complete .preloader {
 
 // Модальное окно
 .dialog {
-  &__blur {
-    left: -292px;
-  }
-
   @media(min-width: $lg) {
 
     &--politics,

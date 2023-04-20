@@ -37,6 +37,10 @@
 
 // О нас
 .about {
+  &__image {
+    transform: rotate(90deg);
+  }
+
   &__pack {
     max-width: 990px;
 
@@ -50,12 +54,18 @@
   }
 
   &__doc {
-    top: 0;
-    left: 0;
+    top   : 0;
+    left  : 0;
     bottom: 0;
   }
 
   @media(min-width: $lg) {
+    &__image {
+      &--2 {
+        left: 500px;
+      }
+    }
+
     &__content {
       padding: 100px 80px;
     }
@@ -151,66 +161,75 @@
   }
 }
 
-
-
-
-// Услуги
-.services {
+// Стоимость
+.price {
   &__pack {
-    &::before {
-      padding-top: 90%;
+    max-width: 1030px;
+
+    &--1 {
+      top : -300px;
+      left: -600px;
+
+      & .image {
+        transform: rotate(90deg);
+      }
+    }
+
+    &--2 {
+      bottom: -250px;
+      right : -600px;
+    }
+  }
+
+  &__info {
+    max-width: 480px;
+  }
+
+  &__content {
+    max-width: 590px;
+  }
+
+  &__item {
+    background-color: var(--color-white-30);
+  }
+
+  @media(max-width: $lg) {
+    &__block {
+      flex-direction: column;
+      align-items   : flex-start;
+    }
+
+    &__content {
+      order    : 1;
+      max-width: 100%;
+    }
+
+    &__info {
+      order    : 2;
+      max-width: 100%;
     }
   }
 }
 
 // Преимущества
 .advantages {
-  &__item {
-    max-width: 350px;
-  }
 
   @media(min-width: $lg) {
-    &__items {
-      gap: 56px;
+    &__gap {
+      gap: 52px;
     }
   }
 
   @media(max-width: $lg) {
-    &__item {
-      max-width: 300px;
+    &__items {
+      flex-direction: row;
     }
   }
 
   @media(max-width: $md) {
-    &__item {
-      max-width: 100%;
+    &__items {
+      flex-direction: column;
     }
-  }
-}
-
-// Мероприятия
-.events {
-  &__pack {
-    filter: grayscale(100%);
-  }
-
-  @media(hover) {
-    &__pack:hover {
-      filter: grayscale(0);
-    }
-  }
-
-  @media(max-width: $md) {
-    &-slide.swiper-slide-active &__pack {
-      filter: grayscale(0);
-    }
-  }
-}
-
-// Рассчет
-.calculation {
-  &__blur {
-    left: 30%;
   }
 }
 
@@ -224,13 +243,14 @@
     max-width: 725px;
   }
 
-  &__blur {
-    left: -210px;
-  }
-
   @media(min-width: $lg) {
+    &__image {
+      left : auto;
+      right: -550px;
+    }
+
     &__content {
-      padding: 60px 64px;
+      padding: 56px 76px;
     }
   }
 
@@ -271,8 +291,61 @@
   }
 }
 
+// Отзывы
+.reviews {
+  &__pack {
+    max-width: 1030px;
+
+    &--1 {
+      top : -395px;
+      left: -675px;
+    }
+
+    &--2 {
+      bottom: -395px;
+      right : -675px;
+    }
+  }
+
+  &__image {
+    transform: rotate(180deg);
+  }
+}
+
+// Вопросы
+.questions {
+  @media(max-width: $lg) {
+    &__items {
+      flex-direction: row;
+    }
+  }
+
+  @media(max-width: $md) {
+    &__items {
+      flex-direction: column;
+    }
+  }
+}
+
 // Квиз
 .quiz {
+  &-images {
+    &__pack {
+      max-width          : 480px;
+      background         : var(--color-primary) url('../img/pictures/firework.png') no-repeat center / cover;
+      background-position: 100px;
+
+      &::before {
+        padding-top: 135%;
+      }
+    }
+
+    &__image {
+      top : 40px;
+      left: -40px;
+    }
+  }
+
   &-slider {
     &[data-quiz="stop"] .swiper-button-next {
       pointer-events: none;
@@ -295,16 +368,19 @@
       &--prev {
         min-width: 60px;
         width    : 60px;
-
-        &.swiper-button-disabled {
-          color           : var(--color-white);
-          background-color: var(--color-white-40);
-        }
       }
     }
   }
 
   &__content {
     max-width: 440px;
+  }
+
+  @media(max-width: 1300px) {
+    &-images {
+      &__pack {
+        max-width: 300px;
+      }
+    }
   }
 }

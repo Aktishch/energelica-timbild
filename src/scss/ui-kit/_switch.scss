@@ -6,7 +6,7 @@
   position       : relative;
   user-select    : none;
   color          : var(--color-blue);
-  border         : 1px solid var(--color-grey);
+  border         : 1px solid var(--color-black-40);
   transition     : 0.2s linear;
   cursor         : pointer;
 
@@ -50,7 +50,7 @@
       display         : block;
       width           : 12px;
       height          : 12px;
-      background-color: var(--color-black);
+      background-color: var(--color-blue);
       border-radius   : inherit;
       transform       : scale(0);
       transition      : opacity 0.1s linear, transform 0.1s linear;
@@ -65,6 +65,10 @@
       &::after {
         opacity  : 1;
         transform: scale(1);
+      }
+
+      &+span {
+        opacity: 1;
       }
     }
   }

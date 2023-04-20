@@ -23,6 +23,7 @@
   @include getBtn("primary");
   @include getBtn("white");
   @include getBtn("black");
+  @include getBtn("grey");
 
   &--lg {
     --size   : var(--size-lg);

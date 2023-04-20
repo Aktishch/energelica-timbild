@@ -3,31 +3,31 @@ body {
   color           : var(--color-black);
   background-color: var(--color-white);
 
-  // &[data-theme="light"] {
-  //   & [data-theme="item"] {
-  //     --color-primary: #EFEFEF;
-  //     --color-black  : #FFFFFF;
-  //     --color-white  : #151515;
+  &[data-theme="dark"] {
+    --color-black: #FFFFFF;
+    --color-white: #151515;
+    --color-grey : #222222;
 
-  //     & [data-movement] {
-  //       --color-primary: #1D1D1D;
-  //       --color-white  : #FFFFFF;
-  //       --color-black  : #151515;
-  //     }
+    & [data-theme="light"],
+    & .form-error,
+    & .movement::after {
+      --color-black: #151515;
+      --color-white: #FFFFFF;
+      --color-grey : #EFEFEF;
+    }
 
-  //     & .input {
-  //       border-color: #151515;
+    & .btn--primary {
+      --btn-accent: #FFFFFF;
+    }
 
-  //       &::placeholder {
-  //         color: var(--color-black-60);
-  //       }
-  //     }
+    & .input {
+      border-color: var(--color-white-60);
 
-  //     & .blur {
-  //       display: none;
-  //     }
-  //   }
-  // }
+      &::placeholder {
+        color: var(--color-white-60);
+      }
+    }
+  }
 }
 
 // Выделение

@@ -2,7 +2,7 @@
 * {
   scrollbar: {
     width: thin;
-    color: var(--color-grey) var(--color-primary);
+    color: var(--color-grey-dark) var(--color-primary);
   }
 
   &::-webkit-scrollbar {
@@ -18,7 +18,7 @@
       }
 
       &-thumb {
-        background-color: var(--color-grey);
+        background-color: var(--color-grey-dark);
 
         border: {
           width : 4px;
