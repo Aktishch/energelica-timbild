@@ -25,12 +25,11 @@
       </picture>
     </div>
   </div>
-  <div class="main__blur blur color-second"></div>
   <div class="flex flex-column align-start relative color-white">
-    <div class="main__title text-16 text-md-22 text-lg-28 text-uppercase mb-2 p-2">
+    <div class="bg-blue text-16 text-md-22 text-lg-28 text-uppercase mb-2 p-2">
       <h1 class="font-alt bold-6 lh-2 zoom-2" data-lag="0.3">Организуем</h1>
     </div>
-    <div class="main__title text-16 text-md-22 text-lg-28 text-uppercase mb-6 p-2">
+    <div class="bg-blue text-16 text-md-22 text-lg-28 text-uppercase mb-6 p-2">
       <h1 class="font-alt bold-6 lh-2 zoom-2" data-lag="0.3">эффективные <br> тимбилдинги</h1>
     </div>
     <div data-lag="0.2">
@@ -67,7 +66,7 @@
   }
 ]; %>
 
-<section class="result container">
+<section class="result container pb-0">
   <div class="grid gap-4 gap-md-7">
     <% for (var i = 0; i < result.length; i++) { %>
       <div class="col-6 col-lg-3 <%= result[i].item %> ease-in-out anim anim--up" data-anim="hidden">
@@ -97,13 +96,13 @@
   },
   {
     img: '3',
-    title: 'Игры. Квесты',
-    ul: ['Логические', 'Развлекательные', 'Финансовые', 'Тематические', 'Активные/Застольные']
+    title: 'Игры и квесты',
+    ul: ['Логические', 'Развлекательные', 'Финансовые', 'Тематические']
   },
   {
     img: '4',
     title: 'Трансформационные программы',
-    ul: ['Тренинги и стратегические сессии', 'Иммерсивные шоу-тренинги', 'Ретриты, йога туры, медитации', 'Трансформационные игры, квесты', 'Мастер-классы']
+    ul: ['Тренинги и стратегические сессии', 'Ретриты, йога туры, медитации', 'Трансформационные игры, квесты', 'Мастер-классы']
   },
   {
     img: '5',
@@ -127,10 +126,10 @@
   </h3>
   <div class="grid gap-4 gap-md-6 gap-lg-10">
     <% for (var i = 0; i < catalog.length; i++) { %>
-      <div class="catalog__item col-12 col-lg-6">
-        <div class="card py-4 px-4 px-md-0 h-100">
-          <div class="bg-block pr-md-8">
-            <div class="pack pack--rect bg-grey h-100" data-movement="light">
+      <div class="catalog__item col-12 col-lg-6" data-theme="light">
+        <div class="card overflow-hidden h-100 p-5 p-md-10">
+          <div class="catalog__bg bg-block">
+            <div class="pack pack--rect bg-grey h-100">
               <div class="loader">
                 <span class="loader-progress">
                   <svg class="loader-icon icon">
@@ -140,19 +139,21 @@
               </div>
               <picture>
                 <source srcset="img/pictures/catalog-<%= catalog[i].img %>.webp" type="image/webp">
-                <img class="image image--rise" src="img/pictures/catalog-<%= catalog[i].img %>.jpg" loading="lazy" alt="">
+                <img class="image" src="img/pictures/catalog-<%= catalog[i].img %>.jpg" loading="lazy" alt="">
               </picture>
             </div>
           </div>
-          <div class="catalog__content card-content relative color-grey bg-white border w-100 ml-auto py-7 py-md-10 px-4 px-md-6" data-waved="dark">
-            <div class="flex flex-column color-black pt-md-5">
-              <h4 class="font-alt text-20 text-md-24 text-lg-28 bold-7 lh-2 mb-4 mb-md-6"><%= catalog[i].title %></h4>
-              <ul class="listing gap-3 text-16 text-md-20 text-lg-22 bold-4 fade-80">
+          <div class="catalog__content card-content flex flex-column relative color-white pt-lg-5">
+            <div class="catalog__info d-none d-md-block fade-0 mb-5 ease duration-3">
+              <h4 class="font-alt text-24 text-md-30 text-lg-36 bold-6 lh-2 mb-5"><%= catalog[i].title %></h4>
+              <ul class="listing gap-2 text-16 text-md-20 text-lg-22 bold-4">
                 <% for (var j = 0; j < catalog[i].ul.length; j++) { %>
                   <li><%= catalog[i].ul[j] %></li>
                 <% } %>
               </ul>
             </div>
+            <h4 class="catalog__title font-alt text-24 text-md-30 text-lg-36 bold-6 lh-2 mt-auto ease duration-3"><%= catalog[i].title %></h4>
+            <button class="btn btn--white btn--sm btn--fill btn--glow d-md-none color-black w-max px-10 mt-4" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-detail.html">Подробнее</button>
           </div>
         </div>
       </div>
@@ -183,7 +184,7 @@
     <h2 class="font-alt text-28 text-md-38 text-lg-42 bold-6 lh-2 mb-5 mb-md-8">
       Получите готовую презентацию <span class="font-alt color-blue">лучших программ</span> на ваше мероприятие
     </h2>
-    <p class="text-16 text-md-20 text-lg-22 bold-4 lh-2 fade-60 mb-5 mb-md-8">Оставьте заявку/ответьте на 5 вопросов и получите:</p>
+    <p class="text-16 text-md-20 text-lg-22 bold-4 lh-2 fade-60 mb-5 mb-md-8">Ответьте на 5 вопросов и получите:</p>
     <div class="flex flex-column gap-3 gap-md-5 mb-10">
       <div class="flex">
         <img class="icon text-20 mt-1 mr-3" src="img/pictures/check.svg" alt="">
@@ -233,7 +234,7 @@
       решающие ваши конкретные задачи.
     </p>
     <p class="text-16 text-md-20 text-lg-22 bold-4 fade-80 lh-2 mb-5">
-      С 2018 г. мы развиваем, сплочаем и развлекаем компании <br>
+      С 2018 г. мы развиваем, сплочаем и развлекаем компании. <br>
       Миссия агентства – в развлекательном формате тимбилдинга передать глубокие смыслы и ценности и выполнить поставленные задачи: обучение, сплочение, развитие, мотивация.
     </p>
     <p class="text-16 text-md-20 text-lg-22 bold-4 fade-80 lh-2 mb-5 mb-md-10">
@@ -294,7 +295,7 @@
     <% } %>
   </div>
   <div class="pt-lg-5 ease-in duration-7 anim anim--up" data-anim="hidden">
-    <button class="btn btn--black btn--lg btn--contur btn--swipe px-10 mx-auto" data-waved="light">показать больше</button>
+    <button class="gallery__btn btn btn--blue btn--lg btn--contur btn--swipe color-black border px-10 mx-auto" data-waved="light">показать больше</button>
   </div>
 </section>
 
@@ -336,16 +337,16 @@
         </p>
         <button class="btn btn--primary btn--lg btn--fill px-md-10" data-waved="light">Рассчитать <span class="d-none d-md-inline ml-1">точную стоимость</span></button>
       </div>
-      <div class="price__content bg-grey w-100 py-5 px-2 py-md-8 px-md-4">
+      <div class="price__content bg-blue color-white w-100 py-5 px-2 py-md-8 px-md-4" data-theme="light">
         <div class="grid ga-1 py-3 px-3 px-md-5 mb-2">
           <div class="col-7">
-            <h4 class="font-alt text-14 text-md-18 text-lg-22 bold-3 fade-60">Количество участников</h4>
+            <h4 class="font-alt text-14 text-md-18 text-lg-22 bold-3">Количество участников</h4>
           </div>
           <div class="col-5">
-            <h4 class="font-alt text-14 text-md-18 text-lg-22 bold-3 fade-60">Стоимость ₽/чел</h4>
+            <h4 class="font-alt text-14 text-md-18 text-lg-22 bold-3">Стоимость ₽/чел</h4>
           </div>
         </div>
-        <div class="grid gap-1 bg-white py-3 px-3 px-md-5 mb-2">
+        <div class="grid gap-1 bg-white color-black py-3 px-3 px-md-5 mb-2">
           <div class="col-7">
             <h4 class="text-16 text-md-20 text-lg-24 bold-6">До 50</h4>
           </div>
@@ -361,7 +362,7 @@
             <h4 class="text-16 text-md-20 text-lg-24 bold-6">1100 - 3000</h4>
           </div>
         </div>
-        <div class="grid gap-1 bg-white py-3 px-3 px-md-5 mb-2">
+        <div class="grid gap-1 bg-white color-black  py-3 px-3 px-md-5 mb-2">
           <div class="col-7">
             <h4 class="text-16 text-md-20 text-lg-24 bold-6">100 - 200</h4>
           </div>
@@ -385,51 +386,63 @@
 <!-- Преимущества -->
 
 <% var advantages = [
-  [
-    {
-      img: '1',
-      title: 'Дизайн и брендинг мероприятия'
-    },
-    {
-      img: '4',
-      title: 'Подбор площадки для мероприятия'
-    },
-    {
-      img: '7',
-      title: 'Шоу-программа'
-    }
-  ],
-  [
-    {
-      img: '2',
-      title: 'Фото и видео съемка'
-    },
-    {
-      img: '5',
-      title: 'Бронь отелей и размещение'
-    },
-    {
-      img: '8',
-      title: 'Декор мероприятия'
-    }
-  ],
-  [
-    {
-      img: '3',
-      title: 'Кейтеринг'
-    },
-    {
-      img: '6',
-      title: 'Организация трансфера'
-    },
-    {
-      img: '9',
-      title: 'Корпоративные подарки'
-    }
-  ]
+  {
+    item: '',
+    data: '',
+    img: '1',
+    text: 'Дизайн и брендинг <br> мероприятия'
+  },
+  {
+    item: '',
+    data: '',
+    img: '2',
+    text: 'Фото и видео съемка'
+  },
+  {
+    item: '',
+    data: '',
+    img: '3',
+    text: 'Кейтеринг'
+  },
+  {
+    item: 'd-none d-md-block',
+    data: 'data-listing-item',
+    img: '4',
+    text: 'Подбор площадки <br> для мероприятия'
+  },
+  {
+    item: 'd-none d-md-block',
+    data: 'data-listing-item',
+    img: '5',
+    text: 'Бронь отелей и размещение'
+  },
+  {
+    item: 'd-none d-md-block',
+    data: 'data-listing-item',
+    img: '6',
+    text: 'Организация трансфера'
+  },
+  {
+    item: 'd-none d-md-block',
+    data: 'data-listing-item',
+    img: '7',
+    text: 'Шоу-программа'
+  },
+  {
+    item: 'd-none d-md-block',
+    data: 'data-listing-item',
+    img: '8',
+    text: 'Декор мероприятия'
+  },
+  {
+    item: 'd-none d-md-block',
+    data: 'data-listing-item',
+    img: '9',
+    text: 'Корпоративные подарки'
+  }
 ]; %>
 
-<section class="advantages container container--sm" data-listing="1">
+<section class="advantages container container--sm" data-listing="2">
   <div class="text-center text-uppercase text-16 text-md-22 text-lg-28 mb-3 ease-in duration-7 anim anim--up" data-anim="hidden">
     <h2 class="font-alt bold-6 lh-4 zoom-2">Вы также можете <span class="font-alt color-blue">заказать</span> у нас</h2>
   </div>
@@ -440,22 +453,13 @@
   <h3 class="text-center text-uppercase text-16 text-md-20 text-lg-26 bold-6 lh-2 mb-10 ease-in-out duration-5 anim anim--up" data-anim="hidden">
     Можете доверить нам организацию под ключ
   </h3>
-  <div class="advantages__gap grid gap-5 gap-lg-10">
+  <div class="grid gap-4 gap-md-7 gap-lg-10 pt-lg-5">
     <% for (var i = 0; i < advantages.length; i++) { %>
-      <div class="col-12 col-lg-4 <%= i == 0 ? '' : 'd-none d-md-block' %>" <%= i == 0 ? '' : 'data-listing-item' %>>
-        <div class="advantages__items advantages__gap flex flex-column gap-5 gap-lg-10">
-          <% for (var j = 0; j < advantages[i].length; j++) { %>
-            <div class="advantages__item">
-              <div class="pack mb-4" data-movement="light">
-                <picture>
-                  <source srcset="img/pictures/advantages-<%= advantages[i][j].img %>.webp" type="image/webp">
-                  <img class="d-block w-100" src="img/pictures/advantages-<%= advantages[i][j].img %>.jpg" alt="">
-                </picture>
-              </div>
-              <h4 class="text-18 text-lg-26 bold-5 lh-2"><%= advantages[i][j].title %></h4>
-            </div>
-          <% } %>
+      <div class="advantages__item col-12 col-md-6 col-lg-4 <%= advantages[i].item %>" <%= advantages[i].data %>>
+        <div class="advantages__pack pack pack--half mb-4">
+          <img class="image image--sd p-5" src="img/pictures/advantages-<%= advantages[i].img %>.svg" alt="">
         </div>
+        <h4 class="text-center text-18 text-md-22 text-lg-26 bold-5 lf02"><%= advantages[i].text %></h4>
       </div>
     <% } %>
   </div>
@@ -644,15 +648,15 @@
         <div class="swiper-wrapper">
           <% for (var i = 0; i < reviews.length; i++) { %>
             <div class="swiper-slide h-auto">
-              <div class="card h-100 py-7 px-4 py-md-10 px-md-7">
+              <div class="card h-100 p-2">
                 <div class="card-content">
-                  <p class="text-16 text-md-20 text-lg-22 bold-4 lh-2 fade-80 mb-5 mb-md-10"><%= reviews[i].text %></p>
-                  <div class="flex align-center justify-between gap-4 mt-auto">
+                  <p class="text-16 text-md-20 text-lg-22 bold-4 lh-2 fade-80 py-7 py-md-10 px-md-5"><%= reviews[i].text %></p>
+                  <div class="reviews__bottom flex align-center justify-between gap-4 mt-auto py-3 px-3 py-md-6 px-md-5">
                     <div class="flex flex-column">
-                      <span class="text-18 text-md-22 text-lg-24 bold-5"><%= reviews[i].title %></span>
-                      <span class="text-14 text-md-16 text-lg-18 bold-3"><%= reviews[i].subtitle %></span>
+                      <span class="text-16 text-md-20 text-lg-24 bold-5"><%= reviews[i].title %></span>
+                      <span class="text-12 text-md-16 text-lg-18"><%= reviews[i].subtitle %></span>
                     </div>
-                    <img class="icon text-40" src="<%= reviews[i].img %>" alt="">
+                    <img class="icon text-30 text-md-40" src="<%= reviews[i].img %>" alt="">
                   </div>
                 </div>
               </div>
@@ -680,44 +684,39 @@
 <% var questions = [
   [
     {
-      item: 'bg-grey',
+      item: 'border color-grey',
       title: 'Какие виды тимбилдинга вы организуете?',
       text: 'У нас есть более 70 готовых вариантов для проведения тимбилдинга. Плюс мы можем разработать тимбилдинг индивидуально под ваши задачи и тематику мероприятия. Для удобства, оставьте заявку на сайте, и наш менеджер подберет наиболее подходящую для вас программу тимбилдинга.'
     },
     {
-      item: 'border',
-      title: 'Зачем нужен тимбилдинг?',
-      text: 'Тимбилдинг сплочает коллектив и повышает уровень мотивации сотрудников.'
+      item: 'questions__item--blue color-blue border-bottom',
+      title: 'Сколько длится тимбилдинг?',
+      text: 'Продолжительность тимбилдинга обычно занимает 2-4 часа.'
     }
   ],
   [
     {
-      item: 'border',
+      item: 'questions__item--blue color-blue border-bottom',
       title: 'Как заказать тимбилдинг?',
       text: 'Заказать тимбилдинг можно оставив заявку на сайте или позвонив нам по телефону <br> <a class="link bold-6" href="tel: 8-918-323-11-22">8-918-323-11-22</a>. <br><br> Мы с радостью проконсультируем вас по всем вопросам!'
     },
     {
-      item: 'bg-grey',
+      item: 'border color-grey',
       title: 'Вы проводите тимбилдинг только по Черноморскому побережью?',
       text: 'Большинство тимбилдингов мы организуем в Геленджике, Анапе. Но мы так же выезжаем по Краснодарскому краю.'
     }
   ],
   [
     {
-      item: 'bg-grey',
+      item: 'border color-grey',
       title: 'Какая стоимость организации тимбилдинга?',
       text: 'Ориентировочная стоимость указана в разделе «Стоимость». Для точного просчета нам необходимо понимать точное кол-во участников и формат тимбилдинга.'
     },
     {
-      item: 'border',
-      title: 'Сколько длится тимбилдинг?',
-      text: 'Продолжительность тимбилдинга обычно занимает 2-4 часа.'
-    },
-    {
-      item: 'border',
-      title: 'Какой у вас налог?',
-      text: 'У нас ИП, налог 8,5%'
-    },
+      item: 'questions__item--blue color-blue border-bottom',
+      title: 'Зачем нужен тимбилдинг?',
+      text: 'Тимбилдинг сплочает коллектив и повышает уровень мотивации сотрудников.'
+    }
   ]
 ]; %>
 
@@ -730,7 +729,7 @@
       <div class="col-12 col-lg-4 <%= i == 0 ? '' : 'd-none d-md-block' %>" <%= i == 0 ? '' : 'data-listing-item' %>>
         <div class="questions__items flex flex-column gap-5 gap-lg-8">
           <% for (var j = 0; j < questions[i].length; j++) { %>
-            <div class="questions__item <%= questions[i][j].item %> color-grey w-100 py-5 px-5 py-lg-8">
+            <div class="questions__item <%= questions[i][j].item %> w-100 py-5 px-5 py-lg-8">
               <div class="flex flex-column color-black">
                 <h4 class="text-18 text-md-22 text-lg-24 bold-4 lh-2 mb-4"><%= questions[i][j].title %></h4>
                 <p class="text-16 text-md-20 text-lg-22 bold-4 fade-80 lh-2"><%= questions[i][j].text %></p>

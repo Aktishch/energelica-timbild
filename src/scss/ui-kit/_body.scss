@@ -16,6 +16,20 @@ body {
       --color-grey : #EFEFEF;
     }
 
+    & .logo-dark {
+      display: none;
+    }
+
+    & .logo-light {
+      display: block;
+    }
+
+    & .header__btn,
+    & .gallery__btn {
+      --btn-accent: var(--color-black);
+      border-color: var(--color-black);
+    }
+
     & .btn--primary {
       --btn-accent: #FFFFFF;
     }
@@ -26,6 +40,10 @@ body {
       &::placeholder {
         color: var(--color-white-60);
       }
+    }
+
+    & .advantages__pack {
+      background: none !important;
     }
   }
 }

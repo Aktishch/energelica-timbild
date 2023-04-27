@@ -24,6 +24,7 @@
   @include getBtn("white");
   @include getBtn("black");
   @include getBtn("grey");
+  @include getBtn("blue");
 
   &--lg {
     --size   : var(--size-lg);

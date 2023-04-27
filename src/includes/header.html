@@ -25,24 +25,25 @@
   
   <!-- Шапка документа -->
 
-  <header class="header container flex align-center justify-between gap-5 fixed zi-3 bg-white py-4 linear duration-3" data-header data-theme="light">
-    <a class="logo btn btn--black" data-waved="light" href="/">
-      <img class="w-100" src="img/pictures/logo.svg" alt="">
+  <header class="header container flex align-center justify-between gap-5 fixed zi-3 bg-white py-4 linear duration-3" data-header>
+    <a class="logo btn btn--blue" data-waved="dark" href="/">
+      <img class="logo-dark w-100" src="img/pictures/logo.svg" alt="">
+      <img class="logo-light d-none w-100" src="img/pictures/logo-light.svg" alt="">
     </a>
     <input class="switch switch--toggle d-none d-lg-block" data-theme="toggle" type="checkbox">
     <div class="d-none d-lg-flex align-center gap-5">
-      <a class="btn btn--black text-18 bold-4 p-1" data-waved="light" data-scroll="top" href="">Программы</a>
-      <a class="btn btn--black text-18 bold-4 p-1" data-waved="light" data-scroll="top" href="">Стоимость</a>
+      <a class="btn btn--blue link color-black text-18 bold-4 p-1" data-waved="dark" data-scroll="top" href="">Программы</a>
+      <a class="btn btn--blue link color-black text-18 bold-4 p-1" data-waved="dark" data-scroll="top" href="">Стоимость</a>
     </div>
-    <a class="btn btn--black d-none d-lg-flex link font-alt text-22 bold-7 p-1" data-waved="light" href="tel: 8 918 323 11 22">8 918 323 11 22</a>
-    <a class="btn btn--black d-none d-lg-flex link text-18 bold-5 p-1" data-waved="light" href="" target="_blank">
+    <a class="btn btn--blue d-none d-lg-flex link color-black font-alt text-22 bold-7 p-1" data-waved="dark" href="tel: 8 918 323 11 22">8 918 323 11 22</a>
+    <a class="btn btn--blue d-none d-lg-flex link color-black text-18 bold-5 p-1" data-waved="dark" href="" target="_blank">
       <svg class="icon text-16 fade-80 mr-2">
         <use xlink:href="img/icons.svg#wa">
       </svg>
       Написать в WhatsApp
     </a>
-    <button class="header__btn btn btn--black btn--sm btn--contur d-none d-md-flex bold-5 px-5" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">Отправить заявку</button>
-    <button class="d-lg-none btn btn--black text-32" data-burger data-waved="light">
+    <button class="header__btn btn btn--blue btn--sm btn--contur btn--swipe d-none d-md-flex color-black bold-5 px-5" data-waved="dark" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-feedback.html">Отправить заявку</button>
+    <button class="d-lg-none btn btn--blue color-black text-32" data-burger data-waved="dark">
       <svg class="icon">
         <use xlink:href="img/icons.svg#burger">
       </svg>
@@ -51,11 +52,12 @@
 
   <!-- Мобильное меню -->
 
-  <section class="mobile fixed zi-6 w-100 h-100 ease duration-1" data-mobile="hidden" data-theme="light">
+  <section class="mobile fixed zi-6 w-100 h-100 ease duration-1" data-mobile="hidden">
     <div class="mobile__content flex flex-column bg-white overflow-auto w-100 h-100 ml-auto ease duration-3">
       <div class="flex align-center justify-between gap-2 color-grey border-bottom relative p-4">
         <a class="logo btn btn--white mr-5" data-waved="dark" href="/">
-          <img class="w-100" src="img/pictures/logo.svg" alt="">
+          <img class="logo-dark w-100" src="img/pictures/logo.svg" alt="">
+          <img class="logo-light d-none w-100" src="img/pictures/logo-light.svg" alt="">
         </a>
         <input class="switch switch--toggle" data-theme="toggle" type="checkbox">
         <button class="btn btn--black text-28 ml-auto p-1" data-mobile-close data-waved="light">
