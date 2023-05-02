@@ -39,6 +39,11 @@
     min-height: 375px;
   }
 
+  &__title,
+  &__subtitle {
+    background-color: var(--color-blue-70);
+  }
+
   &__info {
     transform : scale(0);
     visibility: hidden;

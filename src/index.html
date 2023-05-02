@@ -143,16 +143,16 @@
               </picture>
             </div>
           </div>
-          <div class="catalog__content card-content flex flex-column relative color-white pt-lg-5">
-            <div class="catalog__info d-none d-md-block fade-0 mb-5 ease duration-3">
-              <h4 class="font-alt text-24 text-md-30 text-lg-36 bold-6 lh-2 mb-5"><%= catalog[i].title %></h4>
+          <div class="catalog__content card-content flex flex-column align-start relative color-white pt-lg-5">
+            <div class="catalog__info d-none d-md-flex flex-column align-start fade-0 mb-5 ease duration-3">
+              <h4 class="catalog__subtitle font-alt text-24 text-md-30 text-lg-36 bold-6 lh-2 mb-5 p-2"><%= catalog[i].title %></h4>
               <ul class="listing gap-2 text-16 text-md-20 text-lg-22 bold-4">
                 <% for (var j = 0; j < catalog[i].ul.length; j++) { %>
                   <li><%= catalog[i].ul[j] %></li>
                 <% } %>
               </ul>
             </div>
-            <h4 class="catalog__title font-alt text-24 text-md-30 text-lg-36 bold-6 lh-2 mt-auto ease duration-3"><%= catalog[i].title %></h4>
+            <h4 class="catalog__title font-alt text-24 text-md-30 text-lg-36 bold-6 lh-2 mt-auto p-2 ease duration-3"><%= catalog[i].title %></h4>
             <button class="btn btn--white btn--sm btn--fill btn--glow d-md-none color-black w-max px-10 mt-4" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-detail.html">Подробнее</button>
           </div>
         </div>
