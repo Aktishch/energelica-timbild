@@ -275,12 +275,18 @@
 
 // Преимущества
 .advantages {
-  &__item:nth-child(odd) &__pack {
-    background: linear-gradient(180deg, var(--color-none) 0%, var(--color-grey-50) 100%);
+  &__item &__pack {
+    background: linear-gradient(180deg, var(--color-none) 0%, var(--color-grey-80) 100%);
   }
 
-  &__item:nth-child(even) &__pack {
-    background: linear-gradient(180deg, var(--color-grey-50) 0%, var(--color-none) 100%);
+  @media(min-width: $md) {
+    &__item:nth-child(odd) &__pack {
+      background: linear-gradient(180deg, var(--color-none) 0%, var(--color-grey-50) 100%);
+    }
+
+    &__item:nth-child(even) &__pack {
+      background: linear-gradient(180deg, var(--color-grey-50) 0%, var(--color-none) 100%);
+    }
   }
 }
 
